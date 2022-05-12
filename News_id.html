@@ -1,0 +1,700 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+    <meta name="theme-color" content="#001a70" />
+    <title>News - Spyros Indonesia</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link href="Images/icon.ico" rel="shortcut icon" type="image/x-icon" />
+    <!-- Font Awesome Icons -->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <!-- Google Fonts -->
+    <link href="Content/font-awesome.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Plugin CSS -->
+    <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+    <!-- Theme CSS - Includes Bootstrap -->
+    <link href="css/creative.min.css" rel="stylesheet">
+    <link href="Content/Font.css" rel="stylesheet">
+    <script src="https://unpkg.com/video.js@6/dist/video.js"></script>
+    <script src="Scripts/jquery-1.10.2.min.js"></script>
+</head>
+<body id="page-top">
+    <script>
+
+    $(document).ready(function() {
+        $("#News_Eng").click(function(){
+
+          var id_url = $(location).attr('search');
+          var go_to_url = window.location.href = "https://spyros.co.id/News.html" + id_url;
+
+          //this will redirect us in same window
+          document.location.href = go_to_url;
+       });
+    });
+
+        function goto_Home(content) {
+             window.location.href = "https://spyros.co.id/index_id.html?cnt=" + content;
+        }
+
+        function goto(content) {
+            var _window = $(window).scrollTop();
+            var _position = $('#' + content).offset().top;
+
+
+
+            $("body, html").delay(500).animate({
+                scrollTop: $('#' + content).offset().top
+            }, 600);
+        }
+        $(document).ready(function () {
+            const urlParams = new URLSearchParams(window.location.search);
+            const cnt = urlParams.get('cnt');
+            $('#' + cnt).css('display', 'block');
+
+
+            $(".product").hover(function () {
+                $(this).css('background-color', '#ffe400');
+                $(this).find('.product-text').css('background-color', '#ffe400');
+                $(this).find('.product-text').css('color', '#22478b');
+            }, function () {
+                $(this).css('background-color', '#23468c');
+                $(this).find('.product-text').css('background-color', '#23468c');
+                $(this).find('.product-text').css('color', 'white');
+            });
+
+        });
+
+        $(window).scroll(function () {
+            //var x = $(window).scrollTop()
+            //var y = x / 1000;
+            //if (y <= 0.3) {
+            //    y = 0.3;
+            //}
+            //$('.head').css('background-color', 'rgba(34,71,139,' + y + ')')
+            //if ($(window).scrollTop() > 10) {
+            //    if (isShow == 0) {
+            //        $('#banner').animate({ 'top': '-100vh' }, 1000);
+            //        isShow = 1;
+            //    }
+            //}
+            //else {
+            //    if (isShow == 1) {
+            //        $('#banner').animate({ 'top': '0vh' }, 1000);
+            //        isShow = 0;
+            //    }
+            //}
+        });
+    </script>
+    <script>
+         // This example script hides the "Big Play Button" (a.k.a. BPB),
+         // which may be useful to prevent it flashing and presenting a
+         // playable UI
+
+         var player = videojs(document.querySelector('.a'));
+         var bpb = player.getChild('bigPlayButton');
+
+         // It's always a good idea to verify that a component exists before
+         // doing things with it.
+         if (bpb) {
+
+             // Hide the BPB as early as possible, before the player is ready.
+             bpb.hide();
+
+             player.ready(function () {
+                 var promise = player.play();
+
+                 // If no promise is returned, show the BPB immediately.
+                 if (promise === undefined) {
+                     bpb.show();
+
+                     // If a promise is returned, wait until it either succeeds or
+                     // fails to show the BPB.
+                 } else {
+                     promise.then(function () {
+                         bpb.show();
+                     }, function () {
+                         bpb.show();
+                     });
+                 }
+             });
+         }
+    </script>
+    <style>
+        .product {
+            cursor: pointer;
+        }
+
+        .button-slide:hover {
+            /*color:#ffd100 !important;
+            border-color:#ffd100 !important;
+            box-shadow: 0px 5px 1px rgba(255,209,0,0.5);*/
+        }
+
+        .nav-link {
+            color: white !important;
+            font-size: 12px;
+        }
+
+            .nav-link:hover {
+                color: #ffd200 !important;
+            }
+        /*.brand:hover
+        {
+            padding:0px !important;
+        }*/
+        .news:hover {
+            cursor: pointer;
+            /*padding:1%;*/
+        }
+
+        header {
+            position: relative;
+            background-color: black;
+            height: 100vh;
+            min-height: 25rem;
+            width: 100%;
+            overflow: hidden;
+        }
+
+            header video {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                min-width: 100%;
+                min-height: 100%;
+                width: auto;
+                height: auto;
+                z-index: 0;
+                -ms-transform: translateX(-50%) translateY(-50%);
+                -moz-transform: translateX(-50%) translateY(-50%);
+                -webkit-transform: translateX(-50%) translateY(-50%);
+                transform: translateX(-50%) translateY(-50%);
+            }
+
+            header .container {
+                position: relative;
+                z-index: 2;
+            }
+
+            header .overlay {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                background-color: black;
+                opacity: 1;
+                z-index: 1;
+            }
+    </style>
+    <style>
+        .btn-spyros {
+            background-color: #23468c;
+            color: white !important;
+            cursor: pointer;
+        }
+
+            .btn-spyros:hover {
+                background-color: #ffe400;
+                color: black;
+            }
+
+        .line-outer {
+            width: 100%;
+            background-color: transparent;
+            height: 2px;
+            overflow: hidden;
+        }
+
+        .line-inner {
+            position: relative;
+            height: 100%;
+            background-color: #ffd200;
+            left: -100%;
+        }
+
+        .dms-sos-footer i {
+            width: 40px;
+            color: #c0c0c0;
+        }
+
+        #ifrm {
+            display: none !important;
+        }
+
+        .tabtab {
+            padding-left: 1.8em;
+        }
+
+        .btn-primary {
+            background-color: #22478B;
+            border-color: #22478B;
+        }
+
+            .btn-primary:hover {
+                color: yellow;
+                background-color: #22478B;
+            }
+    </style>
+    <div style="position: fixed;color: white;z-index: 10000;right: 15px;top: -5px;">
+        <table>
+            <tr>
+                <td>
+                    <a class="nav-link js-scroll-trigger Praktika-Regular" style="font-size: 10px;padding: 10px;padding-left: 15px;" href="#" id="News_Eng">
+                        <img src="Images/spyros english.png" style="width:20px" />
+                        <div class="line-outer">
+                            <div class="line-inner">
+                            </div>
+                        </div>
+                    </a>
+                </td>
+                <td>
+                    <a class="nav-link js-scroll-trigger Praktika-Regular" style="font-size: 10px;padding:0px;" href="#">
+                        <img src="Images/spyros indonesia.png" style="width:20px" />
+                        <div class="line-outer">
+                            <div class="line-inner">
+                            </div>
+                        </div>
+                    </a>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3 head" style="background-color:rgba(34,71,139,1);position: fixed;top:0;padding-top: 30px !important;" id="">
+        <div class="container">
+            <a class="navbar-brand js-scroll-trigger" onclick="goto_Home('home')"><img src="Images/Logo.png" style="width:120px;cursor: pointer;" /></a>
+            <button class="navbar-toggler navbar-toggler-right" style="" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon" style="color: white !important;background-color: transparent;background-image: url(&quot;data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e&quot;);"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto my-2 my-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger Montserrat-Light" style="cursor:pointer" onclick="goto_Home('home')">
+                            BERANDA
+                            <div class="line-outer">
+                                <div class="line-inner">
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger Montserrat-Light" style="cursor:pointer" onclick="goto_Home('about')">
+                            PROFIL<div class="line-outer">
+                                <div class="line-inner">
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger Montserrat-Light" style="cursor:pointer" onclick="goto_Home('product')">
+                            SOLUSI<div class="line-outer">
+                                <div class="line-inner">
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger Montserrat-Light" style="cursor:pointer" onclick="goto_Home('technology')">
+                            REFERENSI<div class="line-outer">
+                                <div class="line-inner">
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="nav-item" style="display:none;">
+                        <a class="nav-link js-scroll-trigger Montserrat-Light" style="cursor:pointer" onclick="goto_Home('culture')">
+                            BUDAYA<div class="line-outer">
+                                <div class="line-inner">
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger Montserrat-Light" style="cursor:pointer" onclick="goto_Home('contact')">
+                            KONTAK<div class="line-outer">
+                                <div class="line-inner">
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger Montserrat-Light" style="cursor:pointer" onclick="goto_Home('news')">
+                            BERITA<div class="line-outer">
+                                <div class="line-inner">
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <style>
+        .cover-banner {
+            max-height: 65vh;
+        }
+
+            .cover-banner > img {
+                width: 100%;
+                object-fit: cover;
+                max-height: 65vh;
+                object-position: 0 bottom;
+            }
+    </style>
+    <section style="padding-bottom:8rem;display:none;" id="1">
+        <div class="cover-banner">
+            <img class="img-fluid" src="Images/olympic-aquatic.jpg" alt="" />
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <p><h1 style="text-align:center !important;color:#22478B !important;margin-bottom:4rem;margin-top:4rem;" class="Montserrat-Black">Arena Akuatik Papua</h1></p>
+                    <p><span class="Montserrat-Light"><i class="fa fa-fw fa-clock-o"></i> 5 April, 2019</span></p>
+                    <p style="text-align:justify;" class="Montserrat-Regular">
+                        SPYROS menjadi pemenang untuk tender pengadaan dan pemasangan Sistem Waktu dan juga Papan Skor yang ditempatkan pada Pusat Akuatik Papua. Tempat Olahraga ini akan menjadi tuan rumah kompetisi renang dan menyelam dalam acara olahraga bergengsi, Pekan Olahraga Nasional (PON) 2020. 
+                    </p>
+                    <hr />
+                </div>
+            </div>
+        </div>
+    </section>
+    <section style="padding-bottom:8rem;display:none;" id="2">
+        <div class="cover-banner">
+            <img class="img-fluid" src="Images/isef Banner.jpg" alt="" />
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <p><h1 style="text-align:center !important;color:#22478B !important;margin-bottom:4rem;margin-top:4rem;" class="Montserrat-Black">ISEF 2019</h1></p>
+                    <p><span class="Montserrat-Light"><i class="fa fa-fw fa-clock-o"></i> 23 April 2019</span></p>
+                    <p style="text-align:justify;" class="Montserrat-Regular">
+                        Dengan bangga kami menginformasikan bahwa kami akan berpartisipasi dalam Indonesia Sport Expo & Forum (ISEF). Pameran & forum pertama di Indonesia yang akan mengintegrasikan gedung & teknologi dengan rencana pengembangan fasilitas olahraga dari sektor publik dan swasta di Indonesia, yang merupakan pasar terbesar di Asia Tenggara.
+                    </p>
+                    <p style="text-align:justify;" class="Montserrat-Regular">
+                        Kami akan menampilkan peralatan dan solusi paling inovatif dari merek yang kami wakili di Indonesia.
+                    </p>
+                    <p style="text-align:justify;" class="Montserrat-Regular">
+                        Kami bersiap untuk menyambut kehadiran Anda!
+                    </p>
+                    <hr />
+                </div>
+            </div>
+        </div>
+    </section>
+    <section style="padding-bottom:8rem;display:none;" id="3">
+        <div class="cover-banner">
+            <img class="img-fluid" src="Images/Figueras Banner.jpg" style="" alt="" />
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <p><h1 style="text-align:center !important;color:#22478B !important;margin-bottom:4rem;margin-top:4rem;" class="Montserrat-Black">Kemitraan dengan FIGUERAS GROUP</h1></p>
+                    <p><span class="Montserrat-Light"><i class="fa fa-fw fa-clock-o"></i> 5 April, 2019</span></p>
+                    <p style="text-align:justify;" class="Montserrat-Regular">
+                        Dengan bangga kami mengumumkan bahwa SPYROS dan Figueras Seating Solutions telah menandatangani perjanjian kerjasama untuk pendistribusian semua produk Figueras di Indonesia terutamanya di venue Stadion Olahraga.
+                    </p>
+                    <p style="text-align:justify;" class="Montserrat-Regular">
+                        Figueras menunjuk Spyros sebagai distributor eksklusifnya karena pengetahuan kami di lapangan dan keahlian dalam memberikan solusi turn key.
+                    </p>
+                    <p style="text-align:justify;" class="Montserrat-Regular">
+                        Figueras International Seating adalah perusahaan global terkemuka yang memanfaatkan kemampuan teknik dan desain khusus untuk menghasilkan tempat duduk kelas atas yang inovatif untuk ruang publik dan serbaguna
+                    </p>
+                    <p style="text-align:justify;" class="Montserrat-Regular">
+                        Semua produk Figueras dibuat di fasilitas manufaktur seluas 30.000 m² di dekat Barcelona (Spanyol).
+                    </p>
+                    <hr />
+                </div>
+            </div>
+        </div>
+    </section>
+    <section style="padding-bottom:8rem;display:none;" id="4">
+        <div class="cover-banner">
+            <img class="img-fluid" src="Images/Ragunan Banner.jpg" style="" alt="" />
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <p><h1 style="text-align:center !important;color:#22478B !important;margin-bottom:4rem;margin-top:4rem;" class="Montserrat-Black">Pusat Pelatihan Olahraga Pelajar - Ragunan</h1></p>
+                    <p><span class="Montserrat-Light"><i class="fa fa-fw fa-clock-o"></i> 18 September 2019</span></p>
+                    <p style="text-align:justify;" class="Montserrat-Regular">
+                        Spyros adalah perusahaan pengadaan sekaligus yang akan menginstalasi Sistem Waktu dan Papan Skor untuk Pusat Akuatik dan Atletik di Kompleks Olahraga Ragunan di Jakarta Selatan.
+                    </p>
+                    <p style="text-align:justify;" class="Montserrat-Regular">
+                        Tidak hanya itu, Spyros juga mengintalasi Papan Skor untuk lapangan Sepak Bola, Bola Basket, Bola Voli, Voli Pantai, Lapangan Tenis, Bulu Tangkis, Futsal, Tenis Meja dan Takraw.
+                    </p>
+                    <p style="text-align:justify;" class="Montserrat-Regular">
+                        Kompleks Olahraga Ragunan ini dibangun pada tahun 1973 untuk menjadi Pusat Latihan Olahraga Pelajar provinsi DKI Jakarta. Saat ini dilakukan direnovasi untuk mengikuti standar federasi olahraga secara internasional.
+                    </p>
+                    <hr />
+                </div>
+            </div>
+        </div>
+    </section>
+    <section style="padding-bottom:8rem;display:none;" id="5">
+        <div class="cover-banner">
+            <img class="img-fluid" src="Images/Certificates.jpg" style="" alt="" />
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <p><h1 style="text-align:center !important;color:#22478B !important;margin-bottom:4rem;margin-top:4rem;" class="Montserrat-Black">SPYROS mendapatkan Sertifikasi ISO dan OHSAS</h1></p>
+                    <p><span class="Montserrat-Light"><i class="fa fa-fw fa-clock-o"></i>21 Oktober 2019</span></p>
+                    <p style="text-align:justify;" class="Montserrat-Regular">
+                        Di SPYROS, kami memiliki komitmen yang kuat terhadap masalah lingkungan, sosial, dan tata kelola. Sebagai bagian dari agenda ESG kami, kami telah dianugerahi tiga sertifikat yang mencakup Sistem Manajemen Mutu (QMS - Quality Management System), Sistem Manajemen Lingkungan yang efektif (EMS - Environmental Management System), dan Sistem Manajemen Kesehatan dan Keselamatan Kerja, menurut ISO 9001, ISO 14001 dan OSHAS 18001.
+                     </p>
+                    <p style="text-align:justify;" class="Montserrat-Regular">
+                        Dewan direksi telah menetapkan pedoman EST yang jelas untuk Perusahaan dan akan mengawasi peluncuran beserta implementasinya.
+                    </p>
+                    <hr />
+                </div>
+            </div>
+        </div>
+    </section>
+    <section style="padding-bottom:8rem;display:none;" id="6">
+        <div class="cover-banner">
+            <img class="img-fluid" src="Images/Serah Terima.jpg" style="" alt="" />
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <p><h1 style="text-align:center !important;color:#22478B !important;margin-bottom:4rem;margin-top:4rem;" class="Montserrat-Black">Serah Terima Score Board dan Timing System di Kompleks Olahraga Ragunan , Jakarta</h1></p>
+                    <p><span class="Montserrat-Light"><i class="fa fa-fw fa-clock-o"></i>22 April 2020</span></p>
+                    <p style="text-align:justify;" class="Montserrat-Regular">
+                        Pada April 2020, Tim Manajemen Proyek kami telah menyelesaikan serah terima Papan Skor dan Sistem Waktu untuk Kompleks Olahraga Ragunan, Jakarta. Di Kompleks Olarraga ini kami memasang Papan Skor untuk beberapa stadion, yaitu di stadion bulu tangkis, tenis meja, basket, sepak bola, takraw, tenis, futsal dan bola voli (outdoor, indoor dan voli pantai). Total ada 24 papan skor yang terpasang.
+                    </p>
+                    <p style="text-align:justify;" class="Montserrat-Regular">
+                        Untuk sistem pengaturan waktu, kami memasang pada Pusat Akuatik serta trek dan lapangan Atletik.
+                     </p>
+                    <p style="text-align:justify;" class="Montserrat-Regular">
+                        Selamat kepada Pemerintah Provinsi DKI Jakarta atas renovasi pusat latihan yang luar biasa ini, dan sukses untuk para atlet muda.
+                    </p>
+                    <hr />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section style="padding-bottom:8rem;display:none;" id="7">
+        <div class="cover-banner" style="max-height:80vh">
+            <img class="img-fluid" src="Images/Arena Aquatic Papua.jpg" style="max-height:80vh" alt="" />
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <p><h1 style="text-align:center !important;color:#22478B !important;margin-bottom:4rem;margin-top:4rem;" class="Montserrat-Black">Serah Terima Arena Aquatic Papua (PON XX) Telah Dilakukan dengan Sukses</h1></p>
+                    <p><span class="Montserrat-Light"><i class="fa fa-fw fa-clock-o"></i>30 Juli 2020</span></p>
+                    <p style="text-align:justify;" class="Montserrat-Regular">
+                        SPYROS telah berhasil menyelesaikan serah terima proyek Arena Aquatic Papua.
+                    </p>
+                    <p style="text-align:justify;" class="Montserrat-Regular">
+                        Aquatic Center dibangun sebagai persiapan untuk Pekan Olah Raga Nasional (PON) 2022, Kejuaraan Olahraga Nasional di Indonesia.
+                    </p>
+                    <p style="text-align:justify;" class="Montserrat-Regular">
+                        Kami mulai bekerja di Papua sejak April 2019, sebagai bagian untuk mendukung PT Waskita Karya sebagai Kontraktor Utama. Spyros mengambil bagian dalam menyediakan Papan Skor dan satu set lengkap Sistem Waktu untuk kolam kompetisi, yang meliputi kolam ukuran Olimpiade, kolam polo air, kolam renang sinkronisasi dan kolam menyelam.
+                    </p>
+                    <p style="text-align:justify;" class="Montserrat-Regular">
+                        Meskipun ada pembatasan perjalanan Covid-19 yang diterapkan untuk lebih mengurangi risiko kasus infeksi di Papua, tim kami telah berhasil menyelesaikan proyek ini tepat waktu. Semua sudah selesai dilakukan dengan baik!   
+                    </p>
+                    <hr />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section style="padding-bottom:8rem;display:none;" id="8">
+        <div class="cover-banner" style="max-height:80vh">
+            <img class="img-fluid" src="Images/i_wayan_1.png" style="max-height:80vh" alt="" />
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <p><h1 style="text-align:center !important;color:#22478B !important;margin-bottom:4rem;margin-top:4rem;" class="Montserrat-Black">SPYROS UNTUK PIALA DUNIA FIFA U-20 2021</h1></p>
+                    <p><span class="Montserrat-Light"><i class="fa fa-fw fa-clock-o"></i>01 Maret 2021</span></p>
+                    <p style="text-align:justify;" class="Montserrat-Regular">
+                        I Wayan Dipta Gianyar merupakan stadion multi fungsi yang dibangun pada tahun 1977 berlokasi di wilayah Gianyar Bali. Stadion ini ditunjuk oleh Kementerian Olahraga dan Pemuda sebagai salah satu stadion yang akan menyelenggarakan Piala Dunia U-20 FIFA 2021. Pada tahun 2020, SPYROS sangat tersanjung terpilih sebagai salah satu pemasok papan skor untuk membantu stadion dengan memenuhi standar Piala Dunia U-20 FIFA 2021. Selain itu stadion ini juga merupakan tuan rumah bagi Tim Sepak Bola Bali United.
+                    </p>
+                    <p style="text-align:justify;" class="Montserrat-Regular">
+                        Selain menyediakan papan skor yang berkualitas, SPYROS juga akan memimpin tim untuk menyusun pemsangan papan skor bagi stadion sepak bola ternama yang berkapasitas sebanyak 25.000 tempat duduk ini.
+                    </p>
+                    <p style="text-align:justify;" class="Montserrat-Regular">
+                        Seiring kontrak yang berjalan, SPYROS saat ini sedang menyelesaikan proses pengadaan yang diharapkan akan selesai pada Maret 2021.
+                    </p>
+                    <p style="text-align:justify;" class="Montserrat-Regular">
+                        Meskipun sangat disayangkan, pesta olahraga ini akan ditunda hingga tahun 2023.
+                    </p>
+                    <img class="img-fluid" src="Images/i_wayan_2.png" style="width:100%" alt="" />
+                    <hr />
+                </div>
+            </div>
+        </div>
+    </section>
+    
+     <section style="padding-bottom:8rem;display:none;" id="9">
+        <div class="cover-banner" style="max-height:80vh">
+            <img class="img-fluid" src="Images/Mimika Sport Complex.jpeg" alt="Mimika Sport Complex" style="max-height:80vh"  />
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <p><h1 style="text-align:center !important;color:#22478B !important;margin-bottom:4rem;margin-top:4rem;" class="Montserrat-Black">PERJALANAN SPYROS EUROTECH SOLUTIONS
+                    MENJADI BAGIAN DARI KESUKSESAN PON XX PAPUA 2021
+                    </h1></p>
+                    <p><span class="Montserrat-Light"><i class="fa fa-fw fa-clock-o"></i>26 OKtober 2021</span></p>
+                    <p style="text-align:justify;" class="Montserrat-Regular">
+                        Pekan Olahraga Nasional (PON) XX 2021 Papua baru saja berakhir sepekan lalu namun kisah panjang hingga terselengaranya acara olahraga akbar tingkat nasional ini tidak bisa dilupakan begitu saja. Cobaan terberat dari acara ini tentunya wabah COVID 19 yang menyerang secara global hampir di 99% negara yang ada di dunia. Perhelatan yang seharusnya diadakan tahun 2020 pun mengalami kemunduran pelaksanaan hampir 1 tahun dengan alasan keamanan, kesehatan dan keselamatan semua pihak. Seiring semakin terkendalinya COVID 19, kepastian acara ini akhirnya menemukan ujung penantiannya.     
+                    </p>
+                    <p style="text-align:justify;" class="Montserrat-Regular">
+                        Salah satu kunci kesuksesan penyelenggaraan PON XX 2021 ini adalah kuatnya persatuan dan kesatuan Bangsa Indonesia sebagai bangsa yang majemuk. Bahkan wakil presiden RI, bapak Ma’ruf Amin mengatakan bahwa PON XX 2021 ini merupakan PON tersulit dalam sejarah panjang PON dari awal hingga saat ini. Tapi ternyata tekad & dukungan bukan hanya warga Papua, tetapi semua pihak yang terlibat mampu merealisasikan acara ini. Hal ini selaras dengan semboyan “Torang Bisa!”
+                    </p>
+                    <p style="text-align:justify;" class="Montserrat-Regular">
+                        Spyros Eurotech Solutions sebagai salah satu pendukung acara ini-pun mengalami perjalanan yang cukup panjang & berliku dalam memberikan support terbaiknya. Tentunya sebagai salah satu anak bangsa, Spyros tidak ingin mengecewakan pihak-pihak yang memberikan kepercayaan besar ini.
+                        Satu demi satu tantangan berhasil ditaklukan oleh Spyros dan berujung dengan kisah yang manis dengan berjalannya PON XX Papua 2021 dengan lancar tanpa hambatan berarti.    
+                    </p>
+
+                    <img class="img-fluid" src="Images/Final 4 x 400 meter putra.jpeg" style="width:100%" alt="Final 4 x 400 meter putra" /> <br />
+                    <img class="img-fluid" src="Images/Start.jpeg" style="width:100%" alt="Strat Finis PON" />
+                    <hr />
+                </div>
+            </div>
+        </div>
+    </section>
+    <section style="padding-bottom:8rem;display:none;" id="10">
+        <div class="cover-banner" style="max-height:80vh">
+            <img class="img-fluid" src="Images/PON Papua.jpeg" alt="PON Papua Atletik" style="max-height:80vh" />
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <p>
+                        <h1 style="text-align:center !important;color:#22478B !important;margin-bottom:4rem;margin-top:4rem;" class="Montserrat-Black">
+                            DUA VENUE DI 2 KOTA YANG BERBEDA, SPYROS BISA WUJUDKAN
+                        </h1>
+                    </p>
+                    <p><span class="Montserrat-Light"><i class="fa fa-fw fa-clock-o"></i>26 OKtober 2021</span></p>
+                    <p style="text-align:justify;" class="Montserrat-Regular">
+                        Wabah Covid 19 menjadi suatu alasan terbesar hingga akhirnya terpilih 4 wilayah untuk pelaksanaan PON XX Papua 2021. Keempat wilayah tersebutadalah Kota Jayapura, Kabupaten Jayapura, Kabupaten Mimika, dan Kabupaten Merauke. Daerah-daerah ini dianggap relatif aman dari penularan COVID-19 sebab diukur berdasarkan cakupan vaksinasi rata-rata mencapai 60 persen dari populasi sebagai perlindungan tubuh dari risiko penularan. Hal ini menjadi penting karena perhelatan olahraga ini akan diikuti oleh lebih dari 6000 atlit dan official dari 34 propinsi yang ada di Indonesia.     
+                    </p>
+                    <p style="text-align:justify;" class="Montserrat-Regular">
+                        Pembagian wilayah juga mengakibatkan terjadinya pembagian venue / sport -center yang digunakan untuk cabang-cabang olahraga yang dipertandingkan. Tak terkecuali bagi Spyros Eurotech Solutions yang mendapatkan kepercayaan untuk mensupport venue Aquatic dan Athletic. Kedua venue ini berada di Kota Jayapura untuk Aquatic dan Kota Timika (Kab. Mimika) untuk venue athletic. Jarak antara keduanya kurang lebih 458 km/284 mill atau kurang lebih 5 jam perjalanan dengan mobil. Bukan sebuah perjalanan yang mudah dikarenakan kontur jalanan yang berupa perbukitan. Tim teknis pun terpaksa dibagi dua untuk mempermudah pekerjaan.      
+                    </p>
+                    <p style="text-align:justify;" class="Montserrat-Regular">
+                        Namun hal tersebut tidak menghalangi Spyros dalam melakukan tugasnya. Giant Scoring Board untuk Venue Aquatic dan Timing System di Venue Athletic terpasang dengan sempurna. Tidak ada halangan berarti dalam pengoperasiannya selama acara berlangsung. Tim teknis Spyros bekerja keras menyelesaikan pengerjaannya tepat waktu, tidak peduli waktu dan cuaca yang seringkali berubah-ubah dari panas ke hujan tanpa pertanda sebelumnya. Tentu hanya satu tujuan Spyros, memberikan hasil terbaik untuk acara ini. Apakah terwujud? Dengan adanya pengakuan dari PB PON bahwa Spyros sebagai salah satu pendukung PON XX Papua 2021 yang melakukan pekerjaannya dengan baik, Ya Spyros bisa mewujudkannya!   
+                    </p>
+
+                    <img class="img-fluid" src="Images/PON Papua aquatic.jpeg" style="width:100%" alt="PON Papua aquatic" /> <br />
+                    <img class="img-fluid" src="Images/PON Papua atletik.jpeg" style="width:100%" alt="PON Papua atletik" />
+                    <hr />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-5" style="background-color:#22478b">
+        <div class="container-fluid" style="margin:0">
+            <div class="row">
+                <div class="col-lg-4 text-center" style="margin-bottom:30px">
+                    <i class="fa fa-fw fa-mobile" style="font-size: 45px;background-color: #c0c0c0;color: #22478b;border-radius: 100%;padding: 6px;margin-bottom:30px"></i>
+                    <div class="text-center Montserrat-Regular" style="color:#c0c0c0">
+                        <table class="Montserrat-Regular" align="center" style="text-align:left;">
+                            <tr>
+                                <td>
+                                    Phone
+                                </td>
+                                <td>
+                                    &nbsp; : &nbsp;
+                                </td>
+                                <td>
+                                    <a href="tel:+622127084884" style="color:#ffe400;font-weight:bold;" target="_top">+62 21 2708 4884</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    E-Mail
+                                </td>
+                                <td>
+                                    &nbsp; : &nbsp;
+                                </td>
+                                <td>
+                                    <a href="mailto:admin@spyros.co.id" style="color:#ffe400;font-weight:bold;" target="_top">admin@spyros.co.id</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Instagram
+                                </td>
+                                <td>
+                                    &nbsp; : &nbsp;
+                                </td>
+                                <td>
+                                    <a href="https://www.instagram.com/spyroseurotechsolutions/" style="color:#ffe400;font-weight:bold;" target="_top">spyroseurotechsolutions</a>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-lg-4 text-center" style="margin-bottom:30px">
+                    <div class="Montserrat-Bold" style="color:#c0c0c0;margin-bottom:40px">
+                        &nbsp;
+                    </div>
+                    <style>
+                        .dms-sos-footer {
+                            font-size: 12px;
+                            margin: 0px 5px;
+                            cursor: pointer;
+                            color: #c0c0c0;
+                        }
+
+                            .dms-sos-footer:hover {
+                                color: white !important;
+                                text-decoration: underline !important;
+                            }
+                    </style>
+                    <div class="box Montserrat-Light" style="background-color:transparent !important;box-shadow:none !important;color:#c0c0c0; ">
+                        <div class="text-center">
+                            <a onclick="goto_Home('home')" class="dms-sos-footer">BERANDA</a>
+                            <a onclick="goto_Home('product')" class="dms-sos-footer">SOLUSI</a>
+                            <a onclick="goto_Home('about')" class="dms-sos-footer">PROFIL</a>
+                            <a onclick="goto_Home('technology')" class="dms-sos-footer">REFERENSI</a>
+                            <a onclick="goto_Home('contact')" class="dms-sos-footer">KONTAK</a>
+                            <a onclick="goto_Home('news')" class="dms-sos-footer">BERITA</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 text-center Montserrat-Regular" style="font-size:12px;color:#c0c0c0;margin-bottom:30px">
+                    <i class="fa fa-fw fa-globe" style="font-size: 60px;color: #c0c0c0;padding: 6px;margin-bottom:20px"></i>
+                    <a href="https://goo.gl/maps/h6abY3u5aJSd5Wex6" target="_blank" style="font-size:12px;color:#c0c0c0;">
+                        <div>
+                            <i class="fa fa-fw fa-map-marker"></i>
+                            &nbsp;Perkantoran Kebayoran Baru Mall No. 29
+                        </div>
+                        <div>Kebayoran Baru - Jakarta Selatan</div>
+                        <div>Jakarta 12120</div>
+                        <div>Indonesia</div>
+                    </a>
+                </div>
+            </div>
+            <div class="row" style="margin-top:40px">
+                <div class="col-lg-12">
+                    <div class="small text-center Montserrat-Regular" style="color:#c0c0c0">All Rights Reserved © Strat-One 2020</div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+    <!-- Custom scripts for this template -->
+    <script src="js/creative.min.js"></script>
+</body>
+</html>

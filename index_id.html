@@ -1,0 +1,1677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+    <meta name="theme-color" content="#001a70" />
+    <title>Home - Spyros Indonesia</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link href="Images/icon.ico" rel="shortcut icon" type="image/x-icon" />
+    <!-- Font Awesome Icons -->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <!-- Google Fonts -->
+    <link href="Content/font-awesome.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Plugin CSS -->
+    <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+    <!-- Theme CSS - Includes Bootstrap -->
+    <link href="css/creative.min.css" rel="stylesheet">
+    <link href="Content/Font.css" rel="stylesheet">
+    <script src="https://unpkg.com/video.js@6/dist/video.js"></script>
+    <script src="Scripts/jquery-1.10.2.min.js"></script>
+</head>
+<body id="page-top">
+    <script>
+        function goto(content) {
+            try {
+                var _window = $(window).scrollTop();
+                var _position = $('#' + content).offset().top;
+
+                //$("#tgl").removeClass("navbar-toggler");
+                //$("#navbarResponsive").removeClass("show");
+
+                //$("#tgl").addClass("collapsed");
+
+                $("body, html").delay(500).animate({
+                    scrollTop: $('#' + content).offset().top
+                }, 600);
+            }
+            catch (err) {
+
+            }
+
+        }
+
+        function goto_ProductGallery(content) {
+             window.location.href = "https://spyros.co.id/ProductGallery_id.html?cnt=" + content;
+        }
+        function goto_News(content) {
+             window.location.href = "https://spyros.co.id/News_id.html?cnt=" + content;
+        }
+
+        $(document).ready(function () {
+
+            const urlParams = new URLSearchParams(window.location.search);
+            const cnt = urlParams.get('cnt');
+            goto(cnt);
+            $("#ifrm").hide();
+            $(".product").hover(function () {
+                var src = $(this).find('.product-img').attr('src');
+                var newsrc = src.replace('png', 'jpg');
+                //$(this).find('.product-img').attr('src', newsrc);
+                $(this).css('background-color', '#ffe400');
+                $(this).find('.product-text').css('background-color', '#ffe400');
+                $(this).find('.product-text').css('color', '#22478b');
+            }, function () {
+                var src = $(this).find('.product-img').attr('src');
+                var newsrc = src.replace('jpg', 'png');
+                //$(this).find('.product-img').attr('src', newsrc);
+                $(this).css('background-color', '#23468c');
+                $(this).find('.product-text').css('background-color', '#23468c');
+                $(this).find('.product-text').css('color', 'white');
+            });
+
+        });
+
+        var isShow = 0;
+
+        $(window).scroll(function () {
+            //var x = $(window).scrollTop()
+            //var y = x / 1000;
+            //if (y <= 0.3) {
+            //    y = 0.3;
+            //}
+            //$('.head').css('background-color', 'rgba(34,71,139,' + y + ')')
+            //if ($(window).scrollTop() > 10) {
+            //    if (isShow == 0) {
+            //        $('#banner').animate({ 'top': '-100vh' }, 1000);
+            //        isShow = 1;
+            //    }
+            //}
+            //else {
+            //    if (isShow == 1) {
+
+            //        if ($(document).width() < 768) {
+            //            $('#banner').animate({ 'top': '0px' }, 1000);
+            //            isShow = 0;
+            //        }
+            //        else {
+            //            $('#banner').animate({ 'top': '0vh' }, 1000);
+            //            isShow = 0;
+            //        }
+
+            //    }
+            //}
+        });
+    </script>
+    <script>
+        // This example script hides the "Big Play Button" (a.k.a. BPB),
+        // which may be useful to prevent it flashing and presenting a
+        // playable UI
+
+        var player = videojs(document.querySelector('.a'));
+        var bpb = player.getChild('bigPlayButton');
+
+        // It's always a good idea to verify that a component exists before
+        // doing things with it.
+        if (bpb) {
+
+            // Hide the BPB as early as possible, before the player is ready.
+            bpb.hide();
+
+            player.ready(function () {
+                var promise = player.play();
+
+                // If no promise is returned, show the BPB immediately.
+                if (promise === undefined) {
+                    bpb.show();
+
+                    // If a promise is returned, wait until it either succeeds or
+                    // fails to show the BPB.
+                } else {
+                    promise.then(function () {
+                        bpb.show();
+                    }, function () {
+                        bpb.show();
+                    });
+                }
+            });
+        }
+    </script>
+    <style>
+        #banner {
+            top: 0px;
+            border-bottom: 5px solid white;
+            position: absolute;
+            left: 20px;
+            padding-top: 80px;
+            font-size: 20px;
+            background-color: #22478b;
+            padding-left: 10px;
+            padding-right: 10px;
+            color: white;
+            z-index: 100;
+        }
+
+            #banner > div > div > p {
+                width: 90vw !important;
+                font-size: 30px !important;
+            }
+
+            #banner > div > div {
+                height: 30px !important;
+            }
+
+        .product {
+            cursor: pointer;
+            min-width: 150px;
+        }
+
+        .product-gallery {
+            background-size: cover;
+            -ms-background-size: cover;
+            -o-background-size: cover;
+            -moz-background-size: cover;
+            -webkit-background-size: cover;
+            min-height: 30rem;
+            margin: 25px;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 15rem;
+            padding-bottom: 5rem;
+        }
+
+        .nav-link {
+            color: white !important;
+            font-size: 12px;
+            text-align: right;
+        }
+
+            .nav-link:hover {
+                color: #ffd200 !important;
+            }
+
+        .news:hover {
+            cursor: pointer;
+            /*padding:1%;*/
+        }
+
+        header {
+            position: relative;
+            background-color: black;
+            height: 100vh;
+            min-height: 25rem;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .col-xs-5th-1, .col-xs-5th-2, .col-xs-5th-3, .col-xs-5th-4 {
+            float: left;
+        }
+
+        .col-xs-5th-5 {
+            float: left;
+            width: 100%;
+        }
+
+        .col-xs-5th-4 {
+            width: 80%;
+        }
+
+        .col-xs-5th-3 {
+            width: 60%;
+        }
+
+        .col-xs-5th-2 {
+            width: 40%;
+        }
+
+        .col-xs-5th-1 {
+            width: 20%;
+        }
+
+        .col-xs-5th-pull-5 {
+            right: 100%;
+        }
+
+        .col-xs-5th-pull-4 {
+            right: 80%;
+        }
+
+        .col-xs-5th-pull-3 {
+            right: 60%;
+        }
+
+        .col-xs-5th-pull-2 {
+            right: 40%;
+        }
+
+        .col-xs-5th-pull-1 {
+            right: 20%;
+        }
+
+        .col-xs-5th-pull-0 {
+            right: auto;
+        }
+
+        .col-xs-5th-push-5 {
+            left: 100%;
+        }
+
+        .col-xs-5th-push-4 {
+            left: 80%;
+        }
+
+        .col-xs-5th-push-3 {
+            left: 60%;
+        }
+
+        .col-xs-5th-push-2 {
+            left: 40%;
+        }
+
+        .col-xs-5th-push-1 {
+            left: 20%;
+        }
+
+        .col-xs-5th-push-0 {
+            left: auto;
+        }
+
+        .col-xs-5th-offset-5 {
+            margin-left: 100%;
+        }
+
+        .col-xs-5th-offset-4 {
+            margin-left: 80%;
+        }
+
+        .col-xs-5th-offset-3 {
+            margin-left: 60%;
+        }
+
+        .col-xs-5th-offset-2 {
+            margin-left: 40%;
+        }
+
+        .col-xs-5th-offset-1 {
+            margin-left: 20%;
+        }
+
+        .col-xs-5th-offset-0 {
+            margin-left: 0%;
+        }
+
+        @media (min-width: 768px) {
+            #banner {
+                top: 0px;
+                border-bottom: 5px solid white;
+                position: absolute;
+                left: calc(5% + 110px + 60px);
+                padding-top: 5px;
+                font-size: 20px;
+                background-color: #22478b;
+                padding-left: 10px;
+                padding-right: 10px;
+                color: white;
+                z-index: 10000;
+                box-shadow: -4px 1px 0px white, 0px 0px 9px rgba(0,0,0,.3);
+            }
+
+                #banner > div > div > p {
+                    width: calc(80vw - (5% + 170px )) !important;
+                    font-size: 30px !important;
+                }
+
+
+            .col-sm-5th-1, .col-sm-5th-2, .col-sm-5th-3, .col-sm-5th-4 {
+                float: left;
+            }
+
+            .col-sm-5th-5 {
+                float: left;
+                width: 100%;
+            }
+
+            .col-sm-5th-4 {
+                width: 80%;
+            }
+
+            .col-sm-5th-3 {
+                width: 60%;
+            }
+
+            .col-sm-5th-2 {
+                width: 40%;
+            }
+
+            .col-sm-5th-1 {
+                width: 20%;
+                padding: 0px 5px;
+            }
+
+                .col-sm-5th-1 .h5 {
+                    font-size: 0.7rem !important;
+                }
+
+                .col-sm-5th-1 .product-text {
+                    min-height: 80px !important;
+                }
+
+
+            .col-sm-5th-pull-5 {
+                right: 100%;
+            }
+
+            .col-sm-5th-pull-4 {
+                right: 80%;
+            }
+
+            .col-sm-5th-pull-3 {
+                right: 60%;
+            }
+
+            .col-sm-5th-pull-2 {
+                right: 40%;
+            }
+
+            .col-sm-5th-pull-1 {
+                right: 20%;
+            }
+
+            .col-sm-5th-pull-0 {
+                right: auto;
+            }
+
+            .col-sm-5th-push-5 {
+                left: 100%;
+            }
+
+            .col-sm-5th-push-4 {
+                left: 80%;
+            }
+
+            .col-sm-5th-push-3 {
+                left: 60%;
+            }
+
+            .col-sm-5th-push-2 {
+                left: 40%;
+            }
+
+            .col-sm-5th-push-1 {
+                left: 20%;
+            }
+
+            .col-sm-5th-push-0 {
+                left: auto;
+            }
+
+            .col-sm-5th-offset-5 {
+                margin-left: 100%;
+            }
+
+            .col-sm-5th-offset-4 {
+                margin-left: 80%;
+            }
+
+            .col-sm-5th-offset-3 {
+                margin-left: 60%;
+            }
+
+            .col-sm-5th-offset-2 {
+                margin-left: 40%;
+            }
+
+            .col-sm-5th-offset-1 {
+                margin-left: 20%;
+            }
+
+            .col-sm-5th-offset-0 {
+                margin-left: 0%;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .col-md-5th-1, .col-md-5th-2, .col-md-5th-3, .col-md-5th-4 {
+                float: left;
+            }
+
+            .col-md-5th-5 {
+                float: left;
+                width: 100%;
+            }
+
+            .col-md-5th-4 {
+                width: 80%;
+            }
+
+            .col-md-5th-3 {
+                width: 60%;
+            }
+
+            .col-md-5th-2 {
+                width: 40%;
+            }
+
+            .col-md-5th-1 {
+                width: 20%;
+                padding: 0px 10px;
+            }
+
+                .col-md-5th-1 .h5 {
+                    font-size: 0.8rem !important;
+                }
+
+                .col-md-5th-1 .product-text {
+                    min-height: 70px !important;
+                }
+
+            .col-md-5th-pull-5 {
+                right: 100%;
+            }
+
+            .col-md-5th-pull-4 {
+                right: 80%;
+            }
+
+            .col-md-5th-pull-3 {
+                right: 60%;
+            }
+
+            .col-md-5th-pull-2 {
+                right: 40%;
+            }
+
+            .col-md-5th-pull-1 {
+                right: 20%;
+            }
+
+            .col-md-5th-pull-0 {
+                right: auto;
+            }
+
+            .col-md-5th-push-5 {
+                left: 100%;
+            }
+
+            .col-md-5th-push-4 {
+                left: 80%;
+            }
+
+            .col-md-5th-push-3 {
+                left: 60%;
+            }
+
+            .col-md-5th-push-2 {
+                left: 40%;
+            }
+
+            .col-md-5th-push-1 {
+                left: 20%;
+            }
+
+
+            .col-md-5th-push-0 {
+                left: auto;
+            }
+
+            .col-md-5th-offset-5 {
+                margin-left: 100%;
+            }
+
+            .col-md-5th-offset-4 {
+                margin-left: 80%;
+            }
+
+            .col-md-5th-offset-3 {
+                margin-left: 60%;
+            }
+
+            .col-md-5th-offset-2 {
+                margin-left: 40%;
+            }
+
+            .col-md-5th-offset-1 {
+                margin-left: 20%;
+            }
+
+            .col-md-5th-offset-0 {
+                margin-left: 0%;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .col-lg-5th-1, .col-lg-5th-2, .col-lg-5th-3, .col-lg-5th-4 {
+                float: left;
+            }
+
+            .col-lg-5th-5 {
+                float: left;
+                width: 100%;
+            }
+
+            .col-lg-5th-4 {
+                width: 80%;
+            }
+
+            .col-lg-5th-3 {
+                width: 60%;
+            }
+
+            .col-lg-5th-2 {
+                width: 40%;
+            }
+
+            .col-lg-5th-1 {
+                width: 20%;
+            }
+
+            .col-lg-5th-pull-5 {
+                right: 100%;
+            }
+
+            .col-lg-5th-1 .h5 {
+                font-size: 0.8rem !important;
+            }
+
+            .col-lg-5th-pull-4 {
+                right: 80%;
+            }
+
+            .col-lg-5th-pull-3 {
+                right: 60%;
+            }
+
+            .col-lg-5th-pull-2 {
+                right: 40%;
+            }
+
+            .col-lg-5th-pull-1 {
+                right: 20%;
+            }
+
+            .col-lg-5th-pull-0 {
+                right: auto;
+            }
+
+            .col-lg-5th-push-5 {
+                left: 100%;
+            }
+
+            .col-lg-5th-push-4 {
+                left: 80%;
+            }
+
+            .col-lg-5th-push-3 {
+                left: 60%;
+            }
+
+            .col-lg-5th-push-2 {
+                left: 40%;
+            }
+
+            .col-lg-5th-push-1 {
+                left: 20%;
+            }
+
+            .col-lg-5th-push-0 {
+                left: auto;
+            }
+
+            .col-lg-5th-offset-5 {
+                margin-left: 100%;
+            }
+
+            .col-lg-5th-offset-4 {
+                margin-left: 80%;
+            }
+
+            .col-lg-5th-offset-3 {
+                margin-left: 60%;
+            }
+
+            .col-lg-5th-offset-2 {
+                margin-left: 40%;
+            }
+
+            .col-lg-5th-offset-1 {
+                margin-left: 20%;
+            }
+
+            .col-lg-5th-offset-0 {
+                margin-left: 0%;
+            }
+        }
+
+        header video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: 0;
+            -ms-transform: translateX(-50%) translateY(-50%);
+            -moz-transform: translateX(-50%) translateY(-50%);
+            -webkit-transform: translateX(-50%) translateY(-50%);
+            transform: translateX(-50%) translateY(-50%);
+        }
+
+        header .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        header .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-color: black;
+            opacity: 1;
+            z-index: 1;
+        }
+    </style>
+    <style>
+        .btn-spyros {
+            background-color: #23468c;
+            color: white !important;
+            cursor: pointer;
+        }
+
+            .btn-spyros:hover {
+                background-color: #ffe400;
+                color: black;
+            }
+
+        .line-outer {
+            width: 100%;
+            background-color: transparent;
+            height: 2px;
+            overflow: hidden;
+        }
+
+        .line-inner {
+            position: relative;
+            height: 100%;
+            background-color: #ffd200;
+            left: -100%;
+        }
+
+        #ifrm {
+            display: none !important;
+        }
+
+        .dms-sos-footer i {
+            width: 40px;
+            color: #c0c0c0;
+        }
+    </style>
+    <div style="position: fixed;color: white;z-index: 10000;right: 15px;top: -5px;">
+        <table>
+            <tr>
+                <td>
+                    <a class="nav-link js-scroll-trigger Praktika-Regular" style="font-size: 10px;padding: 10px;padding-left: 15px;" href="index.html">
+                        <img src="Images/spyros english.png" style="width:20px" />
+                        <div class="line-outer">
+                            <div class="line-inner">
+                            </div>
+                        </div>
+                    </a>
+                </td>
+                <td>
+                    <a class="nav-link js-scroll-trigger Praktika-Regular" style="font-size: 10px;padding:0px;" href="#">
+                        <img src="Images/spyros indonesia.png" style="width:20px" />
+                        <div class="line-outer">
+                            <div class="line-inner">
+                            </div>
+                        </div>
+                    </a>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <style>
+        .icon-banner {
+            color: white !important;
+            cursor: pointer !important;
+        }
+
+            .icon-banner:hover {
+                color: #ffe400 !important;
+            }
+    </style>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3 head" style="background-color: rgb(34, 71, 139,1); position: fixed; top: 0px; padding-top: 30px !important;" id="">
+        <div class="container" style="margin-left:5%">
+            <a class="navbar-brand js-scroll-trigger" onclick="goto('home')"><img src="Images/Logo.png" style="width:110px;cursor: pointer;"></a>
+            <button class="navbar-toggler navbar-toggler-right collapsed" style="" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Alihkan navigasi">
+                <span class="navbar-toggler-icon" style="color: white !important;background-color: transparent;background-image: url(&quot;data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e&quot;);"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto my-2 my-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger Montserrat-Light" style="cursor:pointer" onclick="goto('home')">
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">
+                                    BERANDA
+                                </font>
+                            </font><div class="line-outer">
+                                <div class="line-inner">
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger Montserrat-Light" style="cursor:pointer" onclick="goto('about')">
+                            <font style="vertical-align: inherit;"><font style="vertical-align: inherit;">PROFIL</font></font><div class="line-outer">
+                                <div class="line-inner">
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger Montserrat-Light" style="cursor:pointer" onclick="goto('product')">
+                            <font style="vertical-align: inherit;"><font style="vertical-align: inherit;">SOLUSI</font></font><div class="line-outer">
+                                <div class="line-inner">
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger Montserrat-Light" style="cursor:pointer" onclick="goto('technology')">
+                            <font style="vertical-align: inherit;"><font style="vertical-align: inherit;">REFERENSI</font></font><div class="line-outer">
+                                <div class="line-inner">
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="nav-item" style="display:none;">
+                        <a class="nav-link js-scroll-trigger Montserrat-Light" style="cursor:pointer" onclick="goto('culture')">
+                            <font style="vertical-align: inherit;"><font style="vertical-align: inherit;">BUDAYA</font></font><div class="line-outer">
+                                <div class="line-inner">
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger Montserrat-Light" style="cursor:pointer" onclick="goto('contact')">
+                            <font style="vertical-align: inherit;"><font style="vertical-align: inherit;">KONTAK</font></font><div class="line-outer">
+                                <div class="line-inner">
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger Montserrat-Light" style="cursor:pointer" onclick="goto('news')">
+                            <font style="vertical-align: inherit;"><font style="vertical-align: inherit;">BERITA</font></font><div class="line-outer">
+                                <div class="line-inner">
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="text-center" id="banner" style="">
+        <p>
+            <a class="icon-banner" href="tel:+622127084884"><i class="fa fa-fw fa-phone-square"></i></a>
+        </p>
+        <p>
+            <a class="icon-banner" href="mailto:admin@spyros.co.id" target="_blank"><i class="fa fa-fw fa-envelope"></i></a>
+        </p>
+        <p>
+            <a class="icon-banner" href="https://www.instagram.com/spyroseurotechsolutions/"><i class="fa fa-fw fa-instagram"></i></a>
+        </p>
+        <div style="height:70px;">
+            <img src="Images/logo spyros rotate 90.jpg" style="width: 15px;right: -10px;position: relative;float: right;margin-bottom: 10px;" />
+        </div>
+        <div style="height:100px ">
+            <div style="height:45px;text-align:left;">
+                <p class="Montserrat-Black" style="position: absolute;word-wrap: normal;display: block;width: 200px;font-size: larger;width: 390px;font-size: 45px;">
+                    SOLUTION FOR
+                </p>
+            </div>
+            <div style="height:45px;text-align:left;">
+                <p class="Montserrat-Black text-yellow" style="position: absolute;word-wrap: normal;display: block;width: 200px;font-size: larger;width: 390px;font-size: 45px;">
+                    SPORT VENUES
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- Masthead -->
+    <header id="home">
+        <div class="overlay" style="background-color: rgba(0,0,0,0);">
+            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                 style="position: absolute;width: 100vw;opacity: 0.3;" viewBox="0 211.523 612 180.125" enable-background="new 0 211.523 612 180.125"
+                 xml:space="preserve">
+            <polygon fill="#22478B" points="0,391.649 305.841,221.628 612.223,391.33 612.223,211.523 0,211.523 " />
+            <polygon fill="#FFFFFF" points="-0.765,579.552 306.191,540.346 611.682,579.552 " />
+    </svg>
+            <svg version="1.1" id="Layer_2" style="position: absolute;width: 100vw;bottom: 0px;opacity: 0.3;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                 viewBox="0 449.024 612 130.527" enable-background="new 0 449.024 612 130.527"
+                 xml:space="preserve">
+            <polygon fill="#22478B" points="305.235,449.024 611.682,579.552 -0.765,579.552 " />
+    </svg>
+            <svg version="1.1" id="layar_white" style="width: 100vw;position: absolute;bottom: 0;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                 viewBox="0 352.478 612 39.171" enable-background="new 0 352.478 612 39.171"
+                 xml:space="preserve">
+            <polygon fill="#FFFFFF" points="-0.765,391.649 306.191,352.443 611.682,391.649 " />
+    </svg>
+        </div>
+        <video autoplay="" loop="" class="a" muted="" preload="auto" playsinline crossorigin="anonymous">
+            <source src="Images/Allianz2.mp4" type="video/mp4" />
+
+        </video>
+        <div class="container h-100">
+            <div class="d-flex h-100 text-left align-items-center" style="">
+
+            </div>
+        </div>
+    </header>
+    <section class="page-section" id="product" style="padding-bottom:0">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h2 class=" mt-0 Montserrat-Black" style="line-height:0px;"></h2><h1 class="Montserrat-Black" style="color:#22478b;font-size:180%"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">SOLUSI</font></font></h1>
+                    <h3 style="color:black;" class="Montserrat-Bold"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;" class="">PILIH SOLUSI ANDA </font></font></h3>
+
+                    <h6 style="color:#757575;margin-top:50px;" class="text-center Montserrat-Regular"></h6>
+                    <hr class="divider light my-4">
+                    <p class="mb-4 text-center Montserrat-Regular" style="color:#757575;display:none; font-size:smaller;"> Spyros is Indonesia’s experienced Sport Contractor and International Brands Sport Equipment Distributor, specializing in the project management, provision, installation and servicing of a wide range of sport-related construction products including: artificial turf, running tracks, synthetic sports flooring, hardwood gymnasium flooring, rubber fitness room flooring, spectator seating, scoreboards, video display systems and sports equipment.</p>
+                </div>
+            </div>
+            <div class="row" style="padding: 0px 4rem;">
+                <style>
+                    .product-text {
+                        min-height: 160px !important;
+                    }
+                </style>
+                <div class="col-md-5th-1 col-sm-5th-1 offset-md-0 offset-sm-2" style="">
+                    <a >
+                        <div class="mt-5 product"  style="background-color:#23468c">
+                            <!--onclick="goto_ProductGallery('LedDisplay')"-->
+                            <i class="tfas fa-4x  text-primary mb-4">
+                                <img class="img-fluid product-img" src="Images/spyros indonesia led display.png" alt="">
+                            </i>
+                            <div class="product-text" style="background-color: #23468c;padding: 10px;min-height:130px;color:white ">
+                                <h3 class="h5 mb-2 Montserrat-Bold text-center" style="">
+                                    <font style="vertical-align: inherit;">
+                                        <font style="vertical-align: inherit;">
+                                            Papan Skor dan Layar LED Perimeter
+                                        </font>
+                                    </font>
+                                </h3>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-5th-1 col-sm-5th-1 offset-md-0 offset-sm-2" style="">
+                    <a href="ProductGallery_id.html?cnt=SystemTiming">
+                        <div class="mt-5 product" style="background-color: rgb(35, 70, 140);">
+                            <!--onclick="goto_ProductGallery('SystemTiming')"-->
+                            <i class="tfas fa-4x  text-primary mb-4">
+                                <img class="img-fluid product-img" src="Images/spyros indonesia system timing.png" alt="">
+                            </i>
+                            <div class="product-text" style="background-color: rgb(35, 70, 140); padding: 10px; min-height: 130px; color: white;">
+                                <h3 class="h5 mb-2 Montserrat-Bold text-center" style=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Perangkat Pengaturan Waktu untuk Kegiatan Olahraga</font></font></h3>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-5th-1 col-sm-5th-1 offset-md-0 offset-sm-2" style="">
+                    <a href="ProductGallery_id.html?cnt=Seating">
+                        <div class="mt-5 product" style="background-color: rgb(35, 70, 140);">
+                            <!--onclick="goto_ProductGallery('Seating')"-->
+                            <i class="tfas fa-4x  text-primary mb-4">
+                                <img class="img-fluid product-img" src="Images/spyros indonesia seating solution.png" alt="">
+                            </i>
+                            <div class="product-text" style="background-color: rgb(35, 70, 140); padding: 10px; min-height: 130px; color: white;">
+                                <h3 class="h5 mb-2 Montserrat-Bold text-center" style=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Solusi Tempat Duduk</font></font></h3>
+
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-5th-1 col-sm-5th-1 offset-md-0 offset-sm-2" style="">
+                    <a href="ProductGallery_id.html?cnt=Video">
+                        <div class="mt-5 product" style="background-color: rgb(35, 70, 140);">
+                            <!--onclick="goto_ProductGallery('Video')"-->
+                            <i class="tfas fa-4x  text-primary mb-4">
+                                <img class="img-fluid product-img" src="Images/spyros indonesia video security.png" alt="">
+                            </i>
+                            <div class="product-text" style="background-color: rgb(35, 70, 140); padding: 10px; min-height: 130px; color: white;">
+                                <h3 class="h5 mb-2 Montserrat-Bold text-center" style=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Sistem Kamera Pengawas</font></font></h3>
+
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-5th-1 col-sm-5th-1 offset-md-0 offset-sm-2" style="">
+                    <a href="ProductGallery_id.html?cnt=Acess">
+                        <div class="mt-5 product" style="background-color: rgb(35, 70, 140);">
+                            <!--onclick="goto_ProductGallery('Acess')"-->
+                            <i class="tfas fa-4x  text-primary mb-4">
+                                <img class="img-fluid product-img" src="Images/spyros indonesia acess control.png" alt="">
+                            </i>
+                            <div class="product-text" style="background-color: rgb(35, 70, 140); padding: 10px; min-height: 130px; color: white;">
+                                <h3 class="h5 mb-2 Montserrat-Bold text-center" style=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Peralatan Kontrol Akses</font></font></h3>
+
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="row" style="padding: 0px 4rem;">
+                <div class="col-lg-2 col-md-6 text-center col-centered" style=""></div>
+
+            </div>
+
+
+        </div>
+    </section>
+    <style>
+        .portfolio-box {
+            position: relative;
+            width: 100%;
+            height: 282px;
+            overflow: hidden;
+            //left: 2.5%;
+            border-radius: 5px;
+        }
+
+            .portfolio-box img {
+                position: absolute;
+                left: 50%;
+                transform: translate(-50%);
+                min-width: 100%;
+                min-height: 100%;
+                max-width: none;
+            }
+
+        .Title {
+            z-index: 1;
+            position: absolute;
+            width: 100%;
+            padding: 5px 15px;
+            bottom: 0px;
+            color: white;
+            background: rgba(0,0,0,0);
+            background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.39) 39%, rgba(0,0,0,1) 100%);
+            background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(0,0,0,0)), color-stop(39%, rgba(0,0,0,0.39)), color-stop(100%, rgba(0,0,0,1)));
+            background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.39) 39%, rgba(0,0,0,1) 100%);
+            background: -o-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.39) 39%, rgba(0,0,0,1) 100%);
+            background: -ms-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.39) 39%, rgba(0,0,0,1) 100%);
+            background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.39) 39%, rgba(0,0,0,1) 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#000000', GradientType=0 );
+            ";;
+        }
+
+        .btn-more {
+            color: white;
+            background-color: #23468c;
+            padding: 10px 2rem;
+            border-radius: 5px;
+        }
+
+            .btn-more:hover {
+                color: #23468c;
+                background-color: #ffd200;
+            }
+
+        .box-bounce:hover {
+            align-self: flex-end;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+            background-color: #F44336;
+            margin: 0 auto 0 auto;
+            transform-origin: bottom;
+            animation-name: bounce-6;
+            animation-timing-function: ease;
+        }
+
+        @keyframes bounce-6 {
+            0% {
+                transform: scale(1,1) translateY(0);
+            }
+
+            10% {
+                transform: scale(1.1,.9) translateY(0);
+            }
+
+            30% {
+                transform: scale(.9,1.1) translateY(-100px);
+            }
+
+            50% {
+                transform: scale(1.05,.95) translateY(0);
+            }
+
+            57% {
+                transform: scale(1,1) translateY(-7px);
+            }
+
+            64% {
+                transform: scale(1,1) translateY(0);
+            }
+
+            100% {
+                transform: scale(1,1) translateY(0);
+            }
+        }
+    </style>
+    <section class="page-section" id="technology" style="background-color:#ffffff;padding-top:0px;margin-top:-1px;padding-bottom: 4rem;">
+        <svg version="1.1" style="width: 100vw;transform:rotate(180deg);top: 0;margin-bottom: 8rem;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+             viewBox="0 352.478 612 39.171" enable-background="new 0 352.478 612 39.171"
+             xml:space="preserve">
+        <polygon fill="#ffffff" points="-0.765,391.649 306.191,352.443 611.682,391.649 " />
+    </svg>
+        <div class="container">
+            <h2 class="text-center text-grey mt-0 Montserrat-Black" style="line-height:0px;"></h2><h1 class="Montserrat-Black text-center " style="color:#22478b;font-size:180%"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;" class="">REFERENSI</font></font></h1>
+
+            <h2 class="text-center mt-0 Montserrat-Bold" style="line-height: 1rem;margin-bottom: 3rem;">
+                <p style="line-height: 30px;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Catatan Teknologi</font></font></p>
+                <p style="line-height: 33px;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;" class="">Apa Yang Kami Kerjakan Dengan Keras</font></font></p>
+                <p style="line-height: 33px;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;" class="">Untuk Pencapaian Setiap Hari</font></font></p>
+            </h2>
+            <h6 class="text-center mt-0 Montserrat-Regular" style="">
+                <font style="vertical-align: inherit;">
+                    <font style="vertical-align: inherit;">
+                        Itu adalah hasrat.
+                    </font><font style="vertical-align: inherit;">Dibutuhkan dedikasi dan kerja keras setiap hari selama bertahun-tahun. </font><font style="vertical-align: inherit;">Lalu hasilnya datang. </font><font style="vertical-align: inherit;">Begitulah bagi atlet. </font><font style="vertical-align: inherit;">
+                        Kami bekerja dengan penuh semangat setiap hari, tahun demi tahun, untuk mengembangkan produk yang meningkatkan kinerja dan menjaga kesehatan pengguna.
+                    </font>
+                </font>
+            </h6>
+        </div>
+    </section>
+    <section id="portfolio" style="background-color: #ffffff;">
+        <div class="container-fluid">
+            <div class="row no-gutters">
+                <div class="col-lg-1">
+                </div>
+                <div class="col-lg-10">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-4 col-sm-6" style="padding: 10px">
+                            <a class="portfolio-box box-bounce bounce-6 " href="Images/reference/Scoring Board at I Wayan Dipta Stadium Bali.jpeg" target="_blank">
+                                <img class="img-fluid" src="Images/reference/Scoring Board at I Wayan Dipta Stadium Bali.jpeg" alt="Scoring Board at I Wayan Dipta Stadium Bali" style="width: 100%;">
+                                <div class="Title Montserrat-Regular">
+                                    <h6 style="margin:0">2021</h6>
+                                    <h6 style="margin:0">I Wayan Dipta Stadium</h6>
+                                    <h5>Scoring Board at I Wayan Dipta Stadium - Bali</h5>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6" style="padding: 10px">
+                            <a class="portfolio-box box-bounce bounce-6 " href="Images/reference/PON XX Papua dan slogan Torang Bisa.jpeg" target="_blank">
+                                <img class="img-fluid" src="Images/reference/PON XX Papua dan slogan Torang Bisa.jpeg" alt="PON XX Papua dan slogan Torang Bisa" style="width: 100%;">
+                                <div class="Title Montserrat-Regular">
+                                    <h6 style="margin:0">2021</h6>
+                                    <h6 style="margin:0">Papua National Sports Week </h6>
+                                    <h5>PON XX, Papua 2021 Timing System & Scoreboard</h5>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6" style="padding: 10px; ">
+                            <a class="portfolio-box box-bounce bounce-6" href="Images/reference/8-2018. Giant Scoreboard & Perimeter Display for National Sports Event. Papua Bangkit Stadium.jpg" target="_blank">
+                                <img class="img-fluid" src="Images/reference/8-2018. Giant Scoreboard & Perimeter Display for National Sports Event. Papua Bangkit Stadium.jpg" alt="">
+                                <div class="Title Montserrat-Bold">
+                                    <h6 style="margin:0">2020</h6>
+                                    <h6 style="margin:0">National Sports Event. Papua Bangkit Stadium</h6>
+
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6" style="padding: 10px; ">
+                            <a class="portfolio-box box-bounce bounce-6" href="Images/reference/16-2019. PPOP Ragunan Sport Center.jpg" target="_blank">
+                                <img class="img-fluid" src="Images/reference/16-2019. PPOP Ragunan Sport Center.jpg" alt="">
+                                <div class="Title Montserrat-Bold">
+                                    <h6 style="margin:0">2019</h6>
+                                    <h6 style="margin:0">PPOP. Ragunan Sports Center</h6>
+                                    <h5>Timing System & Scoreboard</h5>
+                                </div>
+                            </a>
+                        </div>
+                        <!--<div class="col-lg-3 col-md-4 col-sm-6" style="padding: 10px">-->
+                        <!--    <a class="portfolio-box box-bounce bounce-6 " href="Images/reference/13-2018. Swimming Timing System for event Modern Pentathlon Asian Games 2018.jpg" target="_blank">-->
+                        <!--        <img class="img-fluid" src="Images/reference/13-2018. Swimming Timing System for event Modern Pentathlon Asian Games 2018.jpg" alt="" style="">-->
+                        <!--        <div class="Title Montserrat-Regular">-->
+                        <!--            <h6 style="margin:0">2018</h6>-->
+                        <!--            <h6 style="margin:0">Event Modern Pentathlon Asian Games 2018</h6>-->
+                        <!--            <h5>Swimming Timing System</h5>-->
+                        <!--        </div>-->
+                        <!--    </a>-->
+                        <!--</div>-->
+                        <!--<div class="col-lg-3 col-md-4 col-sm-6" style="padding: 10px">-->
+                        <!--    <a class="portfolio-box box-bounce bounce-6 " href="Images/reference/9-2018. Running Timing System for event Modern Pentathlon Asian Games 2018.jpg" target="_blank">-->
+                        <!--        <img class="img-fluid" src="Images/reference/9-2018. Running Timing System for event Modern Pentathlon Asian Games 2018.jpg" alt="" style="">-->
+                        <!--        <div class="Title Montserrat-Regular">-->
+                        <!--            <h6 style="margin:0">2018</h6>-->
+                        <!--            <h6 style="margin:0">Event Modern Pentathlon Asian Games 2018</h6>-->
+                        <!--            <h5>Running Timing System</h5>-->
+                        <!--        </div>-->
+                        <!--    </a>-->
+                        <!--</div>-->
+                        <!--<div class="col-lg-3 col-md-4 col-sm-6" style="padding: 10px">
+                            <a class="portfolio-box box-bounce bounce-6" href="Images/reference/7-2018 Horse Show Jumping judging system for event Modern Pentathlon Asian Games 2018.jpg" target="_blank">
+                                <img class="img-fluid" src="Images/reference/7-2018 Horse Show Jumping judging system for event Modern Pentathlon Asian Games 2018.jpg" alt="">
+                                <div class="Title Montserrat-Bold">
+                                    <h6 style="margin:0">2018</h6>
+                                    <h6 style="margin:0">Event Modern Pentathlon Asian Games 2018</h6>
+                                    <h5>Horse Show Jumping judging system</h5>
+                                </div>
+                            </a>
+                        </div>-->
+                        <!--<div class="col-lg-3 col-md-4 col-sm-6" style="padding: 10px">
+                            <a class="portfolio-box box-bounce bounce-6" href="Images/reference/10-2018. Scoreboard Athletic Stadium GBK, Jakarta for event ASIAN Games 2018.jpg" target="_blank">
+                                <img class="img-fluid" src="Images/reference/10-2018. Scoreboard Athletic Stadium GBK, Jakarta for event ASIAN Games 2018.jpg" alt="">
+                                <div class="Title Montserrat-Bold">
+                                    <h6 style="margin:0">2018</h6>
+                                    <h6 style="margin:0">Stadium GBK, Jakarta for event ASIAN Games 2018</h6>
+                                    <h5>Scoreboard Athletic System</h5>
+                                </div>
+                            </a>
+                        </div>-->
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="padding:20px">
+                <div class="col-md-12 text-center">
+                    <a class="btn-primary btn-more" href="https://spyros.co.id/PortfolioGallery_id.html" style="">TAMPILKAN REFERENSI LAINNYA</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        .btn-news {
+            background-color: #22478b !important;
+            padding: 7px 15px !important;
+            color: #fafafa !important;
+            border-radius: 20px !important;
+            cursor: pointer !important;
+            font-size: 9px;
+        }
+
+            .btn-news:hover {
+                background-color: #ffe400 !important;
+                color: #22478b !important;
+            }
+    </style>
+
+    <section class="page-section" id="news" style="background-color:#f0f0f0;padding-top:0px;margin-top:0px;">
+        <svg version="1.1" style="width: 100vw;transform:rotate(180deg);top: 0;margin-bottom: 8rem;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+             viewBox="0 352.478 612 39.171" enable-background="new 0 352.478 612 39.171"
+             xml:space="preserve">
+        <polygon fill="#23468c" points="-0.765,391.649 306.191,352.443 611.682,391.649 " />
+    </svg>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div style="padding-bottom:10px">
+                        <h2 class=" mt-0 Montserrat-Black" style="line-height:0px;">
+                            <h1 class="Montserrat-Black " style="color:#22478b;font-size:180%">BERITA</h1>
+                        </h2>
+                    </div>
+                    <hr style="border: solid #22478b;" />
+
+                    <div class="container" style="padding:10px 10px 60px 0px">
+                        <div style="min-height:20px;">
+                            <h3 class="h4 Montserrat-Bold" style="color:#22478b !important;">
+                                DUA VENUE DI 2 KOTA YANG BERBEDA, SPYROS BISA WUJUDKAN
+                            </h3>
+                        </div>
+                        <p class="mb-0 Montserrat-Regular" style="color:black !important;font-size:14px;text-align:right;">
+                            <span style="background-color: #cfcfcf;padding: 5px;font-size: 10px;border-radius: 10px;color: #5a5a5a;font-weight: bold;line-height: 35px;">
+                                <i class="fa fa-fw fa-clock-o"></i>
+                                26 OKtober 2021
+                            </span>
+                        </p>
+                        <p class="mb-0 Montserrat-Light text-justify" style="color:black !important;font-size:12px;">Pekan Olahraga Nasional (PON) XX 2021.</p>
+                        <p class="mb-0 Montserrat-Light" style="color:black !important;font-size:12px;padding-top:10px;">
+                            <a class="Montserrat-Bold btn-news" onclick="goto_News('10')">READ MORE</a>
+                        </p>
+                    </div>
+
+                    <div class="container" style="padding:10px 10px 60px 0px">
+                        <div style="min-height:20px;">
+                            <h3 class="h4 Montserrat-Bold" style="color:#22478b !important;">PERJALANAN SPYROS EUROTECH SOLUTIONS
+                            MENJADI BAGIAN DARI KESUKSESAN PON XX PAPUA 2021
+                            </h3>
+                        </div>
+                        <p class="mb-0 Montserrat-Regular" style="color:black !important;font-size:14px;text-align:right;">
+                            <span style="background-color: #cfcfcf;padding: 5px;font-size: 10px;border-radius: 10px;color: #5a5a5a;font-weight: bold;line-height: 35px;">
+                                <i class="fa fa-fw fa-clock-o"></i>
+                                26 OKtober 2021
+                            </span>
+                        </p>
+                        <p class="mb-0 Montserrat-Light text-justify" style="color:black !important;font-size:12px;">Pekan Olahraga Nasional (PON) XX 2021.</p>
+                        <p class="mb-0 Montserrat-Light" style="color:black !important;font-size:12px;padding-top:10px;">
+                            <a class="Montserrat-Bold btn-news" onclick="goto_News('9')">READ MORE</a>
+                        </p>
+                    </div>
+
+                    <div class="container" style="padding:10px 10px 60px 0px">
+                        <div style="min-height:20px;">
+                            <h3 class="h4 Montserrat-Bold" style="color:#22478b !important;">SPYROS FOR 2021 FIFA U-20 WORLD CUP</h3>
+                        </div>
+                        <p class="mb-0 Montserrat-Regular" style="color:black !important;font-size:14px;text-align:right;">
+                            <span style="background-color: #cfcfcf;padding: 5px;font-size: 10px;border-radius: 10px;color: #5a5a5a;font-weight: bold;line-height: 35px;">
+                                <i class="fa fa-fw fa-clock-o"></i>
+                                01 March 2021
+                            </span>
+                        </p>
+                        <p class="mb-0 Montserrat-Light text-justify" style="color:black !important;font-size:12px;">SPYROS FOR 2021 FIFA U-20 WORLD CUP.</p>
+                        <p class="mb-0 Montserrat-Light" style="color:black !important;font-size:12px;padding-top:10px;">
+                            <a class="Montserrat-Bold btn-news" onclick="goto_News('8')">READ MORE</a>
+                        </p>
+                    </div>
+                    <div class="container" style="padding:10px 10px 60px 0px">
+                        <div style="min-height:20px;">
+                            <h3 class="h4 Montserrat-Bold" style="color:#22478b !important;">Serah Terima Arena Aquatic Papua (PON XX) Telah Dilakukan dengan Sukses</h3>
+                        </div>
+                        <p class="mb-0 Montserrat-Regular" style="color:black !important;font-size:14px;text-align:right;">
+                            <span style="background-color: #cfcfcf;padding: 5px;font-size: 10px;border-radius: 10px;color: #5a5a5a;font-weight: bold;line-height: 35px;">
+                                <i class="fa fa-fw fa-clock-o"></i>
+                                30 July 2020
+                            </span>
+                        </p>
+                        <p class="mb-0 Montserrat-Light text-justify" style="color:black !important;font-size:12px;">PYROS telah berhasil menyelesaikan serah terima proyek Arena Aquatic Papua. </p>
+                        <p class="mb-0 Montserrat-Light" style="color:black !important;font-size:12px;padding-top:10px;">
+                            <a class="Montserrat-Bold btn-news" onclick="goto_News('7')">READ MORE</a>
+                        </p>
+                    </div>
+                  
+                </div>
+                <div class="col-lg-6">
+                    <div class="text-right" style="padding-bottom:10px">
+                        <h2 class=" mt-0 Montserrat-Black" style="line-height: 0px;">
+                            <h1 class="Montserrat-Black " style="color: #22478b; font-size: 180%;"><a href="https://spyros.co.id/NewsList.html" style="color: #22478b">BACA SEMUA BERITA<span class="fa fa-fw fa-chevron-right"></span></a></h1>
+                        </h2>
+                    </div>
+                    <hr style="border: solid #22478b;" />
+                    <div class="container" style="padding:10px 10px 10px 0px">
+                        <div style="min-height:20px;">
+                            <h3 class="h4 Montserrat-Bold" style="color:#22478b !important;">Serah Terima Score Board dan Timing System di Kompleks Olahraga Ragunan , Jakarta</h3>
+                        </div>
+                        <p class="mb-0 Montserrat-Regular" style="color:black !important;font-size:14px;text-align:right;">
+                            <span style="background-color: #cfcfcf;padding: 5px;font-size: 10px;border-radius: 10px;color: #5a5a5a;font-weight: bold;line-height: 35px;">
+                                <i class="fa fa-fw fa-clock-o"></i>
+                                22 April 2020
+                            </span>
+                        </p>
+                        <p class="mb-0 Montserrat-Light text-justify" style="color:black !important;font-size:12px;">Tim Manajemen Proyek kami telah menyelesaikan serah terima Papan Skor dan Sistem Waktu untuk Kompleks Olahraga Ragunan, Jakarta.</p>
+                        <p class="mb-0 Montserrat-Light" style="color:black !important;font-size:12px;padding-top:10px;">
+                            <a class="Montserrat-Bold btn-news" onclick="goto_News('6')">>BACA LEBIH LANJUT</a>
+                        </p>
+                    </div>
+                    <hr />
+                    <div class="container" style="padding:10px 10px 10px 0px">
+                        <div style="min-height:20px;">
+                            <h3 class="h4 Montserrat-Bold" style="color:#22478b !important;">SPYROS mendapatkan Sertifikasi ISO dan OHSAS</h3>
+                        </div>
+                        <p class="mb-0 Montserrat-Regular" style="color:black !important;font-size:14px;text-align:right;">
+                            <span style="background-color: #cfcfcf;padding: 5px;font-size: 10px;border-radius: 10px;color: #5a5a5a;font-weight: bold;line-height: 35px;">
+                                <i class="fa fa-fw fa-clock-o"></i>
+                                21 Oktober 2019
+                            </span>
+                        </p>
+                        <p class="mb-0 Montserrat-Light text-justify" style="color:black !important;font-size:12px;">SPYROS mendapatkan sertifikasi ISO 9001, ISO 14001 dan OHSAS 18001.</p>
+                        <p class="mb-0 Montserrat-Light" style="color:black !important;font-size:12px;padding-top:10px;">
+                            <a class="Montserrat-Bold btn-news" onclick="goto_News('5')">BACA LEBIH LANJUT</a>
+                        </p>
+                    </div>
+                    <hr />
+                    <div class="container" style="padding:10px 10px 10px 0px">
+                        <div style="min-height:20px;">
+                            <h3 class="h4 Montserrat-Bold" style="color:#22478b !important;">Pusat Pelatihan Olahraga Pelajar - Ragunan</h3>
+                        </div>
+                        <p class="mb-0 Montserrat-Regular" style="color:black !important;font-size:14px;text-align:right;">
+                            <span style="background-color: #cfcfcf;padding: 5px;font-size: 10px;border-radius: 10px;color: #5a5a5a;font-weight: bold;line-height: 35px;">
+                                <i class="fa fa-fw fa-clock-o"></i>
+                                18 September 2019
+                            </span>
+                        </p>
+                        <p class="mb-0 Montserrat-Light text-justify" style="color:black !important;font-size:12px;"> Spyros adalah perusahaan pengadaan sekaligus yang akan menginstalasi Sistem Waktu dan Papan Skor untuk Pusat Akuatik dan Atletik.</p>
+                        <p class="mb-0 Montserrat-Light" style="color:black !important;font-size:12px;padding-top:10px;">
+                            <a class="Montserrat-Bold btn-news" onclick="goto_News('4')">BACA LEBIH LANJUT</a>
+                        </p>
+                    </div>
+                    <hr />
+                    <div class="container" style="padding:10px 10px 10px 0px">
+                        <div style="min-height:20px;">
+                            <h3 class="h4 Montserrat-Bold" style="color:#22478b !important;">Kemitraan dengan FIGUERAS GROUP</h3>
+                        </div>
+                        <p class="mb-0 Montserrat-Regular" style="color:black !important;font-size:14px;text-align:right;">
+                            <span style="background-color: #cfcfcf;padding: 5px;font-size: 10px;border-radius: 10px;color: #5a5a5a;font-weight: bold;line-height: 35px;">
+                                <i class="fa fa-fw fa-clock-o"></i>
+                                5 April 2019
+                            </span>
+                        </p>
+                        <p class="mb-0 Montserrat-Light text-justify" style="color:black !important;font-size:12px;">Dengan bangga kami mengumumkan bahwa SPYROS dan Figueras Seating Solutions telah menandatangani perjanjian kerjasama...</p>
+                        <p class="mb-0 Montserrat-Light" style="color:black !important;font-size:12px;padding-top:10px;">
+                            <a class="Montserrat-Bold btn-news" onclick="goto_News('3')">BACA LEBIH LANJUT</a>
+                        </p>
+                    </div>
+                    <hr />
+                </div>
+            </div>
+        </div>
+    </section>
+    <section style="background-color:#22478b;">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-12 text-center m-4">
+                    <div class="text-center Montserrat-Bold align-self-center" style="color:white;">
+                        Dalam olahraga, setiap penampilan dimulai dengan sangat sederhana ketika atlet melakukan kontak dengan permukaan tempat dia bergerak. Langkah ... lompatan ... pendaratan. Di sinilah dimulai.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <header style="height:100vh" id="about">
+        <div class="overlay" style="background-color: rgba(0,0,0,0.5);">
+        </div>
+        <video autoplay="" loop="" class="a" muted="" preload="auto" playsinline crossorigin="anonymous">
+            <source src="Videos/Spyros High Jump.mp4" type="video/mp4" />
+            <source src="Videos/Spyros High Jump.webm" type="video/webm" />
+        </video>
+        <div class="container h-100">
+            <div class="d-flex h-100 text-center align-items-center" style="margin-top:-5vh;">
+                <div class="w-100 text-white">
+                    <h2 class=" mt-0 Montserrat-Black" style="line-height:0px;">
+                        <h1 class="Montserrat-Black text-grey" style="color:#22478b !important;font-size: 55px;">PROFIL</h1>
+                        <h1 class="Montserrat-Black text-grey text-center"><img class="img-fluid" style="width:95px;margin-top: -110px;" src="Images/Logo.png" alt=""></h1>
+                    </h2>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="page-section" style="padding-bottom:5rem;background-color:#e5e5e5">
+        <div class="container text-center Montserrat-Light">
+            <h1 class="Montserrat-Light" style="color: #22478b;">
+                <font style="vertical-align: inherit;">
+                    <font style="vertical-align: inherit;">
+                        Kami adalah perusahaan terkemuka di bidang Solusi Pusat Olahraga
+                    </font>
+                </font>
+            </h1>
+            <p style="text-align:center">
+                <font style="vertical-align: inherit;">
+                    <font style="vertical-align: inherit;">
+                        Spyros adalah Perusahaan Internasional yang berbasis di Indonesia dengan pengalaman yang luas dalam bidang konsultasi, distribusi dan implementasi peralatan untuk Pusat Olahraga.
+                    </font>
+                </font>
+            </p>
+            <p style="text-align:center">
+                <font style="vertical-align: inherit;">
+                    <font style="vertical-align: inherit;">
+                        Berbagai produk dan layanan yang kami sediakan sepenuhnya disesuaikan dengan standar federasi olahraga internasional.
+                    </font>
+                </font>
+            </p>
+            <h1 class="Montserrat-Light" style="color: #22478b;margin-top:5rem;">
+                <font style="vertical-align: inherit;">
+                    <font style="vertical-align: inherit;">
+                        Berbagai produk kami
+                    </font>
+                </font>
+            </h1>
+            <p style="text-align:center">
+                <font style="vertical-align: inherit;">
+                    <font style="vertical-align: inherit;">
+                        Portofolio Spyros meliputi papan skor dengan layar video dan layar LED perimeter, solusi tempat duduk tetap dan bergerak, sistem kamera pengawasan, perangkat penghitung waktu untuk kegiatan olahraga dan peralatan kontrol akses.
+                    </font>
+                </font>
+            </p>
+            <h1 class="Montserrat-Light" style="color: #22478b;margin-top:5rem;">
+                <font style="vertical-align: inherit;">
+                    <font style="vertical-align: inherit;">
+                        Merek referensi global
+                    </font>
+                </font>
+            </h1>
+            <p style="text-align:center">
+                <font style="vertical-align: inherit;">
+                    <font style="vertical-align: inherit;">
+                        Spyros mewakili beberapa merek Eropa yang terkenal di sektor ini seperti EURODISPLAY dari Italia, FIGUERAS dari Spanyol, ALGE dari Austria, DALLMEIER dari Jerman dan GOTSCHLICH dari Austria.
+                    </font>
+                </font>
+            </p>
+            <p style="text-align:center">
+                <font style="vertical-align: inherit;">
+                    <font style="vertical-align: inherit;">
+                        Dengan menggabungkan semuanya, mereka menambah lebih dari 243 tahun pengalaman di Area Stadion Olahraga.
+                    </font>
+                </font>
+            </p>
+            <h1 class="Montserrat-Light" style="color: #22478b;margin-top:5rem;">
+                <font style="vertical-align: inherit;">
+                    <font style="vertical-align: inherit;">
+                        Solusi lengkap
+                    </font>
+                </font>
+            </h1>
+            <p style="text-align:center">
+                <font style="vertical-align: inherit;">
+                    <font style="vertical-align: inherit;">
+                        Di Spyros, tim insinyur, perancang, dan manajer proyek kami yang sangat berkualifikasi dan berpengalaman memastikan bahwa eksekusi kami memenuhi semua persyaratan, serta kelayakan teknis dan ekonomisnya.
+                    </font>
+                </font>
+            </p>
+            <p style="text-align:center;">
+                <font style="vertical-align: inherit;">
+                    <font style="vertical-align: inherit;">
+                        Kami selalu mengingat para pemilik tempat olahraga untuk memberikan mereka dukungan purna jual, layanan pemeliharaan, dan jaminan peralatan.
+                    </font>
+                </font>
+            </p>
+        </div>
+
+    </section>
+    <section class="page-section" id="contact" style="padding-top:0px;">
+        <svg version="1.1" style="width: 100vw;transform:rotate(180deg);margin-bottom: 8rem;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+             viewBox="0 352.478 612 39.171" enable-background="new 0 352.478 612 39.171"
+             xml:space="preserve">
+        <polygon fill="#e5e5e5" points="-0.765,391.649 306.191,352.443 611.682,391.649 " />
+    </svg>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h1 class="Montserrat-Black " style="color:#22478b;margin-bottom:10px;font-size:180%">KONTAK</h1>
+                </div>
+            </div>
+        </div>
+        <iframe style="display:none; border:none; width: 100%; height:60vh; margin-bottom:8rem;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.1857291408087!2d106.78266121401596!3d-6.239234995483673!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f115a71e8de7%3A0xcd08cd331efb41a!2sSPYROS+Indonesia!5e0!3m2!1sid!2sid!4v1557753217497!5m2!1sid!2sid" frameborder="0" allowfullscreen></iframe>
+        <div class="container" style="margin-top:8rem;">
+            <div class="row">
+                <div class="col-md-4" style="margin-bottom:10px">
+                    <img class="img-fluid" style="width:100%" src="Images/logo_contact.png" alt="">
+                    <h2 class=" Montserrat-Black" style="color:#22478b;margin-top:30px">
+                        <font style="vertical-align: inherit;">
+                            <font style="vertical-align: inherit;">
+                                LOKASI KANTOR
+                            </font>
+                        </font>
+                    </h2>
+                    <table class="Montserrat-Regular" style="color:#22478b;">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div>
+                                        Perkantoran Kebayoran Baru Mall No. 29
+                                    </div>
+                                    <div>
+                                        Kebayoran Baru - Jakarta Selatan
+                                    </div>
+                                    <div>
+                                        Jakarta 12120
+                                    </div>
+                                    <div>
+                                        <i class="fa fa-fw fa-envelope"></i> <a href="mailto:admin@spyros.co.id" style="color:#22478b;font-weight:bold; text-decoration:underline !important;" target="_top">admin@spyros.co.id</a>
+                                    </div>
+                                    <p>
+                                        <i class="fa fa-fw fa-phone" style=""></i><a href="tel:+622127084884" style="color:#22478b;font-weight:bold; text-decoration:underline !important;" target="_top">+62 21 2708 4884</a>
+                                    </p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-md-8">
+                    <div style="padding: 25px;background-color: rgba(34,71,139,0.2);border-radius:7px;">
+                        <div style="width: 200px;margin-top: -25px;">
+                            <h3 class="Montserrat-Black" style="color:white;background-color: #22478b;margin-bottom: 0px;text-align: center;padding: 20px 0px;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Hubungi kami</font></font></h3>
+                            <div style="width: 0;height: 0;border-top: 35px solid #22478b;border-left: 100px solid transparent;border-right: 100px solid transparent;padding-bottom: 25px;">
+                            </div>
+                        </div>
+                        <span class="Montserrat-Light"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;" class="">Isi formulir ini dan kami akan menghubungi Anda sesegera mungkin.</font></font></span>
+                        <hr>
+                        <div class="form-group">
+                            <label class="Montserrat-Bold"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nama</font></font></label>
+                            <input type="text" class="form-control Montserrat-Regular" placeholder="Nama...">
+                        </div>
+                        <div class="form-group">
+                            <label class="Montserrat-Bold"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">E-mail</font></font></label>
+                            <input type="text" class="form-control Montserrat-Regular" placeholder="Email...">
+                        </div>
+                        <div class="form-group">
+                            <label class="Montserrat-Bold"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Pesan</font></font></label>
+                            <input type="text" class="form-control Montserrat-Regular" placeholder="Pesan...">
+                        </div>
+                        <style>
+                            .btn-submit {
+                                background-color: #22478b;
+                                padding: 5px 30px;
+                                color: white;
+                            }
+
+                                .btn-submit:hover {
+                                    color: #22478b;
+                                    background-color: #ffe400;
+                                }
+
+                            .form-control:focus {
+                                border-color: #22478b !important;
+                                box-shadow: 0 0 0 .2rem rgba(34,71,139,0.25) !important;
+                            }
+
+                            .form-control {
+                            }
+                        </style>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-submit Montserrat-Bold"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">KIRIM</font></font></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="py-5" style="background-color:#22478b">
+        <div class="container-fluid" style="margin:0">
+            <div class="row">
+                <div class="col-lg-4 text-center" style="margin-bottom:30px">
+                    <i class="fa fa-fw fa-mobile" style="font-size: 45px;background-color: #c0c0c0;color: #22478b;border-radius: 100%;padding: 6px;margin-bottom:30px"></i>
+                    <div class="text-center Montserrat-Regular" style="color:#c0c0c0">
+                        <table class="Montserrat-Regular" align="center" style="text-align:left;">
+                            <tr>
+                                <td>
+                                    Phone
+                                </td>
+                                <td>
+                                    &nbsp; : &nbsp;
+                                </td>
+                                <td>
+                                    <a href="tel:+622127084884" style="color:#ffe400;font-weight:bold;" target="_top">+62 21 2708 4884</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    E-Mail
+                                </td>
+                                <td>
+                                    &nbsp; : &nbsp;
+                                </td>
+                                <td>
+                                    <a href="mailto:admin@spyros.co.id" style="color:#ffe400;font-weight:bold;" target="_top">admin@spyros.co.id</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Instagram
+                                </td>
+                                <td>
+                                    &nbsp; : &nbsp;
+                                </td>
+                                <td>
+                                    <a href="https://www.instagram.com/spyroseurotechsolutions/" style="color:#ffe400;font-weight:bold;" target="_top">spyroseurotechsolutions</a>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-lg-4 text-center" style="margin-bottom:30px">
+                    <div class="Montserrat-Bold" style="color:#c0c0c0;margin-bottom:40px">
+                        &nbsp;
+                    </div>
+                    <style>
+                        .dms-sos-footer {
+                            font-size: 12px;
+                            margin: 0px 5px;
+                            cursor: pointer;
+                            color: #c0c0c0;
+                        }
+
+                            .dms-sos-footer:hover {
+                                color: white !important;
+                                text-decoration: underline !important;
+                            }
+                    </style>
+                    <div class="box Montserrat-Light" style="background-color:transparent !important;box-shadow:none !important;color:#c0c0c0; ">
+                        <div class="text-center">
+                            <a onclick="goto('home')" class="dms-sos-footer">BERANDA</a>
+                            <a onclick="goto('product')" class="dms-sos-footer">SOLUSI</a>
+                            <a onclick="goto('about')" class="dms-sos-footer">PROFIL</a>
+                            <a onclick="goto('technology')" class="dms-sos-footer">REFERENSI</a>
+                            <a onclick="goto('contact')" class="dms-sos-footer">KONTAK</a>
+                            <a onclick="goto('contact')" class="dms-sos-footer">BERITA</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 text-center Montserrat-Regular" style="font-size:12px;color:#c0c0c0;margin-bottom:30px">
+                    <i class="fa fa-fw fa-globe" style="font-size: 60px;color: #c0c0c0;padding: 6px;margin-bottom:20px"></i>
+                    <a href="https://goo.gl/maps/h6abY3u5aJSd5Wex6" target="_blank" style="font-size:12px;color:#c0c0c0;">
+                        <div>
+                            <i class="fa fa-fw fa-map-marker"></i>
+                            &nbsp;Perkantoran Kebayoran Baru Mall No. 29
+                        </div>
+                        <div>Kebayoran Baru - Jakarta Selatan</div>
+                        <div>Jakarta 12120</div>
+                        <div>Indonesia</div>
+                    </a>
+                </div>
+            </div>
+            <div class="row" style="margin-top:40px">
+                <div class="col-lg-12">
+                    <div class="small text-center Montserrat-Regular" style="color:#c0c0c0">All Rights Reserved © Strat-One 2020</div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+    <!-- Custom scripts for this template -->
+    <script src="js/creative.min.js"></script>
+</body>
+</html>

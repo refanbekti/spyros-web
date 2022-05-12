@@ -1,0 +1,58 @@
+﻿.text-yellow
+{
+    color:#ffe400 !important;
+}
+.text-corporate
+{
+    color:#001a3b !important;
+}
+.text-grey
+{
+    color:#e8e8e8 !important;
+}
+
+
+@font-face {
+    font-family: NotoSansCarian-Regular;
+    src: url('../fonts/NotoSansCarian-Regular.otf');
+}
+.NotoSansCarian-Regular
+{
+    font-family:NotoSansCarian-Regular !important;
+}
+
+@font-face {
+    font-family: Montserrat-Black;
+    src: url('../fonts/Montserrat-Black.otf');
+}
+.Montserrat-Black
+{
+    font-family:Montserrat-Black !important;
+}
+
+@font-face {
+    font-family: Montserrat-Bold;
+    src: url('../fonts/Montserrat-Bold.otf');
+}
+.Montserrat-Bold
+{
+    font-family:Montserrat-Bold !important;
+}
+
+@font-face {
+    font-family: Montserrat-Regular;
+    src: url('../fonts/Montserrat-Regular.otf');
+}
+.Montserrat-Regular
+{
+    font-family:Montserrat-Regular !important;
+}
+
+@font-face {
+    font-family: Montserrat-Light;
+    src: url('../fonts/Montserrat-Light.otf');
+}
+.Montserrat-Light
+{
+    font-family:Montserrat-Light !important;
+}

@@ -1,0 +1,3250 @@
+﻿
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+    
+    <meta name="theme-color" content="#001a70" />
+    <title>Product Detail - Spyros Indonesia</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    
+    <link href="Images/icon.ico" rel="shortcut icon" type="image/x-icon" />
+    <!-- Font Awesome Icons -->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Google Fonts -->
+    <link href="Content/font-awesome.min.css" type="text/css" rel="stylesheet" />
+
+
+    <!-- Plugin CSS -->
+    <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+
+    <!-- Theme CSS - Includes Bootstrap -->
+    <link href="css/creative.min.css" rel="stylesheet">
+    <link href="Content/Font.css" rel="stylesheet">
+    <script src="https://unpkg.com/video.js@6/dist/video.js"></script>
+    <script src="Scripts/jquery-1.10.2.min.js"></script>
+</head>
+
+<body id="page-top">
+
+    <script>
+    
+        $(document).ready(function() {
+            $("#PG_Eng").click(function(){
+              
+              var id_url = $(location).attr('search');
+              var go_to_url = window.location.href = "https://spyros.co.id/ProductDetail.html" + id_url;
+              
+              //this will redirect us in same window
+              document.location.href = go_to_url;
+           });
+        });
+    
+        function goto_Home(content) {
+            window.location.href = "https://spyros.co.id/?cnt=" + content;
+        }
+        function goto(content) {
+            var _window = $(window).scrollTop();
+            var _position = $('#' + content).offset().top;
+
+        
+            $("body, html").delay(500).animate({
+                scrollTop: $('#' + content).offset().top
+            }, 600);
+        }
+        
+        
+        function goto_ProductGallery(content) {
+             window.location.href = "https://spyros.co.id/ProductDetail_id.html?cnt=" + content;
+        }
+
+
+        
+        $(document).ready(function () {
+
+           const urlParams = new URLSearchParams(window.location.search);
+            const cnt = urlParams.get('cnt');
+            $('#' + cnt).css('display', 'inherit');
+            $("#ifrm").hide();
+            $(".product").hover(function () {
+                var src = $(this).find('.product-img').attr('src');
+                var newsrc = src.replace('png', 'jpg');
+                //$(this).find('.product-img').attr('src', newsrc);
+                $(this).css('background-color', '#ffe400');
+                $(this).find('.product-text').css('background-color', '#ffe400');
+                $(this).find('.product-text').css('color', '#22478b');
+            }, function () {
+                var src = $(this).find('.product-img').attr('src');
+                var newsrc = src.replace('jpg', 'png');
+                //$(this).find('.product-img').attr('src', newsrc);
+                $(this).css('background-color', '#23468c');
+                $(this).find('.product-text').css('background-color', '#23468c');
+                $(this).find('.product-text').css('color', 'white');
+            });
+
+        });
+
+        $(window).scroll(function () {
+            var x = $(window).scrollTop()
+            var y = x / 1000;
+            if (y <= 0.3) {
+                y = 0.3;
+            }
+            $('.head').css('background-color', 'rgba(34,71,139,' + y + ')')
+            if ($(window).scrollTop() > 10) {
+                if (isShow == 0) {
+                    $('#banner').animate({ 'top': '-100vh' }, 1000);
+                    isShow = 1;
+                }
+            }
+            else {
+                if (isShow == 1) {
+                    $('#banner').animate({ 'top': '0vh' }, 1000);
+                    isShow = 0;
+                }
+            }
+        });
+    </script>
+     <script>
+         // This example script hides the "Big Play Button" (a.k.a. BPB),
+         // which may be useful to prevent it flashing and presenting a
+         // playable UI
+
+         var player = videojs(document.querySelector('.a'));
+         var bpb = player.getChild('bigPlayButton');
+
+         // It's always a good idea to verify that a component exists before
+         // doing things with it.
+         if (bpb) {
+
+             // Hide the BPB as early as possible, before the player is ready.
+             bpb.hide();
+
+             player.ready(function () {
+                 var promise = player.play();
+
+                 // If no promise is returned, show the BPB immediately.
+                 if (promise === undefined) {
+                     bpb.show();
+
+                     // If a promise is returned, wait until it either succeeds or
+                     // fails to show the BPB.
+                 } else {
+                     promise.then(function () {
+                         bpb.show();
+                     }, function () {
+                         bpb.show();
+                     });
+                 }
+             });
+         }
+    </script>
+    <style>
+        .product
+        {
+            cursor:pointer;
+        }
+        .button-slide:hover
+        {
+            /*color:#ffd100 !important;
+            border-color:#ffd100 !important;
+            box-shadow: 0px 5px 1px rgba(255,209,0,0.5);*/
+        }
+        .nav-link{
+            color:white !important;
+            font-size:12px;
+        }
+        .nav-link:hover{
+            color:#ffd200 !important;
+        }
+        /*.brand:hover
+        {
+            padding:0px !important;
+        }*/
+        .news:hover
+        {
+            cursor:pointer;
+            /*padding:1%;*/
+        }
+        header {
+          position: relative;
+          background-color: black;
+          height: 100vh;
+          min-height: 25rem;
+          width: 100%;
+          overflow: hidden;
+        }
+
+header video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: 0;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+
+header .container {
+  position: relative;
+  z-index: 2;
+}
+
+header .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  opacity: 1;
+  z-index: 1;
+}
+
+    </style>
+    <style>
+        .btn-spyros
+        {
+            background-color:#23468c;
+            color:white !important;
+            cursor:pointer;
+        }
+        .btn-spyros:hover
+        {
+              background-color:#ffe400;
+            color:black;
+        }
+        .line-outer
+        {
+            width: 100%;
+            background-color: transparent;
+            height: 2px;
+            overflow:hidden;
+        }
+        .line-inner 
+        {
+            position:relative;
+            height: 100%;
+            background-color: #ffd200;
+            left: -100%;
+
+        }
+        .dms-sos-footer i {
+            width: 40px;
+            color: #c0c0c0;
+        }
+        #ifrm
+        {
+            display:none !important;
+        }
+        .tabtab{
+            padding-left:1.8em;
+        }
+        .btn-primary{
+            background-color:#22478B;
+            border-color:#22478B;
+            
+        }
+        .btn-primary:hover
+        {
+            color:yellow;
+            background-color:#22478B;
+        }
+    </style>
+    <div style="position: fixed;color: white;z-index: 10000;">
+        <table>
+            <tr>
+                <td>
+                    <a class="nav-link js-scroll-trigger Praktika-Regular" style="font-size: 10px;padding: 10px;" href="#" id="PG_Eng">
+                        <img src="Images/spyros english.png" style="width:20px" />
+                        <div class="line-outer">
+                            <div class="line-inner">
+
+                            </div>
+                        </div>
+                    </a>
+                </td>
+                <td>
+                    <a class="nav-link js-scroll-trigger Praktika-Regular" style="font-size: 10px;padding:0px;" href="#">
+                        <img src="Images/spyros indonesia.png" style="width:20px" />
+                        <div class="line-outer">
+                            <div class="line-inner">
+
+                            </div>
+                        </div>
+                    </a>
+                </td>
+            </tr>
+        </table>
+    </div>
+  <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3 head" style="background-color:rgba(34,71,139,0.3);position: fixed;top:0;" id="">
+        <div class="container">
+            <a class="navbar-brand js-scroll-trigger"  onclick="goto_Home('home')"><img src="Images/Logo.png" style="width:120px;cursor: pointer;"  /></a>
+            <button class="navbar-toggler navbar-toggler-right" style="" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon" style="color: white !important;background-color: transparent;background-image: url(&quot;data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e&quot;);"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto my-2 my-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger Montserrat-Light" style="cursor:pointer" onclick="goto_Home('home')"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+                        BERANDA
+                        </font></font><div class="line-outer">
+                            <div class="line-inner">
+
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link js-scroll-trigger Montserrat-Light" style="cursor:pointer" onclick="goto_Home('about')"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">PROFIL</font></font><div class="line-outer">
+                            <div class="line-inner">
+
+                            </div>
+                        </div></a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link js-scroll-trigger Montserrat-Light" style="cursor:pointer" onclick="goto_Home('product')"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">SOLUSI</font></font><div class="line-outer">
+                            <div class="line-inner">
+
+                            </div>
+                        </div></a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link js-scroll-trigger Montserrat-Light" style="cursor:pointer" onclick="goto_Home('technology')"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">REFERENSI</font></font><div class="line-outer">
+                            <div class="line-inner">
+
+                            </div>
+                        </div></a>
+                </li>
+                <li class="nav-item" style="display:none;">
+                <a class="nav-link js-scroll-trigger Montserrat-Light" style="cursor:pointer" onclick="goto_Home('culture')"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">BUDAYA</font></font><div class="line-outer">
+                            <div class="line-inner">
+
+                            </div>
+                        </div></a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link js-scroll-trigger Montserrat-Light" style="cursor:pointer" onclick="goto_Home('contact')"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">KONTAK</font></font><div class="line-outer">
+                            <div class="line-inner">
+
+                            </div>
+                        </div></a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link js-scroll-trigger Montserrat-Light" style="cursor:pointer" onclick="goto_Home('news')"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">BERITA</font></font><div class="line-outer">
+                            <div class="line-inner">
+
+                            </div>
+                        </div></a>
+                </li>
+            </ul>
+            </div>
+        </div>
+    </nav>
+
+
+<!-- Euro Display -->
+    <div id="perimeter_led" style="display:none">
+        <!-- Perimeter Product Gallery -->
+    <section class="page-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 p-5">
+                    <a href="ProductGalleryDetail_id.html?cnt=euro_display" style="text-decoration:none">
+                        <div class="Montserrat-Regular" style="color:#22478b">BACK - PRODUCT GALLERY</div>
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="Montserrat-Bold" style="color:#22478b;font-size:36px;padding-bottom: 2rem;">Perimeter LED Screens</div>
+                    <p> Layar perimeter LED kami digunakan oleh klub olahraga dan perusahaan yang memiliki infrastruktur olahraga untuk dipasang di stadion, baik di luar maupun di dalam ruangan. Mereka biasanya digunakan di: stadion, ruang olahraga, arena pacuan kuda, fasilitas olahraga serba guna, arena pacuan kuda dan aplikasi olahraga profesional lainnya. </p>
+                    <p> Berkat sistem modular, layar perimeter kami dapat menjangkau panjang apa saja, tergantung pada olahraga dan kebutuhan Anda. Anda dapat menginstalnya di satu atau kedua sisi stadion / arena untuk menyiarkan iklan sponsor dan pengiklan Anda, seperti yang dilakukan stadion paling bergengsi di dunia selama beberapa waktu. Menjadi modular, mereka dapat dipasang di sisi panjang atau pintu olahraga bidang olahraga apa pun. </p>
+                </div>
+            </div>
+            <div class="row" style="margin-top:50px">
+                <div class="col-lg-4 col-md-6">
+                    <img src="Images/ProductBrand/EuroDisplay/PLS-Tris.jpg" style="width:100%;margin-bottom:10px" />
+                    <h4>Tris</h4>
+                    <p>Multipurpiuse LED cabinet: rental, perimeter and fixed advertising</p>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <img src="Images/ProductBrand/EuroDisplay/PLS-PerimeterLED.jpg" style="width:100%;margin-bottom:10px" />
+                    <h4>Perimeter led screen</h4>
+                    <p>This is the most sold in Europe of our perimeter led screen</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    </div>
+
+    <div id="giant_led" style="display:none">
+        <!-- Giant Product Gallery -->
+        <section class="page-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 p-5">
+                        <a href="ProductGalleryDetail_id.html?cnt=euro_display" style="text-decoration:none">
+                            <div class="Montserrat-Regular" style="color:#22478b">BACK - PRODUCT GALLERY</div>
+                        </a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <div class="Montserrat-Bold" style="color:#22478b;font-size:36px;padding-bottom: 2rem;">Giant LED Screens for Sport</div>
+                        <p> Layar LED kami digunakan oleh Perusahaan Olahraga atau oleh perusahaan yang memiliki infrastruktur olahraga untuk dipasang di stadion indoor dan outdoor. Biasanya, mereka digunakan di: stadion, ruang olahraga, arena pacuan kuda, fasilitas multi-olahraga, arena balap dan aplikasi olahraga profesional lainnya. </p>
+                         <p> Papan iklan LED kami ideal untuk digunakan di stadion. Sistem modular yang memungkinkan perakitan di layar stadion dari berbagai bentuk dan ukuran. </p>
+                    </div>
+                </div>
+                <div class="row" style="margin-top:50px">
+                    <div class="col-lg-4 col-md-6">
+                        <img src="Images/ProductBrand/EuroDisplay/PLS-Tris.jpg" style="width:100%;margin-bottom:10px" />
+                        <h4>Tris</h4>
+                        <p>Multipurpiuse LED cabinet: rental, perimeter and fixed advertising</p>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <img src="Images/ProductBrand/EuroDisplay/GLS-FrontService.jpg" style="width:100%;margin-bottom:10px" />
+                        <h4>Front Service</h4>
+                        <p>A modular LED billboard witha revolutionary front maintenance system and patented wall-mounted fixing system.</p>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <img src="Images/ProductBrand/EuroDisplay/GLS-RearService.jpg" style="width:100%;margin-bottom:10px" />
+                        <h4>Rear Service</h4>
+                        <p>The classic outdoor giant led sceen model, with rear access cabinets: perfect for installation on a pole.</p>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <img src="Images/ProductBrand/EuroDisplay/GLS-ForntRearService.jpg" style="width:100%;margin-bottom:10px" />
+                        <h4>Front & Rear Service</h4>
+                        <p>Outdoor led screens with both front and rear maintenance access.</p>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <img src="Images/ProductBrand/EuroDisplay/GLS-IP68.jpg" style="width:100%;margin-bottom:10px" />
+                        <h4>IP68</h4>
+                        <p>Outdoor modular led billbards made to withstand even the worst conditions and designed specifically for extreme conditions.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div id="scoreboard_led" style="display:none">
+        <!-- Giant Product Gallery -->
+        <section class="page-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 p-5">
+                        <a href="ProductGalleryDetail_id.html?cnt=euro_display" style="text-decoration:none">
+                            <div class="Montserrat-Regular" style="color:#22478b">BACK - PRODUCT GALLERY</div>
+                        </a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <div class="Montserrat-Bold" style="color:#22478b;font-size:36px;padding-bottom: 2rem;">LED Scoreboard for Sport</div>
+                        <p> Berkat perangkat lunak khusus, Anda dapat mengubah layar raksasa kami menjadi papan skor. </p>
+                         <p> Keuntungan menggunakan layar LED nyata daripada papan skor tradisional dengan hanya nomor LED, adalah Anda dapat dengan mudah mengubah pengaturan elemen dan dapat menampilkan tulisan, gambar, atau video pada layar yang sama, keduanya bersamaan dengan skor dan sebagai alternatif jika perlu. </p>
+                         <p> Model layar kami berkisar dari Layar Toko (lebar dua meter dan satu tinggi) hingga modularitas sistem layar raksasa kami, yang dapat kami suplai baik di dalam maupun di luar ruangan. Secara khusus, kami mengingatkan Anda bahwa produk Tris dapat diubah menjadi layar raksasa dan menjadi bidang perbatasan LED. </p>
+                    </div>
+                </div>
+                <div class="row" style="margin-top:50px">
+                    <div class="col-lg-4 col-md-6">
+                        <img src="Images/ProductBrand/EuroDisplay/PLS-Tris.jpg" style="width:100%;margin-bottom:10px" />
+                        <h4>Tris</h4>
+                        <p>Multipurpiuse LED cabinet: rental, perimeter and fixed advertising</p>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <img src="Images/ProductBrand/EuroDisplay/GLS-FrontService.jpg" style="width:100%;margin-bottom:10px" />
+                        <h4>Front Service</h4>
+                        <p>A modular LED billboard witha revolutionary front maintenance system and patented wall-mounted fixing system.</p>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <img src="Images/ProductBrand/EuroDisplay/LS-ShoppingScreen.jpg" style="width:100%;margin-bottom:10px" />
+                        <h4>Shop Screen</h4>
+                        <p>A led screen specifically designed for shop windows; it can be used both horizontally and vertically, even in direct sunlight.</p>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <img src="Images/ProductBrand/EuroDisplay/GLS-RearService.jpg" style="width:100%;margin-bottom:10px" />
+                        <h4>Rear Service</h4>
+                        <p>The classic outdoor giant led sceen model, with rear access cabinets: perfect for installation on a pole.</p>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <img src="Images/ProductBrand/EuroDisplay/GLS-IP68.jpg" style="width:100%;margin-bottom:10px" />
+                        <h4>IP68</h4>
+                        <p>Outdoor modular led billbards made to withstand even the worst conditions and designed specifically for extreme conditions.</p>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <img src="Images/ProductBrand/EuroDisplay/LS-Mannequin.jpg" style="width:100%;margin-bottom:10px" />
+                        <h4>Mannequin</h4>
+                        <p>A LED screen integrated in an elegant structure with shelves to place your products. Visible even in full sun.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+  <!-- Product Giant -->
+  <div id="product_giant" style="display:none">
+      <!-- Giant Product Gallery -->
+  <section class="page-section">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-12 p-5">
+                  <a href="ProductGallery.html?cnt=LedDisplay" style="text-decoration:none">
+                      <div class="Montserrat-Regular" style="color:#22478b">BACK - PRODUCT GALLERY</div>
+                  </a>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-lg-12 text-center">
+                  <div class="Montserrat-Bold" style="color:#22478b;font-size:36px">GIANT LED SCREEN</div>
+              </div>
+          </div>
+          <div class="row" style="margin-top:50px">
+              <div class="col-lg-4">
+                  <img src="Images/product_giant/front service.png" style="width:100%;margin-bottom:10px" />
+                  <div class="card-img-overlay" style="margin-top:50px">
+                      <div class="card-text Montserrat-Bold text-center text-grey" style="font-size:36px;line-height:12px">FRONT</div>
+                      <div class="card-text Montserrat-Bold text-center text-yellow" style="font-size:36px">SERVICE</div>
+                      <div class="card-text Montserrat-Bold text-center text-grey" style="font-size:16px;line-height:20px">Revolutionary frontal maintenance system and patented wall-mounted fixing system... the perfect solution for any led billboard.</div>
+                  </div>
+              </div>
+              <div class="col-lg-4">
+                  <img src="Images/product_giant/rear service.png" style="width:100%;margin-bottom:10px"/>
+                  <div class="card-img-overlay" style="margin-top:50px">
+                      <div class="card-text Montserrat-Bold text-center text-grey" style="font-size:36px;line-height:12px">REAR</div>
+                      <div class="card-text Montserrat-Bold text-center text-yellow" style="font-size:36px">SERVICE</div>
+                      <div class="card-text Montserrat-Bold text-center text-grey" style="font-size:16px;line-height:20px">Our most preferred product for the creation of outdoor advertising led displays, especially if mounted on poles.</div>
+                  </div>
+              </div>
+              <div class="col-lg-4">
+                  <img src="Images/product_giant/front and rear service.png" style="width:100%;height:83%"/>
+                  <div class="card-img-overlay" style="margin-top:50px">
+                      <div class="card-text Montserrat-Bold text-center text-grey" style="font-size:36px;line-height:12px">FRONT & REAR</div>
+                      <div class="card-text Montserrat-Bold text-center text-yellow" style="font-size:36px">SERVICE</div>
+                      <div class="card-text Montserrat-Bold text-center text-grey" style="font-size:16px;line-height:20px">Revolutionary front and rear maintenance system: the perfect solution for any big screen need.</div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+  <!-- Front Service -->
+  <section style="overflow:hidden">
+      <div style="border:2px solid;border-color:#22478b;width:700px"></div>
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-6 col-md-6">
+                  <div class="Montserrat-Bold text-center" style="color:#22478b;font-size:46px;margin-top:20px;margin-bottom:20px">FRONT SERVICE</div>
+                  <div class="Montserrat-Regular text-justify" style="color:#22478b">
+                      This led screen is characterized by a full front maintenance and a lot of other innovations that make possible a number of previously unthinkable applications.<br /><br />
+                      It can be fixed directly to a wall, with a unique simplicity for this product range, thanks to a modular and compact support structure designed by us.<br /><br />
+                      Thanks to the possibility to act frontally and not from behind, our system allows to replace a defective element in a few minutes making all maintenance activities really simple and inexpensive.<br /><br />
+                      Our Front Service led screens are only 10 cm thick and extremely lightweight (speaking of screens, these few centimeters disappear in relation to the visible surface).<br /><br />
+                      Obviously this outdoor advertising screen is designed and tested to withstand the elements (IP65); also the brightness is managed dynamically to ensure maximum visibility at any time, all with a considerable reduction in power consumption.<br /><br />
+                      The modularity of the system allows us to compose LED billboards of all sizes.<br /><br />
+                      Depending on the height from the ground and the viewing distance we can offer five different levels of resolution with models P6, P8, P10, P16 and P20. a<br /><br />
+                      Revolutionary frontal maintenance system and patented wall-mounted fixing system... the perfect solution for any led billboard.
+                  </div>
+                  <div class="Montserrat-Bold text-left" style="color:#22478b;font-size:20px;margin-top:30px;margin-bottom:10px">Key information</div>
+                  <div class="Montserrat-Regular text-left" style="color:#22478b">
+                      > Frontal maintenance<br />
+                      > Direct mounting to the wall<br />
+                      > Super-slim<br />
+                      > 100% Made in Italy
+                  </div>
+                  <div class="Montserrat-Bold text-left" style="color:#22478b;font-size:20px;margin-top:30px;margin-bottom:10px">Technical Info</div>
+                  <div class="Montserrat-Regular text-left" style="color:#22478b">
+                      <table>
+                          <tr>
+                              <td style="padding-right:50px">Use</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">Outdoor</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Pixel Pitch</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">8/10/16/20</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Cabinet size</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">96 x 96 x 8 cm</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Brightness</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">da 6500 a 7500 Nit</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Contrast</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">3000:1</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Weight</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">45Kg/mq</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Protection level</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">IP65</td>
+                          </tr>
+                      </table>
+                  </div>
+              </div>
+              <div class="col-lg-6 col-md-6">
+                  <img src="Images/product_giant/front service 05.png" class="img-fluid" style="margin-bottom:30px" />
+                  <img src="Images/product_giant/front service 03.png" class="img-fluid" />
+              </div>
+          </div>
+      </div>
+  </section>
+  <!-- Rear Service -->
+  <section style="margin-top:50px;overflow:hidden">
+      <div style="border:2px solid;border-color:#22478b;width:700px"></div>
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-6 col-md-6">
+                  <div class="Montserrat-Bold text-center" style="color:#22478b;font-size:46px;margin-top:20px;margin-bottom:20px">REAR SERVICE</div>
+                  <div class="Montserrat-Regular text-justify" style="color:#22478b">
+                      Our rear-access modular led screens are the most common choice for those who need to install a signage (advertising) screen on a pole, and in some cases even on a wall, if you can leave a space on the back for maintenance.<br /><br />
+                      Cabinets are commonly made of bent steel, but can also be made of aluminum; in both cases, no cabling is visible from the outside and it is possible to close the rear access doors with a key. All our cabinets are equipped with thermostatic fans and high performance switch power supplies.<br /><br />
+                      The screens are available in several pixel pitch (6, 8, 10, 16, 20), always with a wide viewing angle and high contrast and brightness levels to make the image visible even in full sunlight.<br /><br />
+                      Our most preferred product for the creation of outdoor advertising led displays, especially if mounted on poles.
+                  </div>
+                  <div class="Montserrat-Bold text-left" style="color:#22478b;font-size:20px;margin-top:30px;margin-bottom:10px">Key information</div>
+                  <div class="Montserrat-Regular text-left" style="color:#22478b">
+                      > Back maintenance acces<br />
+                      > High levels of brightness and contrast<br />
+                      > Outdoor		
+                  </div>
+                  <div class="Montserrat-Bold text-left" style="color:#22478b;font-size:20px;margin-top:30px;margin-bottom:10px">Technical Info</div>
+                  <div class="Montserrat-Regular text-left" style="color:#22478b">
+                      <table>
+                          <tr>
+                              <td style="padding-right:50px">Use</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">Outdoor</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Pixel Pitch</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">8/10/16/20</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Cabinet size</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">960 x 960 mm /1024 x 1024</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Brightness</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">da 5500 a 7500 Nit</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Refresh Rate</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">1000:1</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Weight</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">50Kg/mq</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Protection level</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">IP65</td>
+                          </tr>
+                      </table>
+                  </div>
+              </div>
+              <div class="col-lg-6 col-md-6">
+                  <img src="Images/product_giant/rs04.png" class="img-fluid" style="margin-bottom:30px;width:100%" />
+                  <img src="Images/product_giant/rs00.png" class="img-fluid" />
+              </div>
+          </div>
+      </div>
+  </section>
+  <!-- Front and Rear Service -->
+  <section style="margin-top:50px;margin-bottom:50px;overflow:hidden">
+      <div style="border:2px solid;border-color:#22478b;width:700px"></div>
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-6 col-md-6">
+                  <div class="Montserrat-Bold text-center" style="color:#22478b;font-size:46px;margin-top:20px;margin-bottom:20px">FRONT & REAR SERVICE</div>
+                  <div class="Montserrat-Regular text-justify" style="color:#22478b">
+                      We have further improved our Front Service line products by creating this new model that can boast double maintenance for each module, both frontal (with our revolutionary patented system) and rear, through two rear doors.<br /><br />
+                      This feature allows greater flexibility, being no longer bound to specific placements due to the need for unilateral access.<br /><br />
+                      Thanks to the ability to operate both front and rear access, our system allows maintenance in a few minutes regardless of the position of the screen.
+                      Also since our screen is often only 10 cm thick, it looks extremely light and non-invasive (talking about giant led billboards, these few inches disappear in relation to the visible surface).<br /><br />
+                      Obviously the screen is designed and tested to withstand any weather (IP65 degree of protection); brightness is also automatically handled to ensure maximum visibility at any time, all with a remarkable reduction in consumption.<br /><br />
+                      The total modularity of the system allows us to easily compose LED billboards of all sizes.<br /><br />
+                      Depending on the ground height and the average viewing distance, we can offer five different resolution levels with the P6, P8, P10, P16 and P20 models.<br /><br />
+                      Revolutionary front and rear maintenance system: the perfect solution for any big screen need.
+                  </div>
+                  <div class="Montserrat-Bold text-left" style="color:#22478b;font-size:20px;margin-top:30px;margin-bottom:10px">Key information</div>
+                  <div class="Montserrat-Regular text-left" style="color:#22478b">
+                    > Front and rear maintenance<br />
+                    > Perfect for any situation<br />
+                    > Only 8 cm thick<br />
+                    > 100% Made in Italy
+                  </div>
+                  <div class="Montserrat-Bold text-left" style="color:#22478b;font-size:20px;margin-top:30px;margin-bottom:10px">Technical Info</div>
+                  <div class="Montserrat-Regular text-left" style="color:#22478b">
+                      <table>
+                          <tr>
+                              <td style="padding-right:50px">Use</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">Outdoor</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Pixel Pitch</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">8/10/16/20</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Cabinet size</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">96 x 96 x 8 cm</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Brightness</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">da 6500 a 7500 Nit</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Contrast</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">3000:1</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Weight</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">45Kg/mq</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Protection level</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">IP65</td>
+                          </tr>
+                      </table>
+                  </div>
+              </div>
+              <div class="col-lg-6 col-md-6">
+                  <img src="Images/product_giant/front and rear service.png" class="img-fluid" style="margin-bottom:30px" />
+                  <img src="Images/product_giant/bg.png" class="img-fluid" />
+              </div>
+          </div>
+      </div>
+  </section>
+  </div>
+  
+  <!-- LED Screen -->
+  <div id="led_screen" style="display:none">
+      <!-- LED Screen For Sport -->
+  <section class="page-section">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-12 p-5">
+                  <a href="ProductGalleryDetail_id.html?cnt=euro_display" style="text-decoration:none">
+                      <div class="Montserrat-Regular" style="color:#22478b">BACK - PRODUCT GALLERY</div>
+                  </a>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-lg-12 text-center">
+                  <div class="Montserrat-Bold" style="color:#22478b;font-size:36px">LED SCREEN FOR SPORT</div>
+              </div>
+          </div>
+          <div class="row" style="margin-top:50px">
+              <div class="col-lg-4">
+                  <img src="Images/led_screen/peremiter led screen.png" style="width:100%;margin-bottom:10px" />
+                  <div class="card-img-overlay" style="margin-top:50px">
+                      <div class="card-text Montserrat-Bold text-center text-grey" style="font-size:36px;line-height:12px">PERIMETER LED</div>
+                      <div class="card-text Montserrat-Bold text-center text-yellow" style="font-size:36px">SCREEN</div>
+                      <div class="card-text Montserrat-Bold text-center text-grey" style="font-size:16px;line-height:20px">Revolutionary frontal maintenance system and patented wall-mounted fixing system... the perfect solution for any led billboard.</div>
+                  </div>
+              </div>
+              <div class="col-lg-4">
+                  <img src="Images/led_screen/giant led billboard.png" style="width:100%;margin-bottom:10px"/>
+                  <div class="card-img-overlay" style="margin-top:50px">
+                      <div class="card-text Montserrat-Bold text-center text-grey" style="font-size:36px;line-height:12px">GIANT LED</div>
+                      <div class="card-text Montserrat-Bold text-center text-yellow" style="font-size:36px">BILLBOARD</div>
+                      <div class="card-text Montserrat-Bold text-center text-grey" style="font-size:16px;line-height:20px">Our most preferred product for the creation of outdoor advertising led displays, especially if mounted on poles.</div>
+                  </div>
+              </div>
+              <div class="col-lg-4">
+                  <img src="Images/led_screen/score board.png" style="width:100%"/>
+                  <div class="card-img-overlay" style="margin-top:50px">
+                      <div class="card-text Montserrat-Bold text-center text-grey" style="font-size:36px;line-height:12px">SCORE</div>
+                      <div class="card-text Montserrat-Bold text-center text-yellow" style="font-size:36px">BOARD</div>
+                      <div class="card-text Montserrat-Bold text-center text-grey" style="font-size:16px;line-height:20px">Revolutionary front and rear maintenance system: the perfect solution for any big screen need.</div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <!-- Perimiter LED Screen -->
+  <section style="margin-top:50px;overflow:hidden">
+      <div style="border:2px solid;border-color:#22478b;width:600px"></div>
+      <div class="Montserrat-Bold text-left" style="color:#22478b;font-size:36px;margin-left:120px;margin-bottom:20px">PERIMETER LED SCREEN</div>
+      <div class="container">
+          <div class="row" style="margin-top:50px">
+              <div class="col-lg-6 col-md-6">
+                  <div class="card">
+                      <img src="Images/led_screen/tris.png" class="img-fluid card-img" style="width:100%" />
+                      <div class="card-img-overlay">
+                        <p class="card-text Montserrat-Bold" style="font-size:36px;color:yellow;bottom:0;position:absolute">TRIS</p>
+                      </div>
+                  </div>
+                  <div class="Montserrat-Regular text-justify" style="color:#22478b;margin-top:50px">
+                      This cabinet made die-cast made of aluminium-magnesium alloy is designed to be used in three different ways according to your needs and this 
+                      makes it more versatile than normal outdoor cabinets. Can be used as rental, perimeter and fixed advertising.
+                  </div>
+                  <div class="Montserrat-Bold text-left" style="color:#22478b;font-size:20px;margin-top:30px;margin-bottom:10px">Key information</div>
+                  <div class="Montserrat-Regular text-left" style="color:#22478b">
+                      > Three applications (rental, fixwd, perimeter)<br />
+                      > Aluminium and Magnesium<br />
+                      > High brightness
+                  </div>
+                  <div class="Montserrat-Bold text-left" style="color:#22478b;font-size:20px;margin-top:30px;margin-bottom:10px">Technical Info</div>
+                  <div class="Montserrat-Regular text-left" style="color:#22478b">
+                      <table>
+                          <tr>
+                              <td style="padding-right:50px">Use</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">Outdoor</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Pixel Pitch</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">5/667/8/10</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Cabinet size</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">96 x 96 cm</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Brightness</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">6500 NIT</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Material</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">almunium + magnesium, die-cast</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Cabinet Weight</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">32 kg</td>
+                          </tr>
+                      </table>
+                  </div>
+              </div>
+              <div class="col-lg-6 col-md-6">
+                  <div class="card">
+                      <img src="Images/led_screen/perimeter led screen 2.png" class="img-fluid" style="width:100%" />
+                      <div class="card-img-overlay">
+                        <p class="card-text Montserrat-Bold" style="font-size:36px;color:yellow;bottom:20px;position:absolute">PERIMETER LED</p>
+                          <p class="card-text Montserrat-Bold" style="font-size:36px;color:yellow;bottom:0;position:absolute">SCREEN</p>
+                      </div>
+                  </div>
+                  <div class="Montserrat-Regular text-justify" style="color:#22478b;margin-top:50px">
+                      Modular perimeter LED screens (pixel pitch P10 or P12) with upper absorbing impact pad and integrated support foot.
+                  </div>
+                  <div class="Montserrat-Bold text-left" style="color:#22478b;font-size:20px;margin-top:30px;margin-bottom:10px">Key information</div>
+                  <div class="Montserrat-Regular text-left" style="color:#22478b">
+                      > Integrated support foot<br />
+                      > Impact-shock bearing<br />
+                      > Independent systems<br />
+                      > Modular
+                  </div>
+                  <button type="button" class="btn btn-primary" style="margin-top:50px">CONTACT US FOR MORE INFO</button>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <!-- Giant Billboard -->
+  <section style="margin-top:50px;overflow:hidden">
+      <div style="border:2px solid;border-color:#22478b;width:600px"></div>
+      <div class="Montserrat-Bold text-left" style="color:#22478b;font-size:36px;margin-left:100px;margin-bottom:20px">GIANT BILLBOARD</div>
+      <div class="container">
+          <div class="row" style="margin-top:50px">
+              <div class="col-lg-6 col-md-6">
+                  <div class="card">
+                      <img src="Images/led_screen/tris.png" class="img-fluid" style="width:100%" />
+                      <div class="card-img-overlay">
+                        <p class="card-text Montserrat-Bold" style="font-size:36px;color:yellow;bottom:0;position:absolute">TRIS</p>
+                      </div>
+                  </div>
+                  <div class="Montserrat-Regular text-justify" style="color:#22478b;margin-top:50px">
+                      This cabinet made die-cast made of aluminium-magnesium alloy is designed to be used in three different ways according to your needs and this 
+                      makes it more versatile than normal outdoor cabinets. Can be used as rental, perimeter and fixed advertising.
+                  </div>
+                  <div class="Montserrat-Bold text-left" style="color:#22478b;font-size:20px;margin-top:30px;margin-bottom:10px">Key information</div>
+                  <div class="Montserrat-Regular text-left" style="color:#22478b">
+                      > Three applications (rental, fixwd, perimeter)<br />
+                      > Aluminium and Magnesium<br />
+                      > High brightness
+                  </div>
+                  <div class="Montserrat-Bold text-left" style="color:#22478b;font-size:20px;margin-top:30px;margin-bottom:10px">Technical Info</div>
+                  <div class="Montserrat-Regular text-left" style="color:#22478b">
+                      <table>
+                          <tr>
+                              <td style="padding-right:50px">Use</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">Outdoor</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Pixel Pitch</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">5/667/8/10</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Cabinet size</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">96 x 96 cm</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Brightness</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">6500 NIT</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Material</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">almunium + magnesium, die-cast</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Cabinet Weight</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">32 kg</td>
+                          </tr>
+                      </table>
+                  </div>
+              </div>
+              <div class="col-lg-6 col-md-6">
+                  <div class="card">
+                      <img src="Images/led_screen/front service.png" class="img-fluid" style="width:100%" />
+                      <div class="card-img-overlay">
+                        <p class="card-text Montserrat-Bold" style="font-size:36px;color:yellow;bottom:0;position:absolute">FRONT SERVICE</p>
+                      </div>
+                  </div>
+                  <div class="Montserrat-Regular text-justify" style="color:#22478b;margin-top:50px">
+                      Revolutionary frontal maintenance system and patented wall-mounted fixing system... the perfect solution for any led billboard.
+                  </div>
+                  <div class="Montserrat-Bold text-left" style="color:#22478b;font-size:20px;margin-top:30px;margin-bottom:10px">Key information</div>
+                  <div class="Montserrat-Regular text-left" style="color:#22478b">
+                      > Frontal maintenance<br />
+                      > Direct mounting to the wall<br />
+                      > Super-slim<br />
+                      > 100% Made in Italy
+                  </div>
+                  <div class="Montserrat-Bold text-left" style="color:#22478b;font-size:20px;margin-top:30px;margin-bottom:10px">Technical Info</div>
+                  <div class="Montserrat-Regular text-left" style="color:#22478b">
+                      <table>
+                          <tr>
+                              <td style="padding-right:50px">Use</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">Outdoor</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Pixel Pitch</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">8/10/16/20</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Cabinet size</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">96 x 96 x 8 cm</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Brightness</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">da 6500 a 7500 Nit</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Contrast</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">3000:1</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Weight</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">45Kg/mq</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Protection level</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">IP65</td>
+                          </tr>
+                      </table>
+                  </div>
+              </div>
+          </div>
+          <div class="row" style="margin-top:100px">
+              <div class="col-lg-6 col-md-6">
+                  <div class="card">
+                      <img src="Images/led_screen/rear service.png" class="img-fluid" style="width:100%" />
+                      <div class="card-img-overlay">
+                        <p class="card-text Montserrat-Bold" style="font-size:36px;color:yellow;bottom:0;position:absolute">REAR SERVICE</p>
+                      </div>
+                  </div>
+                  <div class="Montserrat-Regular text-justify" style="color:#22478b;margin-top:50px">
+                      Our most preferred product for the creation of outdoor advertising led displays, especially if mounted on poles.
+                  </div>
+                  <div class="Montserrat-Bold text-left" style="color:#22478b;font-size:20px;margin-top:30px;margin-bottom:10px">Key information</div>
+                  <div class="Montserrat-Regular text-left" style="color:#22478b">
+                      > Back maintenance acces<br />
+                      > High levels of brightness and contrast<br />
+                      > Outdoor				
+                  </div>
+                  <div class="Montserrat-Bold text-left" style="color:#22478b;font-size:20px;margin-top:30px;margin-bottom:10px">Technical Info</div>
+                  <div class="Montserrat-Regular text-left" style="color:#22478b">
+                      <table>
+                          <tr>
+                              <td style="padding-right:50px">Use</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">Outdoor</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Pixel Pitch</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">8/10/16/20</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Cabinet size</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">96 x 96 x 8 cm</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Brightness</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">da 6500 a 7500 Nit</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Contrast</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">3000:1</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Weight</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">45Kg/mq</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Protection level</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">IP65</td>
+                          </tr>
+                      </table>
+                  </div>
+              </div>
+              <div class="col-lg-6 col-md-6">
+                  <div class="card">
+                      <img src="Images/led_screen/front & rear service.png" class="img-fluid" style="width:100%" />
+                      <div class="card-img-overlay">
+                        <p class="card-text Montserrat-Bold" style="font-size:36px;color:yellow;bottom:0;position:absolute">FRONT & REAR SERVICE</p>
+                      </div>
+                  </div>
+                  <div class="Montserrat-Regular text-justify" style="color:#22478b;margin-top:50px">
+                     Revolutionary front and rear maintenance system: the perfect solution for any big screen need.
+                  </div>
+                  <div class="Montserrat-Bold text-left" style="color:#22478b;font-size:20px;margin-top:30px;margin-bottom:10px">Key information</div>
+                  <div class="Montserrat-Regular text-left" style="color:#22478b">
+                      > Front and rear maintenance<br />
+                      > Perfect for any situation<br />
+                      > Only 8 cm thick<br />
+                      > 100% Made in Italy
+                  </div>
+                  <div class="Montserrat-Bold text-left" style="color:#22478b;font-size:20px;margin-top:30px;margin-bottom:10px">Technical Info</div>
+                  <div class="Montserrat-Regular text-left" style="color:#22478b">
+                      <table>
+                          <tr>
+                              <td style="padding-right:50px">Use</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">Outdoor</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Pixel Pitch</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">8/10/16/20</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Cabinet size</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">96 x 96 x 8 cm</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Brightness</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">da 6500 a 7500 Nit</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Contrast</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">3000:1</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Weight</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">45Kg/mq</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Protection level</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">IP65</td>
+                          </tr>
+                      </table>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <!-- Score Board -->
+  <section style="margin-top:50px;margin-bottom:100px;overflow:hidden">
+      <div style="border:2px solid;border-color:#22478b;width:600px"></div>
+      <div class="Montserrat-Bold text-left" style="color:#22478b;font-size:36px;margin-left:150px;margin-bottom:20px">SCORE BOARD</div>
+      <div class="container">
+          <div class="row" style="margin-top:50px">
+              <div class="col-lg-6 col-md-6">
+                  <div class="card">
+                      <img src="Images/led_screen/bg.png" class="img-fluid" style="width:100%" />
+                      <div class="card-img-overlay">
+                        <p class="card-text Montserrat-Bold" style="font-size:36px;color:yellow;bottom:0;position:absolute">TRIS</p>
+                      </div>
+                  </div>
+                  <div class="Montserrat-Regular text-justify" style="color:#22478b;margin-top:50px">
+                      This cabinet made die-cast made of aluminium-magnesium alloy is designed to be used in three different ways according to your needs and this makes it more 
+                      versatile than normal outdoor cabinets. Can be used as rental, perimeter and fixed advertising.
+                  </div>
+                  <div class="Montserrat-Bold text-left" style="color:#22478b;font-size:20px;margin-top:30px;margin-bottom:10px">Key information</div>
+                  <div class="Montserrat-Regular text-left" style="color:#22478b">
+                     > Three applications (rental, fixwd, perimeter)<br />
+                     > Aluminium and Magnesium<br />
+                     > High brightness
+
+                  </div>
+                  <div class="Montserrat-Bold text-left" style="color:#22478b;font-size:20px;margin-top:30px;margin-bottom:10px">Technical Info</div>
+                  <div class="Montserrat-Regular text-left" style="color:#22478b">
+                      <table>
+                          <tr>
+                              <td style="padding-right:50px">Use</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">Outdoor</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Pixel Pitch</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">5/667/8/10</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Cabinet size</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">96 x 96 cm</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Brightness</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">6500 NIT</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Material</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">almunium + magnesium, die-cast</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Cabinet Weight</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">32 kg</td>
+                          </tr>
+                      </table>
+                  </div>
+              </div>
+              <div class="col-lg-6 col-md-6">
+                  <div class="card">
+                      <img src="Images/led_screen/bg.png" class="img-fluid" style="width:100%" />
+                      <div class="card-img-overlay">
+                        <p class="card-text Montserrat-Bold" style="font-size:36px;color:yellow;bottom:0;position:absolute">FRONT SERVICE</p>
+                      </div>
+                  </div>
+                  <div class="Montserrat-Regular text-justify" style="color:#22478b;margin-top:50px">
+                      Revolutionary frontal maintenance system and patented wall-mounted fixing system... the perfect solution for any led billboard.
+                  </div>
+                  <div class="Montserrat-Bold text-left" style="color:#22478b;font-size:20px;margin-top:30px;margin-bottom:10px">Key information</div>
+                  <div class="Montserrat-Regular text-left" style="color:#22478b">
+                      > Frontal maintenance<br />
+                      > Direct mounting to the wall<br />
+                      > Super-slim<br />
+                      > 100% Made in Italy
+                  </div>
+                  <div class="Montserrat-Bold text-left" style="color:#22478b;font-size:20px;margin-top:30px;margin-bottom:10px">Technical Info</div>
+                  <div class="Montserrat-Regular text-left" style="color:#22478b">
+                      <table>
+                          <tr>
+                              <td style="padding-right:50px">Use</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">Outdoor</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Pixel Pitch</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">8/10/16/20</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Cabinet size</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">96 x 96 x 8 cm</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Brightness</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">da 6500 a 7500 Nit</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Contrast</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">3000:1</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Weight</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">45Kg/mq</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Protection level</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">IP65</td>
+                          </tr>
+                      </table>
+                  </div>
+              </div>
+          </div>
+          <div class="row" style="margin-top:100px">
+              <div class="col-lg-6 col-md-6">
+                  <div class="card">
+                      <img src="Images/led_screen/bg.png" class="img-fluid" style="width:100%" />
+                      <div class="card-img-overlay">
+                        <p class="card-text Montserrat-Bold" style="font-size:36px;color:yellow;bottom:0;position:absolute">REAR SERVICE</p>
+                      </div>
+                  </div>
+                  <div class="Montserrat-Regular text-justify" style="color:#22478b;margin-top:50px">
+                      Our most preferred product for the creation of outdoor advertising led displays, especially if mounted on poles.
+                  </div>
+                  <div class="Montserrat-Bold text-left" style="color:#22478b;font-size:20px;margin-top:30px;margin-bottom:10px">Key information</div>
+                  <div class="Montserrat-Regular text-left" style="color:#22478b">
+                      > Back maintenance acces<br />
+                      > High levels of brightness and contrast<br />
+                      > Outdoor				
+                  </div>
+                  <div class="Montserrat-Bold text-left" style="color:#22478b;font-size:20px;margin-top:30px;margin-bottom:10px">Technical Info</div>
+                  <div class="Montserrat-Regular text-left" style="color:#22478b">
+                      <table>
+                          <tr>
+                              <td style="padding-right:50px">Use</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">Outdoor</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Pixel Pitch</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">8/10/16/20</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Cabinet size</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">96 x 96 x 8 cm</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Brightness</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">da 6500 a 7500 Nit</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Contrast</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">3000:1</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Weight</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">45Kg/mq</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Protection level</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">IP65</td>
+                          </tr>
+                      </table>
+                  </div>
+              </div>
+              <div class="col-lg-6 col-md-6">
+                  <div class="card">
+                      <img src="Images/led_screen/bg.png" class="img-fluid" style="width:100%" />
+                      <div class="card-img-overlay">
+                        <p class="card-text Montserrat-Bold" style="font-size:36px;color:yellow;bottom:0;position:absolute">SHOP SCREEN</p>
+                      </div>
+                  </div>
+                  <div class="Montserrat-Regular text-justify" style="color:#22478b;margin-top:50px">
+                     Revolutionary front and rear maintenance system: the perfect solution for any big screen need.
+                  </div>
+                  <div class="Montserrat-Bold text-left" style="color:#22478b;font-size:20px;margin-top:30px;margin-bottom:10px">Key information</div>
+                  <div class="Montserrat-Regular text-left" style="color:#22478b">
+                      > Only 6 cm thick<br />
+                      > High resolution<br />
+                      > Easy to install<br />
+                      > Two-sided screen (optional)
+                  </div>
+                  <div class="Montserrat-Bold text-left" style="color:#22478b;font-size:20px;margin-top:30px;margin-bottom:10px">Technical Info</div>
+                  <div class="Montserrat-Regular text-left" style="color:#22478b">
+                      <table>
+                          <tr>
+                              <td style="padding-right:50px">Screen</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">102 x 204 cm</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Pixel Pitch</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">2.5/3/4</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Cooling</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">fanless, 0-Noise</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Use</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">Indoor</td>
+                          </tr>
+                      </table>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+  </div>
+
+  <!-- Pharmacy Equipment -->
+  <div id="pharmacy_equipment" style="display:none">
+      <!-- Pharmacy Equipment -->
+  <section class="page-section">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-12 p-5">
+                  <a href="ProductGalleryDetail_id.html?cnt=euro_display" style="text-decoration:none">
+                      <div class="Montserrat-Regular" style="color:#22478b">BACK - PRODUCT GALLERY</div>
+                  </a>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-lg-12 text-center">
+                  <div class="Montserrat-Bold" style="color:#22478b;font-size:36px">PHARMACY EQUIPMENT</div>
+              </div>
+          </div>
+          <div class="row" style="margin-top:50px">
+              <div class="col-lg-4">
+                  <img src="Images/pharmacy equipment/monochrome animated crosses.png" style="width:100%;margin-bottom:10px" />
+                  <div class="card-img-overlay" style="margin-top:120px">
+                      <div class="card-text Montserrat-Bold text-center text-grey" style="font-size:32px;line-height:12px">MONOCHROME</div>
+                      <div class="card-text Montserrat-Bold text-center text-yellow" style="font-size:28px">ANIMATED CROSSES</div>
+                  </div>
+              </div>
+              <div class="col-lg-4">
+                  <img src="Images/pharmacy equipment/full color hd animated crosses.png" style="width:100%;margin-bottom:10px"/>
+                  <div class="card-img-overlay" style="margin-top:120px">
+                      <div class="card-text Montserrat-Bold text-center text-grey" style="font-size:32px;line-height:12px">FULL COLOR HD</div>
+                      <div class="card-text Montserrat-Bold text-center text-yellow" style="font-size:28px">ANIMATED CROSSES</div>
+                  </div>
+              </div>
+              <div class="col-lg-4">
+                  <img src="Images/pharmacy equipment/colored animated crosses.png" style="width:100%"/>
+                  <div class="card-img-overlay" style="margin-top:120px">
+                      <div class="card-text Montserrat-Bold text-center text-grey" style="font-size:32px;line-height:12px">COLORED</div>
+                      <div class="card-text Montserrat-Bold text-center text-yellow" style="font-size:28px">ANIMATED CROSSES</div>
+                  </div>
+              </div>
+          </div>
+          <div class="row" style="margin-top:50px">
+              <div class="col-lg-4">
+                  <img src="Images/pharmacy equipment/smart sign.png" style="width:100%;margin-bottom:10px" />
+                  <div class="card-img-overlay" style="margin-top:120px">
+                      <div class="card-text Montserrat-Bold text-center text-grey" style="font-size:32px;line-height:12px">SMART</div>
+                      <div class="card-text Montserrat-Bold text-center text-yellow" style="font-size:30px">SIGN</div>
+                  </div>
+              </div>
+              <div class="col-lg-4">
+                  <img src="Images/pharmacy equipment/shop screen.png" style="width:100%;margin-bottom:10px"/>
+                  <div class="card-img-overlay" style="margin-top:120px">
+                      <div class="card-text Montserrat-Bold text-center text-grey" style="font-size:32px;line-height:12px">SHOP</div>
+                      <div class="card-text Montserrat-Bold text-center text-yellow" style="font-size:30px">SCREEN</div>
+                  </div>
+              </div>
+              <div class="col-lg-4">
+                  <img src="Images/pharmacy equipment/led info point.png" style="width:100%"/>
+                  <div class="card-img-overlay" style="margin-top:120px">
+                      <div class="card-text Montserrat-Bold text-center text-grey" style="font-size:32px;line-height:12px">LED INFO</div>
+                      <div class="card-text Montserrat-Bold text-center text-yellow" style="font-size:30px">POINT</div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <!-- Monochrome Animated Crosses -->
+  <section style="margin-top:50px;overflow:hidden">
+      <div style="border:2px solid;border-color:#22478b;width:600px"></div>
+      <div class="Montserrat-Bold text-left" style="color:#22478b;font-size:32px;margin-bottom:20px">MONOCHROME ANIMATED CORESSES</div>
+      <div class="container">
+          <div class="row" style="margin-top:50px">
+              <div class="col-lg-6 col-md-6">
+                  <div class="card">
+                      <img src="Images/pharmacy equipment/animated single color 1.png" class="img-fluid card-img" style="width:100%" />
+                      <div class="card-img-overlay">
+                        <p class="card-text Montserrat-Bold p-5" style="font-size:28px;color:yellow;bottom:0;position:absolute">Animated single color pre-programmed LED Cross - 60 Cm</p>
+                      </div>
+                  </div>
+                  <div class="Montserrat-Regular text-justify" style="color:#22478b;margin-top:50px">
+                      The ideal solution for those who want to make their pharmacy visible with an updated style and a limited investment.  
+                  </div>
+                  <div class="Montserrat-Bold text-left" style="color:#22478b;font-size:20px;margin-top:30px;margin-bottom:10px">Key information</div>
+                  <div class="Montserrat-Regular text-left" style="color:#22478b">
+                      > Low power consumption<br />
+                        > High Brightness<br />
+                        > Low Price<br />
+                        > 100% Made in Italy<br />
+                        > Shows animations and a single writing
+                  </div>
+                  <div class="Montserrat-Bold text-left" style="color:#22478b;font-size:20px;margin-top:30px;margin-bottom:10px">Technical Info</div>
+                  <div class="Montserrat-Regular text-left" style="color:#22478b">
+                      <table>
+                          <tr>
+                              <td style="padding-right:50px">Size</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">83 x 58 cm</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Thickness</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">8 cm</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Weight</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">19 kg</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Protection Level</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">IP65/54</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Power Consumption</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">140W</td>
+                          </tr>
+                      </table>
+                  </div>
+              </div>
+              <div class="col-lg-6 col-md-6">
+                  <div class="card">
+                      <img src="Images/pharmacy equipment/animated single color 2.png" class="img-fluid" style="width:100%" />
+                      <div class="card-img-overlay">
+                        <p class="card-text Montserrat-Bold p-5" style="font-size:28px;color:yellow;bottom:0;position:absolute">Animated single color pre-programmed LED Cross - 80 Cm</p>
+                      </div>
+                  </div>
+                  <div class="Montserrat-Regular text-justify" style="color:#22478b;margin-top:50px">
+                      A 100 cm two-sided LED HD cross that displays animations, writing and images (and also time, date and temperature) and is fully programmable in a simple and intuitive way.
+                  </div>
+                  <div class="Montserrat-Bold text-left" style="color:#22478b;font-size:20px;margin-top:30px;margin-bottom:10px">Key information</div>
+                  <div class="Montserrat-Regular text-left" style="color:#22478b">
+                      > Low power consumption<br />
+                    > High Brightness<br />
+                    > Low Price<br />
+                    > 100% Made in Italy<br />
+                    > Shows animations and a single writing
+                  </div>
+                  <div class="Montserrat-Bold text-left" style="color:#22478b;font-size:20px;margin-top:30px;margin-bottom:10px">Technical Info</div>
+                  <div class="Montserrat-Regular text-left" style="color:#22478b">
+                      <table>
+                          <tr>
+                              <td style="padding-right:50px">Size</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">102 x 77 cm</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Thickness</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">8 cm</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Weight</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">19 kg</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Protection Level</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">IP65/54</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Power Consumption</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">200W</td>
+                          </tr>
+                      </table>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <!-- Full Color Animated Crosses -->
+  <section style="margin-top:50px;overflow:hidden">
+      <div style="border:2px solid;border-color:#22478b;width:600px"></div>
+      <div class="Montserrat-Bold text-left" style="color:#22478b;font-size:36px;margin-bottom:20px">FULL COLOR ANIMATED CROSSES</div>
+      <div class="container">
+          <div class="row" style="margin-top:50px">
+              <div class="col-lg-6 col-md-6">
+                  <div class="card">
+                      <img src="Images/pharmacy equipment/full color led pharmacy 1.png" class="img-fluid" style="width:100%" />
+                      <div class="card-img-overlay">
+                        <p class="card-text Montserrat-Bold p-5" style="font-size:28px;color:yellow;bottom:0;position:absolute">Full Color Led Pharmacy Cross - 88 Cm</p>
+                      </div>
+                  </div>
+                  <div class="Montserrat-Regular text-justify" style="color:#22478b;margin-top:50px">
+                      An 88 cm two-sided LED cross that displays animations, writing and images (and also time, date and temperature) and is fully programmable in a simple and intuitive way.
+                  </div>
+                  <div class="Montserrat-Bold text-left" style="color:#22478b;font-size:20px;margin-top:30px;margin-bottom:10px">Key information</div>
+                  <div class="Montserrat-Regular text-left" style="color:#22478b">
+                      > 16 million colors 100%<br />
+                        > Made in Italy<br />
+                        > Ultra-compact design
+                  </div>
+                  <div class="Montserrat-Bold text-left" style="color:#22478b;font-size:20px;margin-top:30px;margin-bottom:10px">Technical Info</div>
+                  <div class="Montserrat-Regular text-left" style="color:#22478b">
+                      <table>
+                          <tr>
+                              <td style="padding-right:50px">Number of LED's</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">7.680</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Size</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">88 x 88 cm</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Brightness</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">96 x 96 cm</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Brightness</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">6500 NIT</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Power Consumption</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">150 W</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Protection Level</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">IP65</td>
+                          </tr>
+                      </table>
+                  </div>
+              </div>
+              <div class="col-lg-6 col-md-6">
+                  <div class="card">
+                      <img src="Images/pharmacy equipment/full color led pharmacy.png" class="img-fluid" style="width:100%" />
+                      <div class="card-img-overlay">
+                        <p class="card-text Montserrat-Bold p-5" style="font-size:28px;color:yellow;bottom:0;position:absolute">Full Color Led Pharmacy Cross - 100 Cm</p>
+                      </div>
+                  </div>
+                  <div class="Montserrat-Regular text-justify" style="color:#22478b;margin-top:50px">
+                      A 100 cm two-sided LED HD cross that displays animations, writing and images (and also time, date and temperature) and is fully programmable in a simple and intuitive way.
+                  </div>
+                  <div class="Montserrat-Bold text-left" style="color:#22478b;font-size:20px;margin-top:30px;margin-bottom:10px">Key information</div>
+                  <div class="Montserrat-Regular text-left" style="color:#22478b">
+                      > More than 4 billion colors<br />
+                    > 100% Made in Italy<br />
+                    > Shows images, videos, and writing
+                  </div>
+                  <div class="Montserrat-Bold text-left" style="color:#22478b;font-size:20px;margin-top:30px;margin-bottom:10px">Technical Info</div>
+                  <div class="Montserrat-Regular text-left" style="color:#22478b">
+                      <table>
+                          <tr>
+                              <td style="padding-right:50px">Size</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">110 x 110 cm</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Thickness</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">10 cm</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Number of LED's</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">69.120</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Brightness</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">6500 Nit</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Power Consumption</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">200 W</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Protection Level</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">IP 65</td>
+                          </tr>
+                      </table>
+                  </div>
+              </div>
+          </div>
+          <div class="row" style="margin-top:100px">
+              <div class="col-lg-6 col-md-6">
+                  <div class="card">
+                      <img src="Images/pharmacy equipment/full color led pharmacy 2.png" class="img-fluid" style="width:100%" />
+                      <div class="card-img-overlay">
+                        <p class="card-text Montserrat-Bold p-5" style="font-size:28px;color:yellow;bottom:0;position:absolute">Full Color Led Pharmacy Cross - 120 Cm</p>
+                      </div>
+                  </div>
+                  <div class="Montserrat-Regular text-justify" style="color:#22478b;margin-top:50px">
+                      An 88 cm two-sided LED cross that displays animations, writing and images (and also time, date and temperature) and is fully programmable in a simple and intuitive way.
+                  </div>
+                  <div class="Montserrat-Bold text-left" style="color:#22478b;font-size:20px;margin-top:30px;margin-bottom:10px">Key information</div>
+                  <div class="Montserrat-Regular text-left" style="color:#22478b">
+                      > More than 4 billion colors<br />
+                    > 100% Made in Italy<br />
+                    > Shows images, videos, and writing	
+                  </div>
+                  <div class="Montserrat-Bold text-left" style="color:#22478b;font-size:20px;margin-top:30px;margin-bottom:10px">Technical Info</div>
+                  <div class="Montserrat-Regular text-left" style="color:#22478b">
+                      <table>
+                          <tr>
+                              <td style="padding-right:50px">Size</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">120 x 120 cm</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Thickness</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">15 cm</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Number of LED's</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">69.120</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Brightness</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">6500 Nit</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Power Consumption</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">200 W</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Protectio Level</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">IP65</td>
+                          </tr>
+                      </table>
+                  </div>
+              </div>
+              <div class="col-lg-6 col-md-6">
+                  <div class="card">
+                      <img src="Images/pharmacy equipment/full color led pharmacy 2.png" class="img-fluid" style="width:100%" />
+                      <div class="card-img-overlay">
+                        <p class="card-text Montserrat-Bold p-5" style="font-size:28px;color:yellow;bottom:0;position:absolute">Full Color Led Pharmacy Cross - 150 Cm</p>
+                      </div>
+                  </div>
+                  <div class="Montserrat-Regular text-justify" style="color:#22478b;margin-top:50px">
+                     A 100 cm two-sided LED HD cross that displays animations, writing and images (and also time, date and temperature) and is fully programmable in a simple and intuitive way.
+                  </div>
+                  <div class="Montserrat-Bold text-left" style="color:#22478b;font-size:20px;margin-top:30px;margin-bottom:10px">Key information</div>
+                  <div class="Montserrat-Regular text-left" style="color:#22478b">
+                      > The largest pharmacy cross on the market<br />
+                    > More than 4 billion colors<br />
+                    > 100% Made in Italy<br />
+                    > Shows images, videos, and writing
+                  </div>
+                  <div class="Montserrat-Bold text-left" style="color:#22478b;font-size:20px;margin-top:30px;margin-bottom:10px">Technical Info</div>
+                  <div class="Montserrat-Regular text-left" style="color:#22478b">
+                      <table>
+                          <tr>
+                              <td style="padding-right:50px">Size</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">Outdoor</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Thickness</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">8/10/16/20</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Number of LED's</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">96 x 96 x 8 cm</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Brightness</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">da 6500 a 7500 Nit</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Power Consumption</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">3000:1</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Protection Level</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">45Kg/mq</td>
+                          </tr>
+                      </table>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <!-- Colored Animated Crosses -->
+  <section style="margin-top:50px;margin-bottom:100px;overflow:hidden">
+      <div style="border:2px solid;border-color:#22478b;width:600px"></div>
+      <div class="Montserrat-Bold text-left" style="color:#22478b;font-size:36px;margin-bottom:20px">Colored Animated Crosses</div>
+      <div class="container">
+          <div class="row" style="margin-top:50px">
+              <div class="col-lg-6 col-md-6">
+                  <div class="card">
+                      <img src="Images/pharmacy equipment/animated multi colored.png" class="img-fluid" style="width:100%" />
+                      <div class="card-img-overlay">
+                        <p class="card-text Montserrat-Bold p-5" style="font-size:28px;color:yellow;bottom:0;position:absolute">Animated multi-colored pre-programmed LED Cross - 60 Cm</p>
+                      </div>
+                  </div>
+                  <div class="Montserrat-Regular text-justify" style="color:#22478b;margin-top:50px">
+                      The ideal solution for those who want to make their pharmacy visible from a long distance with a strong impact and a limited investment.
+                  </div>
+                  <div class="Montserrat-Bold text-left" style="color:#22478b;font-size:20px;margin-top:30px;margin-bottom:10px">Key information</div>
+                  <div class="Montserrat-Regular text-left" style="color:#22478b">
+                     > Colored effects<br />
+                    > Thin structure<br />
+                    > Low consumption<br />
+                    > High brightness<br />
+                    > Low price<br />
+                    > 100% Made in Italy<br />
+                    > Can show animations and writings<br />
+                    > Two resolutions available: P8 / P16
+                  </div>
+                  <div class="Montserrat-Bold text-left" style="color:#22478b;font-size:20px;margin-top:30px;margin-bottom:10px">Technical Info</div>
+                  <div class="Montserrat-Regular text-left" style="color:#22478b">
+                      <table>
+                          <tr>
+                              <td style="padding-right:50px">Size</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">102 x 77 cm</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Thickness</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">8 cm</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Weight</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">26 kg</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Number of LED's</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">30.720 (P8) o 7.680 (P16)</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">IP Rating</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">IP65/54</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Power Consumption</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">140 W</td>
+                          </tr>
+                      </table>
+                  </div>
+              </div>
+              <div class="col-lg-6 col-md-6">
+                  <div class="card">
+                      <img src="Images/pharmacy equipment/animated multi colored2.png" class="img-fluid" style="width:100%" />
+                      <div class="card-img-overlay">
+                        <p class="card-text Montserrat-Bold p-5" style="font-size:28px;color:yellow;bottom:0;position:absolute">Animated multi-colored pre-programmed LED Cross -  80 Cm</p>
+                      </div>
+                  </div>
+                  <div class="Montserrat-Regular text-justify" style="color:#22478b;margin-top:50px">
+                      The ideal solution for those who want to make their pharmacy visible from a long distance with a strong impact and a limited investment.
+                  </div>
+                  <div class="Montserrat-Bold text-left" style="color:#22478b;font-size:20px;margin-top:30px;margin-bottom:10px">Key information</div>
+                  <div class="Montserrat-Regular text-left" style="color:#22478b">
+                      > Colored effects<br />
+                    > Thin structure<br />
+                    > Low consumption<br />
+                    > High brightness<br />
+                    > Low price<br />
+                    > 100% Made in Italy<br />
+                    > Can show animations and writings<br />
+                    > Two resolutions available: P8 / P16
+                  </div>
+                  <div class="Montserrat-Bold text-left" style="color:#22478b;font-size:20px;margin-top:30px;margin-bottom:10px">Technical Info</div>
+                  <div class="Montserrat-Regular text-left" style="color:#22478b">
+                      <table>
+                          <tr>
+                              <td style="padding-right:50px">Size</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">150 x 150 cm</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Thickness</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">20 cm</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Weight</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">26 kg</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Number of LED's</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">30.720 (P8) o 7.680 (P16)</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">IP Rating</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">P65/54</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Power Consumption</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">140 W</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Protection level</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">IP65</td>
+                          </tr>
+                      </table>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+
+    <!-- Smart Sign -->
+      <section style="margin-top:50px;margin-bottom:100px;overflow:hidden">
+          <div style="border:2px solid;border-color:#22478b;width:600px"></div>
+          <div class="Montserrat-Bold text-left" style="color:#22478b;font-size:36px;margin-bottom:20px">SMART SIGN</div>
+          <div class="container">
+              <div class="row" style="margin-top:50px">
+                  <div class="col-lg-12 col-md-12">
+                      <div class="card">
+                          <img src="Images/pharmacy equipment/smart sign 2.png" class="img-fluid" style="width:100%" />
+                          <div class="card-img-overlay">
+                            <p class="card-text Montserrat-Bold" style="font-size:36px;color:yellow;bottom:0;position:absolute">SMART SIGN</p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col-lg-6 col-md-6">
+                      <div class="Montserrat-Regular text-justify" style="color:#22478b;margin-top:50px">
+                          This shop sign is a real revolution: in addition to displaying the name and logo of your business you will be able to advertise (with images, videos and scrolling texts) your products, the offers of the month, the services you offer and everything you have always wanted to advertise.
+                      </div>
+                      <div class="Montserrat-Bold text-left" style="color:#22478b;font-size:20px;margin-top:30px;margin-bottom:10px">Key information</div>
+                      <div class="Montserrat-Regular text-left" style="color:#22478b">
+                         > Always visible
+                        > It catches the attention<br />
+                        > Totally customizable<br />
+                        > Easy to use<br />
+                        > Quick to install
+                      </div>
+                      <div class="Montserrat-Bold text-left" style="color:#22478b;font-size:20px;margin-top:30px;margin-bottom:10px">Technical Info</div>
+                      <div class="Montserrat-Regular text-left" style="color:#22478b">
+                          <table>
+                              <tr>
+                                  <td style="padding-right:50px">Pixel Pitch</td>
+                                  <td>:</td>
+                                  <td style="padding-left:10px">5/6.67/8/10</td>
+                              </tr>
+                              <tr>
+                                  <td style="padding-right:50px">Brightness</td>
+                                  <td>:</td>
+                                  <td style="padding-left:10px">6.500 nit</td>
+                              </tr>
+                              <tr>
+                                  <td style="padding-right:50px">Contrast</td>
+                                  <td>:</td>
+                                  <td style="padding-left:10px">3000:1</td>
+                              </tr>
+                              <tr>
+                                  <td style="padding-right:50px">Height</td>
+                                  <td>:</td>
+                                  <td style="padding-left:10px">32,48,64 or 96 cm</td>
+                              </tr>
+                              <tr>
+                                  <td style="padding-right:50px">Thickness</td>
+                                  <td>:</td>
+                                  <td style="padding-left:10px">8 cm</td>
+                              </tr>
+                          </table>
+                      </div>
+                  </div>
+                  <div class="col-lg-6 col-md-6">
+
+                  </div>
+              </div>
+          </div>
+      </section>
+
+    <!-- Shop Screen -->
+      <section style="margin-top:50px;margin-bottom:100px;overflow:hidden">
+          <div style="border:2px solid;border-color:#22478b;width:600px"></div>
+          <div class="Montserrat-Bold text-left" style="color:#22478b;font-size:36px;margin-bottom:20px">SHOP SCREEN</div>
+          <div class="container">
+              <div class="row" style="margin-top:50px">
+                  <div class="col-lg-6 col-md-6">
+                      <div class="card">
+                          <img src="Images/pharmacy equipment/mobile totem.png" class="img-fluid" style="width:100%" />
+                          <div class="card-img-overlay">
+                            <p class="card-text Montserrat-Bold" style="font-size:36px;color:yellow;bottom:0;position:absolute">MOBILE TOTEM</p>
+                          </div>
+                      </div>
+                      <div class="Montserrat-Regular text-justify" style="color:#22478b;margin-top:50px">
+                          The Totem Mobile is the ideal solution for direct use in shop windows or in indoor display spaces. It can be used on the one side for dynamic communications and on the other as a shelving for goods. It's also very simple to be moved.
+                      </div>
+                      <div class="Montserrat-Bold text-left" style="color:#22478b;font-size:20px;margin-top:30px;margin-bottom:10px">Key information</div>
+                      <div class="Montserrat-Regular text-left" style="color:#22478b">
+                         > Adjustable display height<br />
+                        > Totally silent<br />
+                        > High brightness<br />
+                        > Low consumption<br />
+                        > Customizable color<br />
+                        > 100% Real Made in Italy
+                      </div>
+                      <div class="Montserrat-Bold text-left" style="color:#22478b;font-size:20px;margin-top:30px;margin-bottom:10px">Technical Info</div>
+                      <div class="Montserrat-Regular text-left" style="color:#22478b">
+                          <table>
+                              <tr>
+                                  <td style="padding-right:50px">Pixel Pitch</td>
+                                  <td>:</td>
+                                  <td style="padding-left:10px">25/3/4</td>
+                              </tr>
+                              <tr>
+                                  <td style="padding-right:50px">Screen Size</td>
+                                  <td>:</td>
+                                  <td style="padding-left:10px">102 x 2014 cm</td>
+                              </tr>
+                              <tr>
+                                  <td style="padding-right:50px">Cabinet size</td>
+                                  <td>:</td>
+                                  <td style="padding-left:10px">fanless, 0-Noise</td>
+                              </tr>
+                              <tr>
+                                  <td style="padding-right:50px">Use</td>
+                                  <td>:</td>
+                                  <td style="padding-left:10px">Indoor</td>
+                              </tr>
+                          </table>
+                      </div>
+                  </div>
+                  <div class="col-lg-6 col-md-6">
+                      <div class="card">
+                          <img src="Images/pharmacy equipment/shop screen 2.png" class="img-fluid" style="width:100%" />
+                          <div class="card-img-overlay">
+                            <p class="card-text Montserrat-Bold" style="font-size:36px;color:yellow;bottom:0;position:absolute">SHOP SCREEN</p>
+                          </div>
+                      </div>
+                      <div class="Montserrat-Regular text-justify" style="color:#22478b;margin-top:50px">
+                          Innovative screen, often only 6 cm with frontal maintenance that can be hanged or wall mounted.
+                      </div>
+                      <div class="Montserrat-Bold text-left" style="color:#22478b;font-size:20px;margin-top:30px;margin-bottom:10px">Key information</div>
+                      <div class="Montserrat-Regular text-left" style="color:#22478b">
+                          > Only 6 cm thick<br />
+                        > High resolution<br />
+                        > Easy to install<br />
+                        > Two-sided screen (optional)
+                      </div>
+                      <div class="Montserrat-Bold text-left" style="color:#22478b;font-size:20px;margin-top:30px;margin-bottom:10px">Technical Info</div>
+                      <div class="Montserrat-Regular text-left" style="color:#22478b">
+                          <table>
+                              <tr>
+                                  <td style="padding-right:50px">Pixel Pitch</td>
+                                  <td>:</td>
+                                  <td style="padding-left:10px">2.5/3/4</td>
+                              </tr>
+                              <tr>
+                                  <td style="padding-right:50px">Screen</td>
+                                  <td>:</td>
+                                  <td style="padding-left:10px">102 x 204 cm</td>
+                              </tr>
+                              <tr>
+                                  <td style="padding-right:50px">Cooling</td>
+                                  <td>:</td>
+                                  <td style="padding-left:10px">fanless, 0-Noise</td>
+                              </tr>
+                              <tr>
+                                  <td style="padding-right:50px">Use</td>
+                                  <td>:</td>
+                                  <td style="padding-left:10px">Indoor</td>
+                              </tr>
+                          </table>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </section>
+
+    <!-- Monolit Info LED -->
+      <section style="margin-top:50px;margin-bottom:100px;overflow:hidden">
+          <div style="border:2px solid;border-color:#22478b;width:600px"></div>
+          <div class="Montserrat-Bold text-left" style="color:#22478b;font-size:36px;margin-bottom:20px">MONOLIT INFO LED</div>
+          <div class="container">
+              <div class="row" style="margin-top:50px">
+                  <div class="col-lg-6 col-md-6">
+                      <div class="card">
+                          <img src="Images/pharmacy equipment/monolit info led.png" class="img-fluid" style="width:100%" />
+                          <div class="card-img-overlay">
+                            <p class="card-text Montserrat-Bold" style="font-size:36px;color:yellow;bottom:0;position:absolute"></p>
+                          </div>
+                      </div>
+                      <div class="Montserrat-Regular text-justify" style="color:#22478b;margin-top:50px">
+                          Monolith is a self-supporting structure 3,5mt high and 1mt wide (20cm thick) that allows you to make hybrid communication because it has both a section devoted to fixed written information and a large outdoor high-brightness LED screen on both sides.
+                      </div>
+                      <div class="Montserrat-Bold text-left" style="color:#22478b;font-size:20px;margin-top:30px;margin-bottom:10px">Key information</div>
+                      <div class="Montserrat-Regular text-left" style="color:#22478b">
+                         > Strong impact<br />
+                        > Led screen plus fixed info<br />
+                        > High brightness<br />
+                        > Double screen<br />
+                        > Customizable colors<br /> 
+                        > 100% Made in Italy
+                      </div>
+                      <div class="Montserrat-Bold text-left" style="color:#22478b;font-size:20px;margin-top:30px;margin-bottom:10px">Technical Info</div>
+                      <div class="Montserrat-Regular text-left" style="color:#22478b">
+                          <table>
+                              <tr>
+                                  <td style="padding-right:50px">Pixel Pitch</td>
+                                  <td>:</td>
+                                  <td style="padding-left:10px">6</td>
+                              </tr>
+                              <tr>
+                                  <td style="padding-right:50px">Screen Size</td>
+                                  <td>:</td>
+                                  <td style="padding-left:10px">two 96 x 160 cm screens</td>
+                              </tr>
+                              <tr>
+                                  <td style="padding-right:50px">Use</td>
+                                  <td>:</td>
+                                  <td style="padding-left:10px">Outdoor</td>
+                              </tr>
+                          </table>
+                      </div>
+                  </div>
+                  <div class="col-lg-6 col-md-6">
+                      
+                  </div>
+              </div>
+          </div>
+      </section>
+  </div>
+
+  <!-- Store and Malls -->
+  <div id="store_and_malls" style="display:none">
+      <!-- Store and Malls -->
+  <section class="page-section" style="overflow:hidden">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-12 p-5">
+                  <a href="ProductGallery.html?cnt=LedDisplay" style="text-decoration:none">
+                      <div class="Montserrat-Regular" style="color:#22478b">BACK - PRODUCT GALLERY</div>
+                  </a>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-lg-12 text-center">
+                  <div class="Montserrat-Bold" style="color:#22478b;font-size:36px">STORE AND MALLS</div>
+              </div>
+          </div>
+          <div class="row" style="margin-top:50px">
+              <div class="col-lg-4">
+                  <div class="card">
+                      <img src="Images/store and malls/shop window screen.png" style="width:100%" />
+                      <div class="card-img-overlay">
+                        <p class="card-text Montserrat-Bold" style="font-size:38px;color:white;bottom:60px;position:absolute">SHOP WINDOW</p>
+                        <p class="card-text Montserrat-Bold" style="font-size:38px;color:yellow;bottom:30px;position:absolute">SCREEN</p>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-4">
+                  <div class="card">
+                      <img src="Images/store and malls/outdoor totem.png" style="width:100%"/>
+                      <div class="card-img-overlay">
+                        <p class="card-text Montserrat-Bold" style="font-size:38px;color:white;bottom:60px;position:absolute">OUTDOOR</p>
+                        <p class="card-text Montserrat-Bold" style="font-size:38px;color:yellow;bottom:30px;position:absolute">TOTEM</p>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-4">
+                  <div class="card">
+                      <img src="Images/store and malls/indoor totem.png" style="width:100%"/>
+                      <div class="card-img-overlay">
+                        <p class="card-text Montserrat-Bold" style="font-size:38px;color:white;bottom:60px;position:absolute">INDOOR</p>
+                        <p class="card-text Montserrat-Bold" style="font-size:38px;color:yellow;bottom:30px;position:absolute">TOTEM</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <!-- Shop Window Screen -->
+  <section style="margin-top:50px;overflow:hidden">
+      <div style="border:2px solid;border-color:#22478b;width:600px"></div>
+      <div class="Montserrat-Bold text-left" style="color:#22478b;font-size:36px;margin-left:120px;margin-bottom:20px">SHOP WINDOW SCREEN</div>
+      <div class="container">
+          <div class="row" style="margin-top:50px">
+              <div class="col-lg-6 col-md-6">
+                  <div class="card">
+                      <img src="Images/store and malls/mobile totem.png" class="img-fluid card-img" style="width:100%" />
+                      <div class="card-img-overlay">
+                        <p class="card-text Montserrat-Bold" style="font-size:36px;color:yellow;bottom:0;position:absolute">MOBILE TOTEM</p>
+                      </div>
+                  </div>
+                  <div class="Montserrat-Regular text-justify" style="color:#22478b;margin-top:50px">
+                      The Totem Mobile is the ideal solution for direct use in shop windows or in indoor display spaces. 
+                      It can be used on the one side for dynamic communications and on the other as a shelving for goods. It's also very simple to be moved.
+                  </div>
+                  <div class="Montserrat-Bold text-left" style="color:#22478b;font-size:20px;margin-top:30px;margin-bottom:10px">Key information</div>
+                  <div class="Montserrat-Regular text-left" style="color:#22478b">
+                        > Adjustable display height<br />
+                        > Totally silent<br />
+                        > High brightness<br />
+                        > Low consumption<br />
+                        > Customizable color<br />
+                        > 100% Real Made in Italy
+                  </div>
+                  <div class="Montserrat-Bold text-left" style="color:#22478b;font-size:20px;margin-top:30px;margin-bottom:10px">Technical Info</div>
+                  <div class="Montserrat-Regular text-left" style="color:#22478b">
+                      <table>
+                          <tr>
+                              <td style="padding-right:50px">Pixel Pitch</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">25/3/4</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Screen Size</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">102 x 2014 cm</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Cooling</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">fanless, 0 Noise</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Use</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">Indoor</td>
+                          </tr>
+                      </table>
+                  </div>
+              </div>
+              <div class="col-lg-6 col-md-6">
+                  <div class="card">
+                      <img src="Images/store and malls/shop screen.png" class="img-fluid" style="width:100%" />
+                      <div class="card-img-overlay">
+                        <p class="card-text Montserrat-Bold" style="font-size:36px;color:yellow;bottom:20px;position:absolute">SHOP SCREEN</p>
+                      </div>
+                  </div>
+                  <div class="Montserrat-Regular text-justify" style="color:#22478b;margin-top:50px">
+                      Innovative screen, often only 6 cm with frontal maintenance that can be hanged or wall mounted.
+                  </div>
+                  <div class="Montserrat-Bold text-left" style="color:#22478b;font-size:20px;margin-top:30px;margin-bottom:10px">Key information</div>
+                  <div class="Montserrat-Regular text-left" style="color:#22478b">
+                        > Only 6 cm thick<br />
+                        > High resolution<br />
+                        > Easy to install<br />
+                        > Two-sided screen (optional)
+                  </div>
+                  <div class="Montserrat-Bold text-left" style="color:#22478b;font-size:20px;margin-top:30px;margin-bottom:10px">Technical Info</div>
+                  <div class="Montserrat-Regular text-left" style="color:#22478b">
+                      <table>
+                          <tr>
+                              <td style="padding-right:50px">Pixel Pitch</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">25/3/4/5/6</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Screen</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">1920 Hz</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Cooling</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">96 x 144 cm</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Use</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">107 x 215 x 9 cm</td>
+                          </tr>
+                      </table>
+                  </div>
+                  <button type="button" class="btn btn-primary" style="margin-top:50px">CONTACT US FOR MORE INFO</button>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <!-- Outdoor Totem -->
+  <section style="margin-top:50px;overflow:hidden">
+      <div style="border:2px solid;border-color:#22478b;width:600px"></div>
+      <div class="Montserrat-Bold text-left" style="color:#22478b;font-size:36px;margin-left:100px;margin-bottom:20px">OUTDOOR TOTEM</div>
+      <div class="container">
+          <div class="row" style="margin-top:50px">
+              <div class="col-lg-6 col-md-6">
+                  <div class="card">
+                      <img src="Images/store and malls/indoor led totem.png" class="img-fluid" style="width:100%" />
+                      <div class="card-img-overlay">
+                        <p class="card-text Montserrat-Bold" style="font-size:36px;color:yellow;bottom:0;position:absolute">INDOOR LED TOTEM</p>
+                      </div>
+                  </div>
+                  <div class="Montserrat-Regular text-justify" style="color:#22478b;margin-top:50px">
+                      Indoor led totem, ideal for all kinds of needs such as fairs, airfields, stations, shopping centers, book stores, cinemas, banks, tourism, administrative services, etc.
+                  </div>
+                  <div class="Montserrat-Bold text-left" style="color:#22478b;font-size:20px;margin-top:30px;margin-bottom:10px">Key information</div>
+                  <div class="Montserrat-Regular text-left" style="color:#22478b">
+                        > Sturdy design<br />
+                        > Tempered glass<br />
+                        > Remote or centralized control<br />
+                        > High Definition<br />
+                        > No flickering
+                  </div>
+                  <div class="Montserrat-Bold text-left" style="color:#22478b;font-size:20px;margin-top:30px;margin-bottom:10px">Technical Info</div>
+                  <div class="Montserrat-Regular text-left" style="color:#22478b">
+                      <table>
+                          <tr>
+                              <td style="padding-right:50px">Pixel Pitch</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">25/3/4/5/6</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Refresh</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">1920 Hz</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Screen</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">96 x 144 cm</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Totem</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">107 x 215 x 9 cm</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Use</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">Indoor</td>
+                          </tr>
+                      </table>
+                  </div>
+              </div>
+              <div class="col-lg-6 col-md-6">
+                  <div class="card">
+                      <img src="Images/store and malls/giant led totem.png" class="img-fluid" style="width:100%" />
+                      <div class="card-img-overlay">
+                        <p class="card-text Montserrat-Bold" style="font-size:36px;color:yellow;bottom:0;position:absolute">GIANT LED TOTEM</p>
+                      </div>
+                  </div>
+                  <div class="Montserrat-Regular text-justify" style="color:#22478b;margin-top:50px">
+                      These outdoor and indoor led totems are the largest on the market: with their 97 ", 122" and 127 "displays reach 3.5 meters high, ensuring unmatched impact.
+                  </div>
+                  <div class="Montserrat-Bold text-left" style="color:#22478b;font-size:20px;margin-top:30px;margin-bottom:10px">Key information</div>
+                  <div class="Montserrat-Regular text-left" style="color:#22478b">
+                        > Frontal maintenance<br />
+                        > The biggest on the market<br />
+                        > Both Indoor and Outdoor<br />
+                        > Remote management via wi-fi
+                  </div>
+                  <div class="Montserrat-Bold text-left" style="color:#22478b;font-size:20px;margin-top:30px;margin-bottom:10px">Technical Info</div>
+                  <div class="Montserrat-Regular text-left" style="color:#22478b">
+                      <table>
+                          <tr>
+                              <td style="padding-right:50px">Screen Size</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">97"/122"/127"</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Totem Size</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">up to 1,5 x 3,5 mt</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Pixel Pitch</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">2/3/4.5</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Brightness</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">da 1500 a 5500 Nit</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Protection level</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">IP30/IP65</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Power Consumption</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">from 700W to 1250W</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Use</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">Indoor</td>
+                          </tr>
+                      </table>
+                  </div>
+              </div>
+          </div>
+          <div class="row" style="margin-top:100px">
+              <div class="col-lg-6 col-md-6">
+                  <div class="card">
+                      <img src="Images/store and malls/monolith led.png" class="img-fluid" style="width:100%" />
+                      <div class="card-img-overlay">
+                        <p class="card-text Montserrat-Bold" style="font-size:36px;color:yellow;bottom:0;position:absolute">MONOLITH LED</p>
+                      </div>
+                  </div>
+                  <div class="Montserrat-Regular text-justify" style="color:#22478b;margin-top:50px">
+                      Monolith is a self-supporting structure 3,5mt high and 1mt wide (20cm thick) that allows you to make hybrid communication because it has both a section devoted 
+                      to fixed written information and a large outdoor high-brightness LED screen on both sides. 
+                  </div>
+                  <div class="Montserrat-Bold text-left" style="color:#22478b;font-size:20px;margin-top:30px;margin-bottom:10px">Key information</div>
+                  <div class="Montserrat-Regular text-left" style="color:#22478b">
+                        > Strong impact<br />
+                        > Led screen plus fixed info<br />
+                        > High brightness<br />
+                        > Double screen<br />
+                        > Customizable colors<br />
+                        > 100% Made in Italy
+                  </div>
+                  <div class="Montserrat-Bold text-left" style="color:#22478b;font-size:20px;margin-top:30px;margin-bottom:10px">Technical Info</div>
+                  <div class="Montserrat-Regular text-left" style="color:#22478b">
+                      <table>
+                          <tr>
+                              <td style="padding-right:50px">Pixel Pitch</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">6</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Screen Size</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">two 96 x 160 cm screens</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Use</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">Outdoor</td>
+                          </tr>
+                      </table>
+                  </div>
+              </div>
+              <div class="col-lg-6 col-md-6">
+                  
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <!-- Indoor Totem -->
+  <section style="margin-top:50px;margin-bottom:100px;overflow:hidden">
+      <div style="border:2px solid;border-color:#22478b;width:600px"></div>
+      <div class="Montserrat-Bold text-left" style="color:#22478b;font-size:36px;margin-left:150px;margin-bottom:20px">INDOOR TOTEM</div>
+      <div class="container">
+          <div class="row" style="margin-top:50px">
+              <div class="col-lg-6 col-md-6">
+                  <div class="card">
+                      <img src="Images/store and malls/indoor led totem.png" class="img-fluid" style="width:100%" />
+                      <div class="card-img-overlay">
+                        <p class="card-text Montserrat-Bold" style="font-size:36px;color:yellow;bottom:0;position:absolute">INDOOR LED TOTEM</p>
+                      </div>
+                  </div>
+                  <div class="Montserrat-Regular text-justify" style="color:#22478b;margin-top:50px">
+                      Indoor led totem, ideal for all kinds of needs such as fairs, airfields, stations, 
+                      shopping centers, book stores, cinemas, banks, tourism, administrative services, etc.
+                  </div>
+                  <div class="Montserrat-Bold text-left" style="color:#22478b;font-size:20px;margin-top:30px;margin-bottom:10px">Key information</div>
+                  <div class="Montserrat-Regular text-left" style="color:#22478b">
+                        > Sturdy design<br />
+                        > Tempered glass<br />
+                        > Remote or centralized control<br />
+                        > High Definition<br />
+                        > No flickering
+                  </div>
+                  <div class="Montserrat-Bold text-left" style="color:#22478b;font-size:20px;margin-top:30px;margin-bottom:10px">Technical Info</div>
+                  <div class="Montserrat-Regular text-left" style="color:#22478b">
+                      <table>
+                          <tr>
+                              <td style="padding-right:50px">Pixel Pitch</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">25/3/4/5/6</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Refresh</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">1920 Hz</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Screen</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">96 x 144 cm</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Totem</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">107 x 215 x 9 cm</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Use</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">Indoor</td>
+                          </tr>
+                      </table>
+                  </div>
+              </div>
+              <div class="col-lg-6 col-md-6">
+                  <div class="card">
+                      <img src="Images/store and malls/giant led totem.png" class="img-fluid" style="width:100%" />
+                      <div class="card-img-overlay">
+                        <p class="card-text Montserrat-Bold" style="font-size:36px;color:yellow;bottom:0;position:absolute">GIANT LED TOTEM</p>
+                      </div>
+                  </div>
+                  <div class="Montserrat-Regular text-justify" style="color:#22478b;margin-top:50px">
+                      These outdoor and indoor led totems are the largest on the market: with their 97 ", 122" and 127 "displays reach 3.5 meters high, ensuring unmatched impact.
+                  </div>
+                  <div class="Montserrat-Bold text-left" style="color:#22478b;font-size:20px;margin-top:30px;margin-bottom:10px">Key information</div>
+                  <div class="Montserrat-Regular text-left" style="color:#22478b">
+                        > The biggest on the market<br />
+                        > Both Indoor and Outdoor<br />
+                        > Remote management via wi-fi
+                  </div>
+                  <div class="Montserrat-Bold text-left" style="color:#22478b;font-size:20px;margin-top:30px;margin-bottom:10px">Technical Info</div>
+                  <div class="Montserrat-Regular text-left" style="color:#22478b">
+                      <table>
+                          <tr>
+                              <td style="padding-right:50px">Screen Size</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">97"/122"/127"</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Totem Size</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">up to 1,5 x 3,5 mt</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Pixel Pitch</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">2/3/4.5</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Brightness</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">da 1500 a 5500 Nit</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Protection Level</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">IP30/IP65</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Power Consumption</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">from 700w to 1250W</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Use</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">Indoor</td>
+                          </tr>
+                      </table>
+                  </div>
+              </div>
+          </div>
+          <div class="row" style="margin-top:100px">
+              <div class="col-lg-6 col-md-6">
+                  <div class="card">
+                      <img src="Images/store and malls/mobile totem.png" class="img-fluid" style="width:100%" />
+                      <div class="card-img-overlay">
+                        <p class="card-text Montserrat-Bold" style="font-size:36px;color:yellow;bottom:0;position:absolute">MOBILE TOTEM</p>
+                      </div>
+                  </div>
+                  <div class="Montserrat-Regular text-justify" style="color:#22478b;margin-top:50px">
+                      The Totem Mobile is the ideal solution for direct use in shop windows or in indoor display spaces. 
+                      It can be used on the one side for dynamic communications and on the other as a shelving for goods. It's also very simple to be moved.
+                  </div>
+                  <div class="Montserrat-Bold text-left" style="color:#22478b;font-size:20px;margin-top:30px;margin-bottom:10px">Key information</div>
+                  <div class="Montserrat-Regular text-left" style="color:#22478b">
+                        > Adjustable display height<br />
+                        > Totally silent<br />
+                        > High brightness<br />
+                        > Low consumption<br />
+                        > Customizable color<br />
+                        > 100% Real Made in Italy
+                  </div>
+                  <div class="Montserrat-Bold text-left" style="color:#22478b;font-size:20px;margin-top:30px;margin-bottom:10px">Technical Info</div>
+                  <div class="Montserrat-Regular text-left" style="color:#22478b">
+                      <table>
+                          <tr>
+                              <td style="padding-right:50px">Pixel Pitch</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">2.5/3/4</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Screen Size</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">102 x 204 cm</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Cooling</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">fanless, 0 Noise</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Use</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">Indoor</td>
+                          </tr>
+                      </table>
+                  </div>
+              </div>
+              <div class="col-lg-6 col-md-6">
+                  <div class="card">
+                      <img src="Images/store and malls/i poster.png" class="img-fluid" style="width:100%" />
+                      <div class="card-img-overlay">
+                        <p class="card-text Montserrat-Bold" style="font-size:36px;color:yellow;bottom:0;position:absolute">I POSTER</p>
+                      </div>
+                  </div>
+                  <div class="Montserrat-Regular text-justify" style="color:#22478b;margin-top:50px">
+                     Say goodbye to the usual heavy and complex to manage led totems ... this brand new model is so thin and lightweight as to be almost a digital poster.
+                  </div>
+                  <div class="Montserrat-Bold text-left" style="color:#22478b;font-size:20px;margin-top:30px;margin-bottom:10px">Key information</div>
+                  <div class="Montserrat-Regular text-left" style="color:#22478b">
+                        > Big dimensions<br />
+                        > Super-thin<br />
+                        > Light<br />
+                        > High resolution<br />
+                        > Plug & Play
+                  </div>
+                  <div class="Montserrat-Bold text-left" style="color:#22478b;font-size:20px;margin-top:30px;margin-bottom:10px">Technical Info</div>
+                  <div class="Montserrat-Regular text-left" style="color:#22478b">
+                      <table>
+                          <tr>
+                              <td style="padding-right:50px">Pixel Pitch</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">2.5</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Size</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">192 x 64x 3,5 cm</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Brightness</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">>> 1.200 NIT</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Refresh Rate</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">1.200 Hz</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Weight</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">35 kg</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Use</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">Indoor</td>
+                          </tr>
+                      </table>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+  </div>
+  
+  <!-- Totem -->
+  <div id="totem" style="display:none">
+      <!-- Store and Malls -->
+  <section class="page-section" style="overflow:hidden">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-12 p-5">
+                  <a href="ProductGallery.html?cnt=LedDisplay" style="text-decoration:none">
+                      <div class="Montserrat-Regular" style="color:#22478b">BACK - PRODUCT GALLERY</div>
+                  </a>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-lg-12 text-center">
+                  <div class="Montserrat-Bold" style="color:#22478b;font-size:36px">TOTEM</div>
+              </div>
+          </div>
+          <div class="row" style="margin-top:50px">
+              <div class="col-lg-4">
+                  <div class="card">
+                      <img src="Images/store and malls/shop window screen.png" style="width:100%" />
+                      <div class="card-img-overlay">
+                        <p class="card-text Montserrat-Bold" style="font-size:38px;color:white;bottom:60px;position:absolute">SHOP WINDOW</p>
+                        <p class="card-text Montserrat-Bold" style="font-size:38px;color:yellow;bottom:30px;position:absolute">SCREEN</p>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-4">
+                  <div class="card">
+                      <img src="Images/store and malls/outdoor totem.png" style="width:100%"/>
+                      <div class="card-img-overlay">
+                        <p class="card-text Montserrat-Bold" style="font-size:38px;color:white;bottom:60px;position:absolute">OUTDOOR</p>
+                        <p class="card-text Montserrat-Bold" style="font-size:38px;color:yellow;bottom:30px;position:absolute">TOTEM</p>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-4">
+                  <div class="card">
+                      <img src="Images/store and malls/indoor totem.png" style="width:100%"/>
+                      <div class="card-img-overlay">
+                        <p class="card-text Montserrat-Bold" style="font-size:38px;color:white;bottom:60px;position:absolute">INDOOR</p>
+                        <p class="card-text Montserrat-Bold" style="font-size:38px;color:yellow;bottom:30px;position:absolute">TOTEM</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <!-- Shop Window Screen -->
+  <section style="margin-top:50px;overflow:hidden">
+      <div style="border:2px solid;border-color:#22478b;width:600px"></div>
+      <div class="Montserrat-Bold text-left" style="color:#22478b;font-size:36px;margin-left:120px;margin-bottom:20px">SHOP WINDOW SCREEN</div>
+      <div class="container">
+          <div class="row" style="margin-top:50px">
+              <div class="col-lg-6 col-md-6">
+                  <div class="card">
+                      <img src="Images/store and malls/mobile totem.png" class="img-fluid card-img" style="width:100%" />
+                      <div class="card-img-overlay">
+                        <p class="card-text Montserrat-Bold" style="font-size:36px;color:yellow;bottom:0;position:absolute">MOBILE TOTEM</p>
+                      </div>
+                  </div>
+                  <div class="Montserrat-Regular text-justify" style="color:#22478b;margin-top:50px">
+                      The Totem Mobile is the ideal solution for direct use in shop windows or in indoor display spaces. 
+                      It can be used on the one side for dynamic communications and on the other as a shelving for goods. It's also very simple to be moved.
+                  </div>
+                  <div class="Montserrat-Bold text-left" style="color:#22478b;font-size:20px;margin-top:30px;margin-bottom:10px">Key information</div>
+                  <div class="Montserrat-Regular text-left" style="color:#22478b">
+                        > Adjustable display height<br />
+                        > Totally silent<br />
+                        > High brightness<br />
+                        > Low consumption<br />
+                        > Customizable color<br />
+                        > 100% Real Made in Italy
+                  </div>
+                  <div class="Montserrat-Bold text-left" style="color:#22478b;font-size:20px;margin-top:30px;margin-bottom:10px">Technical Info</div>
+                  <div class="Montserrat-Regular text-left" style="color:#22478b">
+                      <table>
+                          <tr>
+                              <td style="padding-right:50px">Pixel Pitch</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">25/3/4</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Screen Size</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">102 x 2014 cm</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Cooling</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">fanless, 0 Noise</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Use</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">Indoor</td>
+                          </tr>
+                      </table>
+                  </div>
+              </div>
+              <div class="col-lg-6 col-md-6">
+                  <div class="card">
+                      <img src="Images/store and malls/shop screen.png" class="img-fluid" style="width:100%" />
+                      <div class="card-img-overlay">
+                        <p class="card-text Montserrat-Bold" style="font-size:36px;color:yellow;bottom:20px;position:absolute">SHOP SCREEN</p>
+                      </div>
+                  </div>
+                  <div class="Montserrat-Regular text-justify" style="color:#22478b;margin-top:50px">
+                      Innovative screen, often only 6 cm with frontal maintenance that can be hanged or wall mounted.
+                  </div>
+                  <div class="Montserrat-Bold text-left" style="color:#22478b;font-size:20px;margin-top:30px;margin-bottom:10px">Key information</div>
+                  <div class="Montserrat-Regular text-left" style="color:#22478b">
+                        > Only 6 cm thick<br />
+                        > High resolution<br />
+                        > Easy to install<br />
+                        > Two-sided screen (optional)
+                  </div>
+                  <div class="Montserrat-Bold text-left" style="color:#22478b;font-size:20px;margin-top:30px;margin-bottom:10px">Technical Info</div>
+                  <div class="Montserrat-Regular text-left" style="color:#22478b">
+                      <table>
+                          <tr>
+                              <td style="padding-right:50px">Pixel Pitch</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">25/3/4/5/6</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Screen</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">1920 Hz</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Cooling</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">96 x 144 cm</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Use</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">107 x 215 x 9 cm</td>
+                          </tr>
+                      </table>
+                  </div>
+                  <button type="button" class="btn btn-primary" style="margin-top:50px">CONTACT US FOR MORE INFO</button>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <!-- Outdoor Totem -->
+  <section style="margin-top:50px;overflow:hidden">
+      <div style="border:2px solid;border-color:#22478b;width:600px"></div>
+      <div class="Montserrat-Bold text-left" style="color:#22478b;font-size:36px;margin-left:100px;margin-bottom:20px">OUTDOOR TOTEM</div>
+      <div class="container">
+          <div class="row" style="margin-top:50px">
+              <div class="col-lg-6 col-md-6">
+                  <div class="card">
+                      <img src="Images/store and malls/indoor led totem.png" class="img-fluid" style="width:100%" />
+                      <div class="card-img-overlay">
+                        <p class="card-text Montserrat-Bold" style="font-size:36px;color:yellow;bottom:0;position:absolute">INDOOR LED TOTEM</p>
+                      </div>
+                  </div>
+                  <div class="Montserrat-Regular text-justify" style="color:#22478b;margin-top:50px">
+                      Indoor led totem, ideal for all kinds of needs such as fairs, airfields, stations, shopping centers, book stores, cinemas, banks, tourism, administrative services, etc.
+                  </div>
+                  <div class="Montserrat-Bold text-left" style="color:#22478b;font-size:20px;margin-top:30px;margin-bottom:10px">Key information</div>
+                  <div class="Montserrat-Regular text-left" style="color:#22478b">
+                        > Sturdy design<br />
+                        > Tempered glass<br />
+                        > Remote or centralized control<br />
+                        > High Definition<br />
+                        > No flickering
+                  </div>
+                  <div class="Montserrat-Bold text-left" style="color:#22478b;font-size:20px;margin-top:30px;margin-bottom:10px">Technical Info</div>
+                  <div class="Montserrat-Regular text-left" style="color:#22478b">
+                      <table>
+                          <tr>
+                              <td style="padding-right:50px">Pixel Pitch</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">25/3/4/5/6</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Refresh</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">1920 Hz</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Screen</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">96 x 144 cm</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Totem</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">107 x 215 x 9 cm</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Use</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">Indoor</td>
+                          </tr>
+                      </table>
+                  </div>
+              </div>
+              <div class="col-lg-6 col-md-6">
+                  <div class="card">
+                      <img src="Images/store and malls/giant led totem.png" class="img-fluid" style="width:100%" />
+                      <div class="card-img-overlay">
+                        <p class="card-text Montserrat-Bold" style="font-size:36px;color:yellow;bottom:0;position:absolute">GIANT LED TOTEM</p>
+                      </div>
+                  </div>
+                  <div class="Montserrat-Regular text-justify" style="color:#22478b;margin-top:50px">
+                      These outdoor and indoor led totems are the largest on the market: with their 97 ", 122" and 127 "displays reach 3.5 meters high, ensuring unmatched impact.
+                  </div>
+                  <div class="Montserrat-Bold text-left" style="color:#22478b;font-size:20px;margin-top:30px;margin-bottom:10px">Key information</div>
+                  <div class="Montserrat-Regular text-left" style="color:#22478b">
+                        > Frontal maintenance<br />
+                        > The biggest on the market<br />
+                        > Both Indoor and Outdoor<br />
+                        > Remote management via wi-fi
+                  </div>
+                  <div class="Montserrat-Bold text-left" style="color:#22478b;font-size:20px;margin-top:30px;margin-bottom:10px">Technical Info</div>
+                  <div class="Montserrat-Regular text-left" style="color:#22478b">
+                      <table>
+                          <tr>
+                              <td style="padding-right:50px">Screen Size</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">97"/122"/127"</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Totem Size</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">up to 1,5 x 3,5 mt</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Pixel Pitch</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">2/3/4.5</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Brightness</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">da 1500 a 5500 Nit</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Protection level</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">IP30/IP65</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Power Consumption</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">from 700W to 1250W</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Use</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">Indoor</td>
+                          </tr>
+                      </table>
+                  </div>
+              </div>
+          </div>
+          <div class="row" style="margin-top:100px">
+              <div class="col-lg-6 col-md-6">
+                  <div class="card">
+                      <img src="Images/store and malls/monolith led.png" class="img-fluid" style="width:100%" />
+                      <div class="card-img-overlay">
+                        <p class="card-text Montserrat-Bold" style="font-size:36px;color:yellow;bottom:0;position:absolute">MONOLITH LED</p>
+                      </div>
+                  </div>
+                  <div class="Montserrat-Regular text-justify" style="color:#22478b;margin-top:50px">
+                      Monolith is a self-supporting structure 3,5mt high and 1mt wide (20cm thick) that allows you to make hybrid communication because it has both a section devoted 
+                      to fixed written information and a large outdoor high-brightness LED screen on both sides. 
+                  </div>
+                  <div class="Montserrat-Bold text-left" style="color:#22478b;font-size:20px;margin-top:30px;margin-bottom:10px">Key information</div>
+                  <div class="Montserrat-Regular text-left" style="color:#22478b">
+                        > Strong impact<br />
+                        > Led screen plus fixed info<br />
+                        > High brightness<br />
+                        > Double screen<br />
+                        > Customizable colors<br />
+                        > 100% Made in Italy
+                  </div>
+                  <div class="Montserrat-Bold text-left" style="color:#22478b;font-size:20px;margin-top:30px;margin-bottom:10px">Technical Info</div>
+                  <div class="Montserrat-Regular text-left" style="color:#22478b">
+                      <table>
+                          <tr>
+                              <td style="padding-right:50px">Pixel Pitch</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">6</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Screen Size</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">two 96 x 160 cm screens</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Use</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">Outdoor</td>
+                          </tr>
+                      </table>
+                  </div>
+              </div>
+              <div class="col-lg-6 col-md-6">
+                  
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <!-- Indoor Totem -->
+  <section style="margin-top:50px;margin-bottom:100px;overflow:hidden">
+      <div style="border:2px solid;border-color:#22478b;width:600px"></div>
+      <div class="Montserrat-Bold text-left" style="color:#22478b;font-size:36px;margin-left:150px;margin-bottom:20px">INDOOR TOTEM</div>
+      <div class="container">
+          <div class="row" style="margin-top:50px">
+              <div class="col-lg-6 col-md-6">
+                  <div class="card">
+                      <img src="Images/store and malls/indoor led totem.png" class="img-fluid" style="width:100%" />
+                      <div class="card-img-overlay">
+                        <p class="card-text Montserrat-Bold" style="font-size:36px;color:yellow;bottom:0;position:absolute">INDOOR LED TOTEM</p>
+                      </div>
+                  </div>
+                  <div class="Montserrat-Regular text-justify" style="color:#22478b;margin-top:50px">
+                      Indoor led totem, ideal for all kinds of needs such as fairs, airfields, stations, 
+                      shopping centers, book stores, cinemas, banks, tourism, administrative services, etc.
+                  </div>
+                  <div class="Montserrat-Bold text-left" style="color:#22478b;font-size:20px;margin-top:30px;margin-bottom:10px">Key information</div>
+                  <div class="Montserrat-Regular text-left" style="color:#22478b">
+                        > Sturdy design<br />
+                        > Tempered glass<br />
+                        > Remote or centralized control<br />
+                        > High Definition<br />
+                        > No flickering
+                  </div>
+                  <div class="Montserrat-Bold text-left" style="color:#22478b;font-size:20px;margin-top:30px;margin-bottom:10px">Technical Info</div>
+                  <div class="Montserrat-Regular text-left" style="color:#22478b">
+                      <table>
+                          <tr>
+                              <td style="padding-right:50px">Pixel Pitch</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">25/3/4/5/6</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Refresh</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">1920 Hz</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Screen</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">96 x 144 cm</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Totem</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">107 x 215 x 9 cm</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Use</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">Indoor</td>
+                          </tr>
+                      </table>
+                  </div>
+              </div>
+              <div class="col-lg-6 col-md-6">
+                  <div class="card">
+                      <img src="Images/store and malls/giant led totem.png" class="img-fluid" style="width:100%" />
+                      <div class="card-img-overlay">
+                        <p class="card-text Montserrat-Bold" style="font-size:36px;color:yellow;bottom:0;position:absolute">GIANT LED TOTEM</p>
+                      </div>
+                  </div>
+                  <div class="Montserrat-Regular text-justify" style="color:#22478b;margin-top:50px">
+                      These outdoor and indoor led totems are the largest on the market: with their 97 ", 122" and 127 "displays reach 3.5 meters high, ensuring unmatched impact.
+                  </div>
+                  <div class="Montserrat-Bold text-left" style="color:#22478b;font-size:20px;margin-top:30px;margin-bottom:10px">Key information</div>
+                  <div class="Montserrat-Regular text-left" style="color:#22478b">
+                        > The biggest on the market<br />
+                        > Both Indoor and Outdoor<br />
+                        > Remote management via wi-fi
+                  </div>
+                  <div class="Montserrat-Bold text-left" style="color:#22478b;font-size:20px;margin-top:30px;margin-bottom:10px">Technical Info</div>
+                  <div class="Montserrat-Regular text-left" style="color:#22478b">
+                      <table>
+                          <tr>
+                              <td style="padding-right:50px">Screen Size</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">97"/122"/127"</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Totem Size</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">up to 1,5 x 3,5 mt</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Pixel Pitch</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">2/3/4.5</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Brightness</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">da 1500 a 5500 Nit</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Protection Level</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">IP30/IP65</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Power Consumption</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">from 700w to 1250W</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Use</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">Indoor</td>
+                          </tr>
+                      </table>
+                  </div>
+              </div>
+          </div>
+          <div class="row" style="margin-top:100px">
+              <div class="col-lg-6 col-md-6">
+                  <div class="card">
+                      <img src="Images/store and malls/mobile totem.png" class="img-fluid" style="width:100%" />
+                      <div class="card-img-overlay">
+                        <p class="card-text Montserrat-Bold" style="font-size:36px;color:yellow;bottom:0;position:absolute">MOBILE TOTEM</p>
+                      </div>
+                  </div>
+                  <div class="Montserrat-Regular text-justify" style="color:#22478b;margin-top:50px">
+                      The Totem Mobile is the ideal solution for direct use in shop windows or in indoor display spaces. 
+                      It can be used on the one side for dynamic communications and on the other as a shelving for goods. It's also very simple to be moved.
+                  </div>
+                  <div class="Montserrat-Bold text-left" style="color:#22478b;font-size:20px;margin-top:30px;margin-bottom:10px">Key information</div>
+                  <div class="Montserrat-Regular text-left" style="color:#22478b">
+                        > Adjustable display height<br />
+                        > Totally silent<br />
+                        > High brightness<br />
+                        > Low consumption<br />
+                        > Customizable color<br />
+                        > 100% Real Made in Italy
+                  </div>
+                  <div class="Montserrat-Bold text-left" style="color:#22478b;font-size:20px;margin-top:30px;margin-bottom:10px">Technical Info</div>
+                  <div class="Montserrat-Regular text-left" style="color:#22478b">
+                      <table>
+                          <tr>
+                              <td style="padding-right:50px">Pixel Pitch</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">2.5/3/4</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Screen Size</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">102 x 204 cm</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Cooling</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">fanless, 0 Noise</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Use</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">Indoor</td>
+                          </tr>
+                      </table>
+                  </div>
+              </div>
+              <div class="col-lg-6 col-md-6">
+                  <div class="card">
+                      <img src="Images/store and malls/i poster.png" class="img-fluid" style="width:100%" />
+                      <div class="card-img-overlay">
+                        <p class="card-text Montserrat-Bold" style="font-size:36px;color:yellow;bottom:0;position:absolute">I POSTER</p>
+                      </div>
+                  </div>
+                  <div class="Montserrat-Regular text-justify" style="color:#22478b;margin-top:50px">
+                     Say goodbye to the usual heavy and complex to manage led totems ... this brand new model is so thin and lightweight as to be almost a digital poster.
+                  </div>
+                  <div class="Montserrat-Bold text-left" style="color:#22478b;font-size:20px;margin-top:30px;margin-bottom:10px">Key information</div>
+                  <div class="Montserrat-Regular text-left" style="color:#22478b">
+                        > Big dimensions<br />
+                        > Super-thin<br />
+                        > Light<br />
+                        > High resolution<br />
+                        > Plug & Play
+                  </div>
+                  <div class="Montserrat-Bold text-left" style="color:#22478b;font-size:20px;margin-top:30px;margin-bottom:10px">Technical Info</div>
+                  <div class="Montserrat-Regular text-left" style="color:#22478b">
+                      <table>
+                          <tr>
+                              <td style="padding-right:50px">Pixel Pitch</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">2.5</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Size</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">192 x 64x 3,5 cm</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Brightness</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">>> 1.200 NIT</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Refresh Rate</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">1.200 Hz</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Weight</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">35 kg</td>
+                          </tr>
+                          <tr>
+                              <td style="padding-right:50px">Use</td>
+                              <td>:</td>
+                              <td style="padding-left:10px">Indoor</td>
+                          </tr>
+                      </table>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+  </div>
+
+
+  <!-- Footer -->
+  <footer class="py-5" style="background-color:#22478b">
+    <div class="container-fluid" style="margin:0">
+      <div class="row">
+          <div class="col-lg-4 text-center" style="/*border-right:2px solid #c0c0c0;*/margin-bottom:30px">
+              <i class="fa fa-fw fa-mobile" style="font-size: 45px;background-color: #c0c0c0;color: #22478b;border-radius: 100%;padding: 6px;margin-bottom:30px"></i>
+              <div class="text-center Montserrat-Regular" style="color:#c0c0c0">
+                  <table class="Montserrat-Regular" align="center" style="text-align:left;">
+                      <tr>
+                          <td>
+                              Phone
+                          </td>
+                          <td>
+                              &nbsp; : &nbsp;
+                          </td>
+                          <td>
+                              <a href="tel:+622127084884" style="color:#ffe400;font-weight:bold;" target="_top">+62 21 2708 4884</a>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td>
+                              E-Mail
+                          </td>
+                          <td>
+                              &nbsp; : &nbsp;
+                          </td>
+                          <td>
+                              <a href="mailto:admin@spyros.co.id" style="color:#ffe400;font-weight:bold;" target="_top">admin@spyros.co.id</a>
+                          </td>
+                      </tr>
+                  </table>
+              </div>
+          </div>
+          <div class="col-lg-4 text-center" style="/*border-right:2px solid #c0c0c0;*/margin-bottom:30px">
+               <div class="Montserrat-Bold" style="color:#c0c0c0;margin-bottom:40px">
+                  &nbsp;
+              </div>
+              <style>
+                  .dms-sos-footer
+                  {
+                    font-size: 12px;
+                    margin: 0px 5px;
+                    cursor:pointer;
+                    color:#c0c0c0;
+                  }
+                  .dms-sos-footer:hover
+                  {
+                      color:white !important;
+                      text-decoration:underline !important;
+                  }
+              </style>
+              <div class="box Montserrat-Light" style="background-color:transparent !important;box-shadow:none !important;color:#c0c0c0; " >
+                  <div class="text-center">
+                      <a onclick="goto_Home('home')" class="dms-sos-footer">BERANDA</a>
+                      <a onclick="goto_Home('product')" class="dms-sos-footer">SOLUSI</a>
+                      <a onclick="goto_Home('about')" class="dms-sos-footer">PROFIL</a>
+                      <a onclick="goto_Home('technology')" class="dms-sos-footer">REFERENSI</a>
+                      <a onclick="goto_Home('contact')" class="dms-sos-footer">KONTAK</a>
+                      <a onclick="goto_Home('news')" class="dms-sos-footer">BERITA</a>
+                  </div>
+              </div>
+          </div>
+          <div class="col-lg-4 text-center Montserrat-Regular" style="font-size:12px;color:#c0c0c0;margin-bottom:30px">
+              <i class="fa fa-fw fa-globe" style="font-size: 60px;color: #c0c0c0;padding: 6px;margin-bottom:20px"></i>
+              <a href="https://goo.gl/maps/h6abY3u5aJSd5Wex6" target="_blank" style="font-size:12px;color:#c0c0c0;">
+                  <div>
+                      <i class="fa fa-fw fa-map-marker"></i>
+                      &nbsp;Perkantoran Kebayoran Baru Mall No. 29
+                  </div>
+                  <div>Kebayoran Baru - Jakarta Selatan</div>
+                  <div>Jakarta 12120</div>
+                  <div>Indonesia</div>
+              </a>
+          </div>
+      </div>
+      <div class="row" style="margin-top:40px">
+          <div class="col-lg-12">
+              <div class="small text-center Montserrat-Regular" style="color:#c0c0c0">All Rights Reserved © Strat-One 2019</div>
+          </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/creative.min.js"></script>
+
+</body>
+
+</html>
